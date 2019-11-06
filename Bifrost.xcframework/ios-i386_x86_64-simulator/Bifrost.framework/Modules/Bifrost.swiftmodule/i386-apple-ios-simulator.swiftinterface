@@ -1,0 +1,74 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.1 effective-4.1.50 (swiftlang-1100.0.270.13 clang-1100.0.33.7)
+// swift-module-flags: -target i386-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 4 -enforce-exclusivity=checked -O -module-name Bifrost
+@_exported import Bifrost
+import Foundation
+import Swift
+import UIKit
+public protocol ParsedRequestable : Bifrost.Requestable {
+  associatedtype ParsedType
+  func parsingFunction(obj: Self.ExpectedObjType) -> (Self.ParsedType?)
+}
+extension ParsedRequestable {
+  public func run(_ ch: @escaping (Bifrost.Result<Self.ParsedType>) -> ())
+}
+public enum Result<ExpectedObj> {
+  case success(ExpectedObj)
+  case failure(Swift.Error)
+  public var obj: ExpectedObj? {
+    get
+  }
+  public var success: Swift.Bool {
+    get
+  }
+}
+@objc public class Router : ObjectiveC.NSObject {
+  @objc dynamic public var paused: Swift.Bool {
+    @objc get
+  }
+  public static let sharedInstance: Bifrost.Router
+  @objc deinit
+}
+public class ParsedRequest<ExpectedObj, ModelType> : Bifrost.Request<ExpectedObj> {
+  public init(HTTPMethod: Swift.String, host: Swift.String, path: Swift.String, payload: Any? = nil, queryParameters: [Swift.String : [Swift.String]]? = nil, headers: [Swift.String : Swift.String]? = nil, signer: Bifrost.Signing? = nil, bufferTag: Swift.String, ch: @escaping (Bifrost.Result<ModelType>) -> (), parsingFunction: @escaping (ExpectedObj) -> (ModelType?))
+  override public init(HTTPMethod: Swift.String, host: Swift.String, path: Swift.String, payload: Any? = super, queryParameters: [Swift.String : [Swift.String]]? = super, headers: [Swift.String : Swift.String]? = super, signer: Bifrost.Signing? = super, bufferTag: Swift.String, ch: ((Bifrost.Result<ExpectedObj>) -> ())?)
+  @objc deinit
+}
+public class ImageRequest : Bifrost.CoreRequest<Foundation.URL> {
+  public init(urlString: Swift.String, ch: @escaping (Bifrost.Result<UIKit.UIImage>) -> ())
+  @objc deinit
+}
+public class Request<ExpectedObj> : Bifrost.CoreRequest<ExpectedObj> {
+  public init(HTTPMethod: Swift.String, host: Swift.String, path: Swift.String, payload: Any? = nil, queryParameters: [Swift.String : [Swift.String]]? = nil, headers: [Swift.String : Swift.String]? = nil, signer: Bifrost.Signing? = nil, bufferTag: Swift.String, ch: ((Bifrost.Result<ExpectedObj>) -> ())?)
+  @objc deinit
+}
+public protocol Requestable {
+  associatedtype ExpectedObjType
+  var HTTPMethod: Swift.String { get set }
+  var host: Swift.String { get set }
+  var path: Swift.String { get set }
+  var bufferTag: Swift.String { get set }
+  var payload: Any? { get set }
+  var queryParameters: [Swift.String : [Swift.String]]? { get set }
+  var headers: [Swift.String : Swift.String]? { get set }
+  var signer: Bifrost.Signing? { get set }
+}
+extension Requestable {
+  public func run(_ ch: @escaping (Bifrost.Result<Self.ExpectedObjType>) -> ())
+}
+public protocol ImageRequestable {
+  var urlString: Swift.String { get set }
+}
+extension ImageRequestable {
+  public func run(_ ch: @escaping (Bifrost.Result<UIKit.UIImage>) -> ())
+}
+public class X {
+  @objc deinit
+}
+public class CoreRequest<ExpectedObj> {
+  public func addToQueue()
+  @objc deinit
+}
+public protocol Signing {
+  func sign(payload: Any?) -> [Swift.String : Swift.String]
+}

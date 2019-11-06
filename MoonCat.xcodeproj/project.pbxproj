@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,7 +14,23 @@
 		AE6F99372372C69000533DC2 /* GitWorkflow.md in Resources */ = {isa = PBXBuildFile; fileRef = AE6F99362372C69000533DC2 /* GitWorkflow.md */; };
 		AE6F99392372D23900533DC2 /* StyleGuide.md in Resources */ = {isa = PBXBuildFile; fileRef = AE6F99382372D23800533DC2 /* StyleGuide.md */; };
 		AE6F993B2372DAE000533DC2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AE6F993A2372DAE000533DC2 /* README.md */; };
+		AE6F993E2372DB7100533DC2 /* Bifrost.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE6F993C2372DB6500533DC2 /* Bifrost.xcframework */; };
+		AE6F993F2372DB7100533DC2 /* Bifrost.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE6F993C2372DB6500533DC2 /* Bifrost.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AE6F99402372DB7100533DC2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AE6F993F2372DB7100533DC2 /* Bifrost.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AE381496237269F7001F9A73 /* MoonCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoonCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,6 +42,7 @@
 		AE6F99362372C69000533DC2 /* GitWorkflow.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = GitWorkflow.md; sourceTree = "<group>"; };
 		AE6F99382372D23800533DC2 /* StyleGuide.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = StyleGuide.md; sourceTree = "<group>"; };
 		AE6F993A2372DAE000533DC2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AE6F993C2372DB6500533DC2 /* Bifrost.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Bifrost.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE6F993E2372DB7100533DC2 /* Bifrost.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +60,7 @@
 		AE38148D237269F7001F9A73 = {
 			isa = PBXGroup;
 			children = (
+				AE6F993C2372DB6500533DC2 /* Bifrost.xcframework */,
 				AE381498237269F7001F9A73 /* MoonCat */,
 				AE6F99362372C69000533DC2 /* GitWorkflow.md */,
 				AE6F99382372D23800533DC2 /* StyleGuide.md */,
@@ -80,6 +99,7 @@
 				AE381492237269F7001F9A73 /* Sources */,
 				AE381493237269F7001F9A73 /* Frameworks */,
 				AE381494237269F7001F9A73 /* Resources */,
+				AE6F99402372DB7100533DC2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
