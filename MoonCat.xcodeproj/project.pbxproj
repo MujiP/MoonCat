@@ -13,6 +13,7 @@
 		AE6F993523726A6A00533DC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F993423726A6A00533DC2 /* AppDelegate.swift */; };
 		AE6F99372372C69000533DC2 /* GitWorkflow.md in Resources */ = {isa = PBXBuildFile; fileRef = AE6F99362372C69000533DC2 /* GitWorkflow.md */; };
 		AE6F99392372D23900533DC2 /* StyleGuide.md in Resources */ = {isa = PBXBuildFile; fileRef = AE6F99382372D23800533DC2 /* StyleGuide.md */; };
+		AE6F993B2372DAE000533DC2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AE6F993A2372DAE000533DC2 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		AE6F993423726A6A00533DC2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE6F99362372C69000533DC2 /* GitWorkflow.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = GitWorkflow.md; sourceTree = "<group>"; };
 		AE6F99382372D23800533DC2 /* StyleGuide.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = StyleGuide.md; sourceTree = "<group>"; };
+		AE6F993A2372DAE000533DC2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,9 +42,10 @@
 		AE38148D237269F7001F9A73 = {
 			isa = PBXGroup;
 			children = (
-				AE6F99382372D23800533DC2 /* StyleGuide.md */,
-				AE6F99362372C69000533DC2 /* GitWorkflow.md */,
 				AE381498237269F7001F9A73 /* MoonCat */,
+				AE6F99362372C69000533DC2 /* GitWorkflow.md */,
+				AE6F99382372D23800533DC2 /* StyleGuide.md */,
+				AE6F993A2372DAE000533DC2 /* README.md */,
 				AE381497237269F7001F9A73 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -127,6 +130,7 @@
 			files = (
 				AE6F99372372C69000533DC2 /* GitWorkflow.md in Resources */,
 				AE3814A6237269F9001F9A73 /* LaunchScreen.storyboard in Resources */,
+				AE6F993B2372DAE000533DC2 /* README.md in Resources */,
 				AE3814A3237269F9001F9A73 /* Assets.xcassets in Resources */,
 				AE6F99392372D23900533DC2 /* StyleGuide.md in Resources */,
 			);
