@@ -121,3 +121,14 @@ Go to Source Control > Pull, and then select the develop branch. Note that if yo
 
 ## Extra Notes
 When you select a branch in Xcode, you can see the commits made on that branch. However, when your feature branch is merged in to develop, and then you delete your local feature branch, switch to develop, and pull, Xcode won't show you the commits you made. It'll only show the merge commits. But don't worry, when you run git log in the command line, all your commits and messages are still there (and they're also in the origin repo).
+
+
+
+## Useful Links
+
+About the Git Workflow:
+https://www.youtube.com/watch?v=aJnFGMclhU8
+
+About Xcode's Git Features:
+https://developer.apple.com/videos/play/wwdc2018/418/
+https://developer.apple.com/videos/play/wwdc2017/405/
