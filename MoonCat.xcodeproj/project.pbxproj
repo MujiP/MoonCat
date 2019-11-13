@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83D99CD12376736F007F96EE /* CreateEvent_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D99CD02376736F007F96EE /* CreateEvent_VC.swift */; };
+		83F4CF182377FEF900551751 /* EventInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F4CF172377FEF900551751 /* EventInfo.swift */; };
 		AE38149E237269F7001F9A73 /* Root_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE38149D237269F7001F9A73 /* Root_VC.swift */; };
 		AE3814A3237269F9001F9A73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE3814A2237269F9001F9A73 /* Assets.xcassets */; };
 		AE3814A6237269F9001F9A73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE3814A4237269F9001F9A73 /* LaunchScreen.storyboard */; };
@@ -33,6 +35,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		83D99CD02376736F007F96EE /* CreateEvent_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEvent_VC.swift; sourceTree = "<group>"; };
+		83F4CF172377FEF900551751 /* EventInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfo.swift; sourceTree = "<group>"; };
 		AE381496237269F7001F9A73 /* MoonCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoonCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE38149D237269F7001F9A73 /* Root_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root_VC.swift; sourceTree = "<group>"; };
 		AE3814A2237269F9001F9A73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,7 +85,9 @@
 			isa = PBXGroup;
 			children = (
 				AE6F993423726A6A00533DC2 /* AppDelegate.swift */,
+				83F4CF172377FEF900551751 /* EventInfo.swift */,
 				AE38149D237269F7001F9A73 /* Root_VC.swift */,
+				83D99CD02376736F007F96EE /* CreateEvent_VC.swift */,
 				AE3814A2237269F9001F9A73 /* Assets.xcassets */,
 				AE3814A4237269F9001F9A73 /* LaunchScreen.storyboard */,
 				AE3814A7237269F9001F9A73 /* Info.plist */,
@@ -163,8 +169,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83F4CF182377FEF900551751 /* EventInfo.swift in Sources */,
 				AE6F993523726A6A00533DC2 /* AppDelegate.swift in Sources */,
 				AE38149E237269F7001F9A73 /* Root_VC.swift in Sources */,
+				83D99CD12376736F007F96EE /* CreateEvent_VC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
