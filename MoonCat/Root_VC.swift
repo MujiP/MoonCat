@@ -51,6 +51,8 @@ class Root_VC: UIViewController {
     @objc func handleTap() {
         
         // TODO: present the create event vc
+        let vc = CreateEvent_VC()
+        self.welcomeChild(vc, frame: self.view.bounds)
     }
 
 

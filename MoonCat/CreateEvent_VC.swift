@@ -524,14 +524,9 @@ class CreateEvent_VC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
     }
     
-    // action for cancelling the form
-    @objc func cancelButtonTap(_ sender: UIButton){
-        
-    }
-    
     // tap action function for DISMISS Button
     @objc func dismissTap(_ sender:UIButton){
-        print("hi")
+        self.leave()
     }
 
 }

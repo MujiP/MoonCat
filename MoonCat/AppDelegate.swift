@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Bagel.start()
         
         self.window = UIWindow()
-        self.window?.rootViewController = CreateEvent_VC()
+        self.window?.rootViewController = Root_VC()
         self.window?.makeKeyAndVisible()
         
         return true
