@@ -33,6 +33,8 @@
 		AE6F993E2372DB7100533DC2 /* Bifrost.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE6F993C2372DB6500533DC2 /* Bifrost.xcframework */; };
 		AE6F993F2372DB7100533DC2 /* Bifrost.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE6F993C2372DB6500533DC2 /* Bifrost.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		AEB5BF47237BED6E00727337 /* ref1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB5BF46237BED6E00727337 /* ref1@2x.png */; };
+		AEB5BF49237CC6D700727337 /* PromiseKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB5BF48237CC6D700727337 /* PromiseKitExtensions.swift */; };
+		AEB5BF4C237CC88E00727337 /* 🎟Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB5BF4B237CC88E00727337 /* 🎟Event.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -77,6 +79,8 @@
 		AE6F993A2372DAE000533DC2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AE6F993C2372DB6500533DC2 /* Bifrost.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Bifrost.xcframework; sourceTree = "<group>"; };
 		AEB5BF46237BED6E00727337 /* ref1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ref1@2x.png"; sourceTree = "<group>"; };
+		AEB5BF48237CC6D700727337 /* PromiseKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromiseKitExtensions.swift; sourceTree = "<group>"; };
+		AEB5BF4B237CC88E00727337 /* 🎟Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎟Event.swift"; sourceTree = "<group>"; };
 		B24AF53C344CB3394E946627 /* Pods-MoonCat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoonCat.debug.xcconfig"; path = "Target Support Files/Pods-MoonCat/Pods-MoonCat.debug.xcconfig"; sourceTree = "<group>"; };
 		CBE384059984994862B6A2B2 /* Pods_MoonCat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoonCat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -100,7 +104,6 @@
 				B24AF53C344CB3394E946627 /* Pods-MoonCat.debug.xcconfig */,
 				7246F606AF6640AB0E16373B /* Pods-MoonCat.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -127,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				AE22F0E22378D7D7008256B4 /* DevExtensions.swift */,
+				AEB5BF48237CC6D700727337 /* PromiseKitExtensions.swift */,
 				AE22F0DE2378D7D7008256B4 /* X_UILabel.swift */,
 				AE22F0DF2378D7D7008256B4 /* X_UIView.swift */,
 				AE22F0E42378D7D7008256B4 /* X_UIViewController.swift */,
@@ -168,8 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				AE6F993C2372DB6500533DC2 /* Bifrost.xcframework */,
-				AE22F0DD2378D7D7008256B4 /* Extensions */,
-				AE22F0BD23779198008256B4 /* Components */,
 				AE381498237269F7001F9A73 /* MoonCat */,
 				AE6F99362372C69000533DC2 /* GitWorkflow.md */,
 				AE6F99382372D23800533DC2 /* StyleGuide.md */,
@@ -196,10 +198,21 @@
 				AEB5BF46237BED6E00727337 /* ref1@2x.png */,
 				AE22F0FB237B72A2008256B4 /* A_VC.swift */,
 				AE3814A2237269F9001F9A73 /* Assets.xcassets */,
+				AEB5BF4A237CC74D00727337 /* DarkThunder */,
+				AE22F0DD2378D7D7008256B4 /* Extensions */,
+				AE22F0BD23779198008256B4 /* Components */,
 				AE3814A4237269F9001F9A73 /* LaunchScreen.storyboard */,
 				AE3814A7237269F9001F9A73 /* Info.plist */,
 			);
 			path = MoonCat;
+			sourceTree = "<group>";
+		};
+		AEB5BF4A237CC74D00727337 /* DarkThunder */ = {
+			isa = PBXGroup;
+			children = (
+				AEB5BF4B237CC88E00727337 /* 🎟Event.swift */,
+			);
+			path = DarkThunder;
 			sourceTree = "<group>";
 		};
 		C1BFA7FF9555A1A9DD1C6B94 /* Frameworks */ = {
@@ -331,6 +344,7 @@
 			files = (
 				AE22F0F8237B6F5E008256B4 /* SlideAnimation.swift in Sources */,
 				AE22F0D82378BB42008256B4 /* SpacingStrategy.swift in Sources */,
+				AEB5BF49237CC6D700727337 /* PromiseKitExtensions.swift in Sources */,
 				AE52FD23237B9A3500468DBE /* GazelleTabBar.swift in Sources */,
 				AE22F0FC237B72A2008256B4 /* A_VC.swift in Sources */,
 				AE22F0F6237B6EE8008256B4 /* FadeAnimation.swift in Sources */,
@@ -340,6 +354,7 @@
 				AE22F0E92378D7D7008256B4 /* DevExtensions.swift in Sources */,
 				AE22F0ED237963AA008256B4 /* EqualSpacing.swift in Sources */,
 				AE22F0E62378D7D7008256B4 /* X_UIView.swift in Sources */,
+				AEB5BF4C237CC88E00727337 /* 🎟Event.swift in Sources */,
 				AE22F0DC2378CE51008256B4 /* TabConfig.swift in Sources */,
 				AE38149E237269F7001F9A73 /* Root_VC.swift in Sources */,
 				AE22F0D62378B891008256B4 /* Tab.swift in Sources */,
