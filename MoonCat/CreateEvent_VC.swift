@@ -80,47 +80,25 @@ class CreateEvent_VC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = .white
+        setupTitleBar()
+        setupEventLabel()
+        setupLocationLabel()
+        setupCategoryLabel()
+        setupStartTimeLabel()
+        setupEndTimeLabel()
+        setupDescriptionLabel()
+        setupMaxNumLabel()
+        setupContactLabel()
+        setupCreateButton()
+        setupDismissButton()
         
         /* code for moving the view when keyboard pops up
         NotificationCenter.default.addObserver(self, selector: #selector(CreateEvent_VC.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(CreateEvent_VC.keyboardWillHide), name: UIResponder.keyboardDidHideNotification, object: nil)*/
     }
     
-    override func loadView(){
-        super.loadView()
-        
-        // top purple bar with title of create event page
-        let topView = UIView()
-        topView.backgroundColor = #colorLiteral(red: 0.4549019608, green: 0.2745098039, blue: 0.9529411765, alpha: 1)
-        topView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(topView)
-        topView.leftAnchor.constraint(equalTo:view.leftAnchor).isActive = true
-        topView.rightAnchor.constraint(equalTo:view.rightAnchor).isActive = true
-        topView.heightAnchor.constraint(equalToConstant: view.frame.height/9).isActive = true
-        
-        //add DISMISS button
-        let dismissButton = UIButton()
-        dismissButton.backgroundColor = #colorLiteral(red: 0.4549019608, green: 0.2745098039, blue: 0.9529411765, alpha: 1)
-        dismissButton.setTitle("Dismiss", for: .normal)
-        dismissButton.setTitleColor(.white, for: .normal)
-        dismissButton.layer.cornerRadius = 10
-        dismissButton.layer.borderColor = UIColor.white.cgColor
-        dismissButton.translatesAutoresizingMaskIntoConstraints = false
-        dismissButton.addTarget(self, action: #selector(dismissTap(_:)), for: .touchUpInside)
-        self.view.addSubview(dismissButton)
-        NSLayoutConstraint.activate([dismissButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 5.0), dismissButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 5.0), dismissButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -290.0)])
-        
-        // add title
-        let titleLabel = UILabel()
-        titleLabel.numberOfLines = 0
-        titleLabel.textAlignment = .center
-        titleLabel.text = "Create your own event!"
-        titleLabel.textColor = UIColor.white
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        topView.addSubview(titleLabel)
-        NSLayoutConstraint.activate([titleLabel.topAnchor.constraint(equalTo: topView.safeAreaLayoutGuide.topAnchor, constant: 12.0), titleLabel.leadingAnchor.constraint(equalTo: topView.leadingAnchor, constant: 16.0), titleLabel.trailingAnchor.constraint(equalTo: topView.trailingAnchor, constant: -16.0)])
-        
+    func setupEventLabel(){
         // enter event name
         let eventLabel = UILabel()
         eventLabel.numberOfLines = 0
@@ -129,7 +107,11 @@ class CreateEvent_VC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         eventLabel.textColor = #colorLiteral(red: 0.4549019608, green: 0.2745098039, blue: 0.9529411765, alpha: 1)
         eventLabel.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(eventLabel)
-        NSLayoutConstraint.activate([eventLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 70.0), eventLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0), eventLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -100.0)])
+        NSLayoutConstraint.activate([
+            eventLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 70.0),
+            eventLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0),
+            eventLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -100.0)
+        ])
         
         eventName.backgroundColor = .white
         eventName.borderStyle = .roundedRect
@@ -140,8 +122,14 @@ class CreateEvent_VC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         eventName.delegate = self
         eventName.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(eventName)
-        NSLayoutConstraint.activate([eventName.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 100.0), eventName.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0), eventName.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.0)])
-        
+        NSLayoutConstraint.activate([
+            eventName.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 100.0),
+            eventName.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0),
+            eventName.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.0)
+        ])
+    }
+    
+    func setupLocationLabel(){
         // enter location
         let locationLabel = UILabel()
         locationLabel.numberOfLines = 0
@@ -150,7 +138,11 @@ class CreateEvent_VC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         locationLabel.textColor = #colorLiteral(red: 0.4549019608, green: 0.2745098039, blue: 0.9529411765, alpha: 1)
         locationLabel.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(locationLabel)
-        NSLayoutConstraint.activate([locationLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 150.0), locationLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0), locationLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -100.0)])
+        NSLayoutConstraint.activate([
+            locationLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 150.0),
+            locationLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0),
+            locationLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -100.0)
+        ])
         
         location.backgroundColor = .white
         location.borderStyle = .roundedRect
@@ -161,8 +153,40 @@ class CreateEvent_VC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         location.delegate = self
         location.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(location)
-        NSLayoutConstraint.activate([location.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 180.0), location.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0), location.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.0)])
+        NSLayoutConstraint.activate([
+            location.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 180.0),
+            location.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0),
+            location.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.0)
+        ])
+    }
+    
+    func setupTitleBar(){
+        // top purple bar with title of create event page
+        let topView = UIView()
+        topView.backgroundColor = #colorLiteral(red: 0.4549019608, green: 0.2745098039, blue: 0.9529411765, alpha: 1)
+        topView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(topView)
+        topView.leftAnchor.constraint(equalTo:view.leftAnchor).isActive = true
+        topView.rightAnchor.constraint(equalTo:view.rightAnchor).isActive = true
+        topView.heightAnchor.constraint(equalToConstant: view.frame.height/9).isActive = true
         
+        // add title
+        let titleLabel = UILabel()
+        titleLabel.numberOfLines = 0
+        titleLabel.textAlignment = .center
+        titleLabel.text = "Create your own event!"
+        titleLabel.textColor = UIColor.white
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        topView.addSubview(titleLabel)
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: topView.safeAreaLayoutGuide.topAnchor, constant: 12.0),
+            titleLabel.leadingAnchor.constraint(equalTo: topView.leadingAnchor, constant: 16.0),
+            titleLabel.trailingAnchor.constraint(equalTo: topView.trailingAnchor, constant: -16.0)
+        ])
+
+    }
+    
+    func setupCategoryLabel(){
         // select category label
         
         let catLabel = UILabel()
@@ -172,7 +196,11 @@ class CreateEvent_VC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         catLabel.textColor = #colorLiteral(red: 0.4549019608, green: 0.2745098039, blue: 0.9529411765, alpha: 1)
         catLabel.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(catLabel)
-        NSLayoutConstraint.activate([catLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 235.0), catLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0), catLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -100.0)])
+        NSLayoutConstraint.activate([
+            catLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 235.0),
+            catLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0),
+            catLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -100.0)
+        ])
         
         catButton.backgroundColor = .lightGray
         catButton.setTitle("Select Category", for: .normal)
@@ -180,9 +208,14 @@ class CreateEvent_VC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         catButton.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(catButton)
         catButton.addTarget(self, action: #selector(categoryButtonTap(_:)), for: .touchUpInside)
-        NSLayoutConstraint.activate([catButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 230.0), catButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 116.0), catButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.0)])
-        
-        
+        NSLayoutConstraint.activate([
+            catButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 230.0),
+            catButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 116.0),
+            catButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.0)
+        ])
+    }
+    
+    func setupStartTimeLabel(){
         // choose start time (date picker)
         let startLabel = UILabel()
         startLabel.numberOfLines = 0
@@ -191,7 +224,11 @@ class CreateEvent_VC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         startLabel.textColor = #colorLiteral(red: 0.4549019608, green: 0.2745098039, blue: 0.9529411765, alpha: 1)
         startLabel.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(startLabel)
-        NSLayoutConstraint.activate([startLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 280.0), startLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0), startLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -100.0)])
+        NSLayoutConstraint.activate([
+            startLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 280.0),
+            startLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0),
+            startLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -100.0)
+        ])
         
         // tap button to choose start time from date picker
         startDateText.backgroundColor = .white
@@ -207,10 +244,14 @@ class CreateEvent_VC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         createStartToolBar() // create the tool bar for date picker
         startDateText.inputAccessoryView = startDoneBar
         self.view.addSubview(startDateText)
-        NSLayoutConstraint.activate([startDateText.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 275.0), startDateText.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 120.0), startDateText.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20.0)])
-
-
-        
+        NSLayoutConstraint.activate([
+            startDateText.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 275.0),
+            startDateText.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 120.0),
+            startDateText.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20.0)
+        ])
+    }
+    
+    func setupEndTimeLabel(){
         // choose end time (date picker)
         let endLabel = UILabel()
         endLabel.numberOfLines = 0
@@ -219,7 +260,11 @@ class CreateEvent_VC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         endLabel.textColor = #colorLiteral(red: 0.4549019608, green: 0.2745098039, blue: 0.9529411765, alpha: 1)
         endLabel.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(endLabel)
-        NSLayoutConstraint.activate([endLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 320.0), endLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0), endLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -10.0)])
+        NSLayoutConstraint.activate([
+            endLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 320.0),
+            endLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0),
+            endLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -10.0)
+        ])
         
         endDateText.backgroundColor = .white
         endDateText.borderStyle = .roundedRect
@@ -234,8 +279,14 @@ class CreateEvent_VC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         createEndToolBar() // create the tool bar for date picker
         endDateText.inputAccessoryView = endDoneBar
         self.view.addSubview(endDateText)
-        NSLayoutConstraint.activate([endDateText.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 315.0), endDateText.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 120.0), endDateText.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20.0)])
-        
+        NSLayoutConstraint.activate([
+            endDateText.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 315.0),
+            endDateText.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 120.0),
+            endDateText.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20.0)
+        ])
+    }
+    
+    func setupDescriptionLabel(){
         // enter event description
         let descripLabel = UILabel()
         descripLabel.numberOfLines = 0
@@ -244,7 +295,10 @@ class CreateEvent_VC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         descripLabel.textColor = #colorLiteral(red: 0.4549019608, green: 0.2745098039, blue: 0.9529411765, alpha: 1)
         descripLabel.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(descripLabel)
-        NSLayoutConstraint.activate([descripLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 360.0), descripLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0), descripLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -100.0)])
+        NSLayoutConstraint.activate([
+            descripLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 360.0),
+            descripLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0),
+            descripLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -100.0)])
         
         descrip.backgroundColor = .white
         descrip.borderStyle = .roundedRect
@@ -255,8 +309,15 @@ class CreateEvent_VC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         descrip.delegate = self
         descrip.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(descrip)
-        NSLayoutConstraint.activate([descrip.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 390.0), descrip.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0), descrip.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.0),descrip.heightAnchor.constraint(equalToConstant: 60)])
-        
+        NSLayoutConstraint.activate([
+            descrip.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 390.0),
+            descrip.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0),
+            descrip.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.0),
+            descrip.heightAnchor.constraint(equalToConstant: 60)
+        ])
+    }
+    
+    func setupMaxNumLabel(){
         // set maximum number of people (drop down menu)
         let maxNumLabel = UILabel()
         maxNumLabel.numberOfLines = 0
@@ -265,7 +326,11 @@ class CreateEvent_VC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         maxNumLabel.textColor = #colorLiteral(red: 0.4549019608, green: 0.2745098039, blue: 0.9529411765, alpha: 1)
         maxNumLabel.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(maxNumLabel)
-        NSLayoutConstraint.activate([maxNumLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 470.0), maxNumLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0), maxNumLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -50.0)])
+        NSLayoutConstraint.activate([
+            maxNumLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 470.0),
+            maxNumLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0),
+            maxNumLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -50.0)
+        ])
         
         maxNum.backgroundColor = .white
         maxNum.borderStyle = .roundedRect
@@ -276,7 +341,14 @@ class CreateEvent_VC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         maxNum.delegate = self
         maxNum.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(maxNum)
-        NSLayoutConstraint.activate([maxNum.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 465.0), maxNum.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 295.0), maxNum.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.0)])
+        NSLayoutConstraint.activate([
+            maxNum.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 465.0),
+            maxNum.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 295.0),
+            maxNum.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.0)
+        ])
+    }
+    
+    func setupContactLabel(){
         
         // choose yes or no to showing contact info
         let contactLabel = UILabel()
@@ -286,7 +358,11 @@ class CreateEvent_VC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         contactLabel.textColor = #colorLiteral(red: 0.4549019608, green: 0.2745098039, blue: 0.9529411765, alpha: 1)
         contactLabel.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(contactLabel)
-        NSLayoutConstraint.activate([contactLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 530.0), contactLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0), contactLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -50.0)])
+        NSLayoutConstraint.activate([
+            contactLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 530.0),
+            contactLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0),
+            contactLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -50.0)
+        ])
         
         // create switch for choosing to show contact info
         let contactSwitch = UISwitch()
@@ -296,31 +372,47 @@ class CreateEvent_VC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         contactSwitch.setOn(true, animated: false)
         contactSwitch.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(contactSwitch)
-        NSLayoutConstraint.activate([contactSwitch.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 525.0), contactSwitch.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 303.0), contactSwitch.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -5.0)])
-        
+        NSLayoutConstraint.activate([
+            contactSwitch.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 525.0),
+            contactSwitch.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 303.0),
+            contactSwitch.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -5.0)
+        ])
+    }
+    
+    func setupCreateButton(){
         // button for creating events
         let createButton = UIButton(type:.system)
         createButton.backgroundColor = .green
         createButton.setTitle("Create", for: .normal)
         createButton.setTitleColor(.black, for: .normal)
         createButton.layer.cornerRadius = 10
-        createButton.frame.size = CGSize(width: 20, height: 30)
+        createButton.frame.size = CGSize(width: 60, height: 60)
         createButton.translatesAutoresizingMaskIntoConstraints = false
         createButton.addTarget(self, action: #selector(createButtonTap(_:)), for: .touchUpInside)
         self.view.addSubview(createButton)
-        NSLayoutConstraint.activate([createButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 580.0), createButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 80.0), createButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -210.0)])
-        // button for cancelling form
-        let cancelButton = UIButton(type:.system)
-        cancelButton.backgroundColor = .red
-        cancelButton.setTitle("Cancel", for: .normal)
-        cancelButton.setTitleColor(.white, for: .normal)
-        cancelButton.layer.cornerRadius = 10
-        cancelButton.frame.size = CGSize(width: 20, height: 30)
-        cancelButton.translatesAutoresizingMaskIntoConstraints = false
-        cancelButton.addTarget(self, action: #selector(cancelButtonTap(_:)), for: .touchUpInside)
-        self.view.addSubview(cancelButton)
-        NSLayoutConstraint.activate([cancelButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 580.0), cancelButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 220.0), cancelButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -80.0)])
-        
+        NSLayoutConstraint.activate([
+            createButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 580.0),
+            createButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 50.0),
+            createButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -50.0)
+        ])
+    }
+    
+    func setupDismissButton(){
+        //add DISMISS button
+        let dismissButton = UIButton()
+        dismissButton.backgroundColor = #colorLiteral(red: 0.4549019608, green: 0.2745098039, blue: 0.9529411765, alpha: 1)
+        dismissButton.setTitle("Dismiss", for: .normal)
+        dismissButton.setTitleColor(.white, for: .normal)
+        dismissButton.layer.cornerRadius = 10
+        dismissButton.layer.borderColor = UIColor.white.cgColor
+        dismissButton.translatesAutoresizingMaskIntoConstraints = false
+        dismissButton.addTarget(self, action: #selector(dismissTap(_:)), for: .touchUpInside)
+        self.view.addSubview(dismissButton)
+        NSLayoutConstraint.activate([
+            dismissButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 5.0),
+            dismissButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 300.0),
+            dismissButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -5.0)
+        ])
     }
     
     @objc func categoryButtonTap(_ sender: UIButton){
@@ -332,7 +424,11 @@ class CreateEvent_VC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         catPicker.translatesAutoresizingMaskIntoConstraints = false
         catPicker.contentMode = .center
         self.view.addSubview(catPicker)
-        NSLayoutConstraint.activate([catPicker.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 135.0), catPicker.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 116.0), catPicker.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.0)])
+        NSLayoutConstraint.activate([
+            catPicker.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 135.0),
+            catPicker.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 116.0),
+            catPicker.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.0)
+        ])
         
         doneButton.backgroundColor = .white
         doneButton.setTitle("Done", for: .normal)
@@ -340,7 +436,11 @@ class CreateEvent_VC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         doneButton.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(doneButton)
         doneButton.addTarget(self, action: #selector(onDoneButtonTapped(_:)), for: .touchUpInside)
-        NSLayoutConstraint.activate([doneButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 150.0), doneButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 250.0), doneButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -5.0)])
+        NSLayoutConstraint.activate([
+            doneButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 150.0),
+            doneButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 250.0),
+            doneButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -5.0)
+        ])
         
     }
     @objc func onDoneButtonTapped(_ sender: UIButton) {
@@ -411,9 +511,17 @@ class CreateEvent_VC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
      object.
      */
     @objc func createButtonTap(_ sender: UIButton){
-        let eventInformation = EventInfo(eventName: eventName.text!, location: location.text!, category: catButton.currentTitle!, startTime: startDateText.text!, endTime: endDateText.text!, description: descrip.text!, maxNumPeople: maxNum.text!, showContact: showContact)
+        let eventInformation = EventInfo(
+            eventName: eventName.text!,
+            location: location.text!,
+            category: catButton.currentTitle!,
+            startTime: startDateText.text!,
+            endTime: endDateText.text!,
+            description: descrip.text!,
+            maxNumPeople: maxNum.text!,
+            showContact: showContact
+        )
         
-        print(eventInformation)
     }
     
     // action for cancelling the form

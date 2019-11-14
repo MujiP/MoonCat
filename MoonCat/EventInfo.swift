@@ -23,14 +23,14 @@ struct EventInfo {
     
     // type annotations of EventInfo properties
     // pass values of these properties when creating a new instance of EventInfo 
-    var eventName: String
-    var location: String
-    var category: String
-    var startTime: String
-    var endTime: String
-    var description: String
-    var maxNumPeople: String
-    var showContact: Bool
+    let eventName: String
+    let location: String
+    let category: String
+    let startTime: String
+    let endTime: String
+    let description: String
+    let maxNumPeople: String
+    let showContact: Bool
     
     
     func printEvent() {

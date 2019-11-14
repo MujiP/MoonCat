@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         self.window = UIWindow()
-        self.window?.rootViewController = Root_VC()
+        self.window?.rootViewController = CreateEvent_VC()
         self.window?.makeKeyAndVisible()
         
         return true
