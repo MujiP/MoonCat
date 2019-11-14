@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PromiseKit
 
 class CreateEvent_VC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate{
    
@@ -521,6 +522,14 @@ class CreateEvent_VC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             maxNumPeople: maxNum.text!,
             showContact: showContact
         )
+        
+        firstly {
+            🎟Event(eventInformation).run()
+        }.done { _ in
+            print("done")
+        }.catch { error in
+            print(error)
+        }
         
     }
     
