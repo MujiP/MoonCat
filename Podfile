@@ -6,5 +6,7 @@ target 'MoonCat' do
   # Pods for MoonCat
   pod 'Bagel'
   pod 'PromiseKit/CorePromise'
+  pod 'GooglePlaces'
+  pod 'GoogleMaps'
 
 end

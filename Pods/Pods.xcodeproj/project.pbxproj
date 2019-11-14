@@ -6,102 +6,138 @@
 	objectVersion = 52;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		0C1885900810601510E0C632060FAF26 /* GooglePlaces */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 2FC2AC47FDB0310285CE777F18CD1532 /* Build configuration list for PBXAggregateTarget "GooglePlaces" */;
+			buildPhases = (
+			);
+			dependencies = (
+				D42315111F400C0605ACCD6B5CAF2178 /* PBXTargetDependency */,
+			);
+			name = GooglePlaces;
+		};
+		E5B4BBC6DD552AC8943C7E22772FC1D3 /* GoogleMaps */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 46921981F609C5BA3CB72EC4EA41299D /* Build configuration list for PBXAggregateTarget "GoogleMaps" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = GoogleMaps;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
-		06F36ADF559D49658DCCC986153700B4 /* Pods-MoonCat-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 066C0B2A7EEBDB0029A39EC727EDF17F /* Pods-MoonCat-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		08E0CA2B1EAE1FFE92723E86406FE05F /* BagelRequestPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = 42923FADAD574197A0D4D8677D1A884E /* BagelRequestPacket.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0AC5096478FA7A8F544ACDE7BD3A2EE7 /* BagelURLSessionInjector.h in Headers */ = {isa = PBXBuildFile; fileRef = EEAA407C74BA8A8CA0EED2A6C16C0600 /* BagelURLSessionInjector.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		16208A7953A067D01BFC0F47811C76C8 /* BagelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A723AB2924D3850B816097C8589D201 /* BagelController.m */; };
-		17578ED859932D4CD449278FE40289D9 /* BagelRequestInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = A125A73E9CD81DDBA0DF87B8B0F5C388 /* BagelRequestInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		185525B192AF43D134E3F3908B2C43FA /* BagelBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 639E743337AC03BC31C3541489D4D9DA /* BagelBrowser.m */; };
-		243D94842FD86814747B6688CE03281B /* Bagel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 841BB2089C015967DCBDECB29036FCCB /* Bagel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		27C0FF19DABB7CAECC1C3D4F10B0238E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E484F037B807D7B1ECF003384573173D /* Foundation.framework */; };
-		35705D82AD7C685F00A059D6C9B316C9 /* hang.m in Sources */ = {isa = PBXBuildFile; fileRef = B43889E10D894FCB326F9D23231C2590 /* hang.m */; };
-		3B1CFEC87BC2B672C5F86D8A045A4F36 /* BagelBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8854FEB41144CEC5735916F634450C2A /* BagelBaseModel.m */; };
-		3B88E9D835489F192E3D7A40D18E20BD /* BagelConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 08BE375857539B865B21DCFBA58D5DF0 /* BagelConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3E0F35F82CEE931D8FF4657FA5CBEDF0 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B1C4E403FAAB16F6A809DACA22A062 /* GCDAsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		402E3F33BA66E7CF187EA62E559B2092 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7272D43323581500FA19EBE585CAAC96 /* Error.swift */; };
-		40C2D67B05ABBF372B7DAFB94669B2AE /* BagelRequestCarrier.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DB785103B172792DB569370A3DD5134 /* BagelRequestCarrier.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		40DBD708E3F35B7C4E795300EDCA4CCE /* Guarantee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726F89F158E3123FCEB3E79434DBB5EA /* Guarantee.swift */; };
-		417543A04E7CFD63DB968761AB4E2C94 /* race.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A409B73FC37F0C5D13A44AF6557237 /* race.swift */; };
-		43FD90E9C24B9DA5460CBC914EE3AEB3 /* BagelRequestPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 014A763BB4102F377C09C084A3FDE88B /* BagelRequestPacket.m */; };
-		45054E2D893823884AD1ECA13CD2F996 /* AnyPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63F723575DB3E078A916920DEFEA18B /* AnyPromise.swift */; };
-		45B24CAED6B2FFFC1D637C1F9AD2CF04 /* BagelDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07982EE07E0BC42692D0234042C8BE8F /* BagelDeviceModel.m */; };
-		46FEF243EB68418996C15554C3DB20ED /* BagelRequestInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1DB70251C40B2F978CA24D2A3323B6 /* BagelRequestInfo.m */; };
-		4E26A73E8FD5ACA6153D9C15B084B598 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8566B853F27EBB0761F2941839D262 /* Resolver.swift */; };
-		56BD4D29687D229B48D7AFCE5B6DB3BE /* GCDAsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 259ABEBCF9CCBFB6CB30296AD48B5712 /* GCDAsyncUdpSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		581AFA3976F737129B6985C8D82A4957 /* Thenable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC65B36C2FAAA317851DE3AB02CE08B /* Thenable.swift */; };
-		59F142BF69B1DCEFABF51376CE68F5E6 /* race.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F99D822F9A36D9B6B6B7B956D2FEB0A /* race.m */; };
+		08E0CA2B1EAE1FFE92723E86406FE05F /* BagelRequestPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = 69EAA78B0F5273A92CA062CFD4A24C40 /* BagelRequestPacket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0AC5096478FA7A8F544ACDE7BD3A2EE7 /* BagelURLSessionInjector.h in Headers */ = {isa = PBXBuildFile; fileRef = 292B2C8773DEB4A747B649647B116767 /* BagelURLSessionInjector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		13ED0E09221A893C71B6349E3AD68504 /* Pods-MoonCat-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C29CAA1EADC70E2AAC87C351B90D36 /* Pods-MoonCat-dummy.m */; };
+		16208A7953A067D01BFC0F47811C76C8 /* BagelController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB2B6ACF6EF591181C2AAD203CB14DD /* BagelController.m */; };
+		17578ED859932D4CD449278FE40289D9 /* BagelRequestInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = AB90DDC94F7A1239CFE951B05EFE3523 /* BagelRequestInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		185525B192AF43D134E3F3908B2C43FA /* BagelBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = E224BCB62F065DD5260EF67BC352A841 /* BagelBrowser.m */; };
+		23952E4A71F9148A994C29446D257B4A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E484F037B807D7B1ECF003384573173D /* Foundation.framework */; };
+		243D94842FD86814747B6688CE03281B /* Bagel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D18FC7AF0D634EF956ECE4495D1529BD /* Bagel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		35705D82AD7C685F00A059D6C9B316C9 /* hang.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E46805AA1220B936F45258A54F57F15 /* hang.m */; };
+		3B1CFEC87BC2B672C5F86D8A045A4F36 /* BagelBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A0462945A90BDF43417159255024CF /* BagelBaseModel.m */; };
+		3B88E9D835489F192E3D7A40D18E20BD /* BagelConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = D3A328C0A10EDB5EAB4F84525EAC6C42 /* BagelConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E0F35F82CEE931D8FF4657FA5CBEDF0 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F45945C697374A0E2983192F7AE5B60F /* GCDAsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		402E3F33BA66E7CF187EA62E559B2092 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0623FE6B5CE9BA3B8447800C370F2558 /* Error.swift */; };
+		40C2D67B05ABBF372B7DAFB94669B2AE /* BagelRequestCarrier.h in Headers */ = {isa = PBXBuildFile; fileRef = 75B2ECFB6BF433096F99A0EB54F0A5D9 /* BagelRequestCarrier.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		40DBD708E3F35B7C4E795300EDCA4CCE /* Guarantee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B9ED674B8155116C6ADDE1B8A23482 /* Guarantee.swift */; };
+		417543A04E7CFD63DB968761AB4E2C94 /* race.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BCD573688ADA10A9DCA9849A3095C5 /* race.swift */; };
+		43FD90E9C24B9DA5460CBC914EE3AEB3 /* BagelRequestPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE58AE8861114E79BF5DD37F7592FDC /* BagelRequestPacket.m */; };
+		45054E2D893823884AD1ECA13CD2F996 /* AnyPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B1D906B14BC9124AA924EE2B6646DB /* AnyPromise.swift */; };
+		45B24CAED6B2FFFC1D637C1F9AD2CF04 /* BagelDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A37E74F9C62933CABA07356E4BB9A316 /* BagelDeviceModel.m */; };
+		46FEF243EB68418996C15554C3DB20ED /* BagelRequestInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BB17AF5054AFE5B88276E08492CE54 /* BagelRequestInfo.m */; };
+		4E26A73E8FD5ACA6153D9C15B084B598 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7058A160125D85AA064C4D32FD38CA51 /* Resolver.swift */; };
+		56BD4D29687D229B48D7AFCE5B6DB3BE /* GCDAsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 775CC710A39D84ECB4A296B35D1D67E5 /* GCDAsyncUdpSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		581AFA3976F737129B6985C8D82A4957 /* Thenable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE81F0CBCB2E4EE54944D9BC469B21 /* Thenable.swift */; };
+		59F142BF69B1DCEFABF51376CE68F5E6 /* race.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC1B6A2DA897B3782CA9B1F01002594 /* race.m */; };
 		5C605257D9971CEE1995C4B487E7188B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E484F037B807D7B1ECF003384573173D /* Foundation.framework */; };
+		5CB58323E6E2787BCDCE2AD0697BEF5C /* Pods-MoonCat-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AF224F2FB7C92E5FB989D39A805F02E /* Pods-MoonCat-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5CCEFAB876499F5BA642AB217B489625 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E484F037B807D7B1ECF003384573173D /* Foundation.framework */; };
-		675AE356ADB3D278FAF9F939320AC73E /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F81AC473A0F949C13B4197C0063240E /* Configuration.swift */; };
-		683ADEBB633C3B79366C8BEEC7CBD2B1 /* BagelBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = B52E61805329E9D0D9F44520978EBFCA /* BagelBrowser.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6943B2287135808366E13183763396FF /* LogEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46D46EE521725491EF633273289763 /* LogEvent.swift */; };
-		6EF370DE63E467814B475AFC472C85E2 /* BagelDeviceModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 467E4912C657D3A65B79BCB446E4406E /* BagelDeviceModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		70F1476F14D06DF144EF441236863304 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C4A12E36A273F5A679FF8FF5DDE8C6 /* Promise.swift */; };
-		72773E371CD9D5F63EC6DF822E606B60 /* CocoaAsyncSocket-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 91026C9400B0174A86FE6A79F9E67FF9 /* CocoaAsyncSocket-dummy.m */; };
-		7956D060CB15AFEA0F0EFD0B1748E5C7 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CABB2BFD1E38E624DF077F399F05AB /* GCDAsyncSocket.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		7A57D989EB7EB3D21FC9E13C97A47911 /* BagelUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC4D3172475B82DF5F4FEEF5427AF39 /* BagelUtility.m */; };
-		7D19647E26736527449499A4A79A75C0 /* BagelUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 4405018865C36CA4D06928FA33912C9A /* BagelUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		80E07A162283B20D9E8F812D211FAF11 /* hang.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23E63083DA4AF36756F1F928DAFAF19 /* hang.swift */; };
-		892F3D38D7DA136B8FB358E0D04F027F /* Deprecations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747F702357CF40850F7231134638FFD8 /* Deprecations.swift */; };
-		8B1FC49ADC598CCD860C3A77249ECCB6 /* fwd.h in Headers */ = {isa = PBXBuildFile; fileRef = D3B370BF433A002E9E138C8CCD0A9063 /* fwd.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9010BE7613DD9C7769650C92E3CCC3B5 /* CocoaAsyncSocket-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CD23909C8684883FAD6BAA3CC02D6081 /* CocoaAsyncSocket-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		91C0CE367829BC5CA26E1047B6520D11 /* after.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32CBDDDD0C439D931AF23E568968D0 /* after.swift */; };
-		926E9C9366EA5F2D29894F95EEA67F44 /* AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E0023D854FA914843ADC219583AD1C9 /* AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		93244E0F093EF192848F5E65662B91D5 /* PromiseKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F8514AB86EF3E5122A813FDE9587768 /* PromiseKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9864EE98952C4D1973456DEA80C1C37F /* Catchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5944D2658BFB2C78CF1909526EF6804 /* Catchable.swift */; };
-		9DA5C0F9EC04839B854FF52724C45137 /* Bagel.h in Headers */ = {isa = PBXBuildFile; fileRef = 10B4E0D03A4594F84A63498D4AAFAD90 /* Bagel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AA365BEE6D789715345E2EFDAAEFFAE7 /* BagelProjectModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 50D444EC700CFC04954CE52E3D611AA1 /* BagelProjectModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		675AE356ADB3D278FAF9F939320AC73E /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC2B4A6C2DBD3605FB61F5F6CD2FC3A /* Configuration.swift */; };
+		683ADEBB633C3B79366C8BEEC7CBD2B1 /* BagelBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 187D90586F097893E9EB400A089D4A2A /* BagelBrowser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6943B2287135808366E13183763396FF /* LogEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5478202504AFC3EE6CDE9D7D61D8D66F /* LogEvent.swift */; };
+		6EF370DE63E467814B475AFC472C85E2 /* BagelDeviceModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F5B46F6B53EC58B8672F0F680F9A937F /* BagelDeviceModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		70F1476F14D06DF144EF441236863304 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71C5A56896F0465D3EB2FE5984926CA /* Promise.swift */; };
+		72773E371CD9D5F63EC6DF822E606B60 /* CocoaAsyncSocket-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B062B5941EE4D2F2B7FDE9ABA2537362 /* CocoaAsyncSocket-dummy.m */; };
+		7956D060CB15AFEA0F0EFD0B1748E5C7 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B55121336BE7420D38825A079E68BEF /* GCDAsyncSocket.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		7A57D989EB7EB3D21FC9E13C97A47911 /* BagelUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1001DD61A45FF0AC6B0F441B90D69556 /* BagelUtility.m */; };
+		7D19647E26736527449499A4A79A75C0 /* BagelUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 5439338DE4B4A580F28D5974FBE8DD70 /* BagelUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		80E07A162283B20D9E8F812D211FAF11 /* hang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D7DA215667B09B5B51F4E01CB650A /* hang.swift */; };
+		892F3D38D7DA136B8FB358E0D04F027F /* Deprecations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF35B8E2BCF3D75E86F6D592324F0F5 /* Deprecations.swift */; };
+		8B1FC49ADC598CCD860C3A77249ECCB6 /* fwd.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F97301CF449F11285350880E8CA1088 /* fwd.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9010BE7613DD9C7769650C92E3CCC3B5 /* CocoaAsyncSocket-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D86632253CB3662DC3AD50604072BEC /* CocoaAsyncSocket-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		91C0CE367829BC5CA26E1047B6520D11 /* after.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094AA186211D4761C5A8510671003D72 /* after.swift */; };
+		926E9C9366EA5F2D29894F95EEA67F44 /* AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 2191E998C8171C15A6DE56EF4D918867 /* AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		93244E0F093EF192848F5E65662B91D5 /* PromiseKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FD9E1ADADEA12ABAE6919665A34FD508 /* PromiseKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9864EE98952C4D1973456DEA80C1C37F /* Catchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCFC61CB9E01B479C3B33740FFD00E3 /* Catchable.swift */; };
+		9DA5C0F9EC04839B854FF52724C45137 /* Bagel.h in Headers */ = {isa = PBXBuildFile; fileRef = A72A9598D716C875C0FABF5E7B94FE6A /* Bagel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA365BEE6D789715345E2EFDAAEFFAE7 /* BagelProjectModel.h in Headers */ = {isa = PBXBuildFile; fileRef = C23A986D7ACAB5F1643498EFB76B69CF /* BagelProjectModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AD17A649D16BC5E1922FA7AB7F703DE2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E484F037B807D7B1ECF003384573173D /* Foundation.framework */; };
-		AFBC2DB459CC5AA74E51E09162058CDF /* BagelProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F16F6B9C8B97C8BD779BDC02E10CD28 /* BagelProjectModel.m */; };
-		B2CD26FA12F085D65FC6B6435DB0F9F5 /* BagelRequestCarrier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3237ABE603E4789DA019D61E80A39DF5 /* BagelRequestCarrier.m */; };
+		AFBC2DB459CC5AA74E51E09162058CDF /* BagelProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 257EF8D3F0810BD1F91EDFCD6FD55C1D /* BagelProjectModel.m */; };
+		B2CD26FA12F085D65FC6B6435DB0F9F5 /* BagelRequestCarrier.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCBDD987E848B4D633C3186B92AA95E /* BagelRequestCarrier.m */; };
 		B3DC5642B065FEA6756C6CC6846B70BF /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5F157F703F8134396B2E2D2D64ED7AC /* CocoaAsyncSocket.framework */; };
-		B6FAF285DA96EC1301083C77904A1E74 /* BagelBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = AFEAFE51B4FB3B91D1229D4BB1A8EC2B /* BagelBaseModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C092BB7611CA7435ADF5E588B8D52032 /* when.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0565D2CF6F28296D6F4396139A076B /* when.swift */; };
-		C372F123E06CEC19EF12F3C7A20BA020 /* BagelURLConnectionInjector.h in Headers */ = {isa = PBXBuildFile; fileRef = DFA111D2ADC081A9F71AD7110CEC1E18 /* BagelURLConnectionInjector.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C673B2D9D96ECC41BC63C368E617F19C /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15097F524E79A05602050D9840ADB0 /* Box.swift */; };
-		C768D37C96FB5804C24EF322352D8A67 /* PromiseKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9965B0ED51452FBF53D946B61BE284F8 /* PromiseKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C9494D7777E820B961CE91E14B8247A0 /* AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = D330767496C927CDF01D3BB1E8AEE46F /* AnyPromise.m */; };
-		CF820E9D7EA97BDF5339D41D52F45135 /* BagelURLSessionInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 911B2EFD7F5756FD5E9BFCCCBE14479F /* BagelURLSessionInjector.m */; };
-		D2314FE06659A080051601265EFE42F3 /* firstly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111ABD7F5E64621379435295134B8402 /* firstly.swift */; };
-		D5FC2ACF0DE2453192158F599AD1ABAD /* join.m in Sources */ = {isa = PBXBuildFile; fileRef = 4919BA5A23D527678BA8E17DF66AADED /* join.m */; };
+		B6FAF285DA96EC1301083C77904A1E74 /* BagelBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 217028023A6A3EF477E824D059D3AB30 /* BagelBaseModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C092BB7611CA7435ADF5E588B8D52032 /* when.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6117C450CD127FD408D4639763B110B /* when.swift */; };
+		C372F123E06CEC19EF12F3C7A20BA020 /* BagelURLConnectionInjector.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D16F8147A242F2E03E658C7CA004D57 /* BagelURLConnectionInjector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C673B2D9D96ECC41BC63C368E617F19C /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = F776B85ADCB379470CDBC4DC7897BCF8 /* Box.swift */; };
+		C768D37C96FB5804C24EF322352D8A67 /* PromiseKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 39943308F7986AB7E394BA0AAC49D11B /* PromiseKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C9494D7777E820B961CE91E14B8247A0 /* AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC5260E34FFC1844EB1045732A02086 /* AnyPromise.m */; };
+		CF820E9D7EA97BDF5339D41D52F45135 /* BagelURLSessionInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD971571221111C47704C321B35DB06 /* BagelURLSessionInjector.m */; };
+		D2314FE06659A080051601265EFE42F3 /* firstly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1815985AC7F16E254323CB949F5F02C /* firstly.swift */; };
+		D5FC2ACF0DE2453192158F599AD1ABAD /* join.m in Sources */ = {isa = PBXBuildFile; fileRef = A94531811C1282AB7F4E846394A79ADF /* join.m */; };
 		D9BB93F8AE877839A78F1931DAA7D5F3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6B030D0E7DA0B32C45F2CA5EF0AF7 /* Security.framework */; };
-		E004C788B0E2D86B19647E5380A6F0E3 /* dispatch_promise.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A458E5152931A3E842BE0CF7B3737A5 /* dispatch_promise.m */; };
-		E3C065CA26F80DBB9A69E2E1E9E30B03 /* when.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D821A12B1EFEDF1D19DD3C3A499A85 /* when.m */; };
-		E3DF86D0FDF91965AC2952E06B62D4DF /* BagelURLConnectionInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 286BDC5583A2234414E8DF6ED1B6B1EC /* BagelURLConnectionInjector.m */; };
-		E450C3381BD6C3396ED67EF9AA841BDB /* BagelConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = E302BDA1ECBFDB45C99443E6D3A9D83C /* BagelConfiguration.m */; };
-		EB0C41DE8E5AA5EB81925C6AE5AE6318 /* BagelController.h in Headers */ = {isa = PBXBuildFile; fileRef = CEF9A3F1EC1E275696FCCF0F09F426E2 /* BagelController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ECEACEE8073902583B73EAED446AFD8E /* Pods-MoonCat-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2369C140B60AC8ECE3184FB708411BC1 /* Pods-MoonCat-dummy.m */; };
-		ED2AC2AB12822A5A5E3C23A7138D87C4 /* CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A1D2F84B6E5DB3751B712608888106 /* CustomStringConvertible.swift */; };
-		F2A6333B097B83E1E77F45A310B4457F /* PromiseKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C8167392CC0A1542A17FF93AD5061560 /* PromiseKit-dummy.m */; };
-		F314657DC4F4425C5B1C11DA8A75C9EB /* Bagel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 068C9DE53810238E1AF26546E17A1D5F /* Bagel-dummy.m */; };
-		F3CCFA9F29CB71F25124DDFF8B6D6849 /* GCDAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 4762533F29C74504FA789E4281149836 /* GCDAsyncSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F7A65685FF248CAAC852BD5D5DEE4488 /* Bagel.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1A04FCA932D1AC08B3321256054F2E /* Bagel.m */; };
-		FB974A28413F87CBD15912BCBA8EA688 /* after.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F7E130E2EF627C9E5C6F778D8EB103 /* after.m */; };
+		E004C788B0E2D86B19647E5380A6F0E3 /* dispatch_promise.m in Sources */ = {isa = PBXBuildFile; fileRef = CC22B71AFC3AC4464F6C78F7095C2909 /* dispatch_promise.m */; };
+		E3C065CA26F80DBB9A69E2E1E9E30B03 /* when.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C90E636A30DE8DE544C24DABFD8F06A /* when.m */; };
+		E3DF86D0FDF91965AC2952E06B62D4DF /* BagelURLConnectionInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 06D8C1C3DD7D07B9AADCB4079440F754 /* BagelURLConnectionInjector.m */; };
+		E450C3381BD6C3396ED67EF9AA841BDB /* BagelConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB86E1D5B2E728117030AA07EC07115 /* BagelConfiguration.m */; };
+		EB0C41DE8E5AA5EB81925C6AE5AE6318 /* BagelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 299CF02E3B66BAF87ADE3CF76A848B53 /* BagelController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED2AC2AB12822A5A5E3C23A7138D87C4 /* CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E083CC03A469D591688FA7EEA1E7357 /* CustomStringConvertible.swift */; };
+		F2A6333B097B83E1E77F45A310B4457F /* PromiseKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE13307E1DC10BA79024F285F9BA14D /* PromiseKit-dummy.m */; };
+		F314657DC4F4425C5B1C11DA8A75C9EB /* Bagel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C670BE8B43CC970EACDB6D12689F41DE /* Bagel-dummy.m */; };
+		F3CCFA9F29CB71F25124DDFF8B6D6849 /* GCDAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E673B89E0C0E587A5324D1786D45F15 /* GCDAsyncSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7A65685FF248CAAC852BD5D5DEE4488 /* Bagel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC97C5535F73CD91284D92700F186CFC /* Bagel.m */; };
+		FB974A28413F87CBD15912BCBA8EA688 /* after.m in Sources */ = {isa = PBXBuildFile; fileRef = B3263D541986E01765BB496163E5A1CA /* after.m */; };
 		FCEBD47A588F50570D9598C9E511E058 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C048F262F6A4130C49AD3954C4CCCD /* CFNetwork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A6EE6596096CB8A88D773877617F4CF8 /* PBXContainerItemProxy */ = {
+		121470B0699182E095B141FBE44863B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C1885900810601510E0C632060FAF26;
+			remoteInfo = GooglePlaces;
+		};
+		6EB1C2DD30E6564FC3135C9E8002D8F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E5B4BBC6DD552AC8943C7E22772FC1D3;
+			remoteInfo = GoogleMaps;
+		};
+		B72C0134289434AF57E197FFD2B426A6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 92077976CB3E088351E515981DC39115;
 			remoteInfo = Bagel;
 		};
-		C13BA98A0EC73EB844DAC0F05CB5EC5C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7C579CE66A1E7A9AA33CA5F97F9C22C5;
-			remoteInfo = PromiseKit;
-		};
-		E6831853FA87B21263F55EDC95770F77 /* PBXContainerItemProxy */ = {
+		D9E20DAC0CEDFD5F1906BECEBB3013E9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 6083682834ABE0AE7BD1CBF06CADD036;
 			remoteInfo = CocoaAsyncSocket;
+		};
+		E4BC701AA05B8F3164D49B60F5FF22FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7C579CE66A1E7A9AA33CA5F97F9C22C5;
+			remoteInfo = PromiseKit;
 		};
 		EAB742075FE5C98FA8A4A7C0FCC35552 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -110,102 +146,118 @@
 			remoteGlobalIDString = 6083682834ABE0AE7BD1CBF06CADD036;
 			remoteInfo = CocoaAsyncSocket;
 		};
+		FB9B87BA409B32A44F6A85D3CDF4237C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E5B4BBC6DD552AC8943C7E22772FC1D3;
+			remoteInfo = GoogleMaps;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		002B1E88BA14EBF633CD66EBFBA107E9 /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PromiseKit.framework; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		014A763BB4102F377C09C084A3FDE88B /* BagelRequestPacket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BagelRequestPacket.m; path = iOS/Source/BagelRequestPacket.m; sourceTree = "<group>"; };
-		05CABB2BFD1E38E624DF077F399F05AB /* GCDAsyncSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncSocket.m; path = Source/GCD/GCDAsyncSocket.m; sourceTree = "<group>"; };
-		066C0B2A7EEBDB0029A39EC727EDF17F /* Pods-MoonCat-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MoonCat-umbrella.h"; sourceTree = "<group>"; };
-		068C9DE53810238E1AF26546E17A1D5F /* Bagel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Bagel-dummy.m"; sourceTree = "<group>"; };
-		07982EE07E0BC42692D0234042C8BE8F /* BagelDeviceModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BagelDeviceModel.m; path = iOS/Source/BagelDeviceModel.m; sourceTree = "<group>"; };
-		08BE375857539B865B21DCFBA58D5DF0 /* BagelConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BagelConfiguration.h; path = iOS/Source/BagelConfiguration.h; sourceTree = "<group>"; };
-		10B4E0D03A4594F84A63498D4AAFAD90 /* Bagel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Bagel.h; path = iOS/Source/Bagel.h; sourceTree = "<group>"; };
-		111ABD7F5E64621379435295134B8402 /* firstly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = firstly.swift; path = Sources/firstly.swift; sourceTree = "<group>"; };
-		15D67C4C2DBFD4E48FF91032CFC8E76B /* Bagel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Bagel.xcconfig; sourceTree = "<group>"; };
+		048244A259C542F02CD903922709BAD1 /* Pods-MoonCat-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MoonCat-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0623FE6B5CE9BA3B8447800C370F2558 /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Sources/Error.swift; sourceTree = "<group>"; };
+		06D8C1C3DD7D07B9AADCB4079440F754 /* BagelURLConnectionInjector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BagelURLConnectionInjector.m; path = iOS/Source/BagelURLConnectionInjector.m; sourceTree = "<group>"; };
+		094AA186211D4761C5A8510671003D72 /* after.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = after.swift; path = Sources/after.swift; sourceTree = "<group>"; };
+		0C3482ED878A08F70B373657564FBA60 /* Pods-MoonCat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MoonCat.release.xcconfig"; sourceTree = "<group>"; };
+		0C90E636A30DE8DE544C24DABFD8F06A /* when.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = when.m; path = Sources/when.m; sourceTree = "<group>"; };
+		0DCBDD987E848B4D633C3186B92AA95E /* BagelRequestCarrier.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BagelRequestCarrier.m; path = iOS/Source/BagelRequestCarrier.m; sourceTree = "<group>"; };
+		1001DD61A45FF0AC6B0F441B90D69556 /* BagelUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BagelUtility.m; path = iOS/Source/BagelUtility.m; sourceTree = "<group>"; };
+		116D7DA215667B09B5B51F4E01CB650A /* hang.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = hang.swift; path = Sources/hang.swift; sourceTree = "<group>"; };
+		187D90586F097893E9EB400A089D4A2A /* BagelBrowser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BagelBrowser.h; path = iOS/Source/BagelBrowser.h; sourceTree = "<group>"; };
 		19F6B030D0E7DA0B32C45F2CA5EF0AF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
-		1A458E5152931A3E842BE0CF7B3737A5 /* dispatch_promise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = dispatch_promise.m; path = Sources/dispatch_promise.m; sourceTree = "<group>"; };
-		1F8566B853F27EBB0761F2941839D262 /* Resolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Resolver.swift; path = Sources/Resolver.swift; sourceTree = "<group>"; };
-		2369C140B60AC8ECE3184FB708411BC1 /* Pods-MoonCat-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MoonCat-dummy.m"; sourceTree = "<group>"; };
-		259ABEBCF9CCBFB6CB30296AD48B5712 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncUdpSocket.h; path = Source/GCD/GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		1AF224F2FB7C92E5FB989D39A805F02E /* Pods-MoonCat-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MoonCat-umbrella.h"; sourceTree = "<group>"; };
+		1CCE54250D7DFD1257D82C42E4F20E1E /* CocoaAsyncSocket.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CocoaAsyncSocket.modulemap; sourceTree = "<group>"; };
+		1D16F8147A242F2E03E658C7CA004D57 /* BagelURLConnectionInjector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BagelURLConnectionInjector.h; path = iOS/Source/BagelURLConnectionInjector.h; sourceTree = "<group>"; };
+		217028023A6A3EF477E824D059D3AB30 /* BagelBaseModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BagelBaseModel.h; path = iOS/Source/BagelBaseModel.h; sourceTree = "<group>"; };
+		2191E998C8171C15A6DE56EF4D918867 /* AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AnyPromise.h; path = Sources/AnyPromise.h; sourceTree = "<group>"; };
+		22175CB68F0ED92EAF94CFB0F7670982 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		24BCD573688ADA10A9DCA9849A3095C5 /* race.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = race.swift; path = Sources/race.swift; sourceTree = "<group>"; };
+		257EF8D3F0810BD1F91EDFCD6FD55C1D /* BagelProjectModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BagelProjectModel.m; path = iOS/Source/BagelProjectModel.m; sourceTree = "<group>"; };
 		278B7C23FBAB43499373E3C6BF4E954B /* Bagel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Bagel.framework; path = Bagel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		286BDC5583A2234414E8DF6ED1B6B1EC /* BagelURLConnectionInjector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BagelURLConnectionInjector.m; path = iOS/Source/BagelURLConnectionInjector.m; sourceTree = "<group>"; };
-		29CD515A39E7E32A85A031390ABF1326 /* Pods-MoonCat-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MoonCat-Info.plist"; sourceTree = "<group>"; };
-		2A77147B6525A0EEFC19C45364656266 /* Pods-MoonCat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MoonCat.release.xcconfig"; sourceTree = "<group>"; };
-		2D8AFD3342403A6E33C4FB7BA05C53E0 /* PromiseKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PromiseKit.modulemap; sourceTree = "<group>"; };
+		292B2C8773DEB4A747B649647B116767 /* BagelURLSessionInjector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BagelURLSessionInjector.h; path = iOS/Source/BagelURLSessionInjector.h; sourceTree = "<group>"; };
+		299CF02E3B66BAF87ADE3CF76A848B53 /* BagelController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BagelController.h; path = iOS/Source/BagelController.h; sourceTree = "<group>"; };
+		2A214F65B7683032750F0AC5F4F4B199 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
 		30C048F262F6A4130C49AD3954C4CCCD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
-		3237ABE603E4789DA019D61E80A39DF5 /* BagelRequestCarrier.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BagelRequestCarrier.m; path = iOS/Source/BagelRequestCarrier.m; sourceTree = "<group>"; };
-		35A409B73FC37F0C5D13A44AF6557237 /* race.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = race.swift; path = Sources/race.swift; sourceTree = "<group>"; };
-		35FD51634809F48DBFB1229145CCAC09 /* Pods-MoonCat-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MoonCat-frameworks.sh"; sourceTree = "<group>"; };
-		3A15097F524E79A05602050D9840ADB0 /* Box.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Box.swift; path = Sources/Box.swift; sourceTree = "<group>"; };
-		3B46D46EE521725491EF633273289763 /* LogEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LogEvent.swift; path = Sources/LogEvent.swift; sourceTree = "<group>"; };
-		42923FADAD574197A0D4D8677D1A884E /* BagelRequestPacket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BagelRequestPacket.h; path = iOS/Source/BagelRequestPacket.h; sourceTree = "<group>"; };
-		4405018865C36CA4D06928FA33912C9A /* BagelUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BagelUtility.h; path = iOS/Source/BagelUtility.h; sourceTree = "<group>"; };
-		467E4912C657D3A65B79BCB446E4406E /* BagelDeviceModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BagelDeviceModel.h; path = iOS/Source/BagelDeviceModel.h; sourceTree = "<group>"; };
-		4762533F29C74504FA789E4281149836 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncSocket.h; path = Source/GCD/GCDAsyncSocket.h; sourceTree = "<group>"; };
-		4919BA5A23D527678BA8E17DF66AADED /* join.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = join.m; path = Sources/join.m; sourceTree = "<group>"; };
-		4A32CBDDDD0C439D931AF23E568968D0 /* after.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = after.swift; path = Sources/after.swift; sourceTree = "<group>"; };
-		4A723AB2924D3850B816097C8589D201 /* BagelController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BagelController.m; path = iOS/Source/BagelController.m; sourceTree = "<group>"; };
-		4F99D822F9A36D9B6B6B7B956D2FEB0A /* race.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = race.m; path = Sources/race.m; sourceTree = "<group>"; };
-		50D444EC700CFC04954CE52E3D611AA1 /* BagelProjectModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BagelProjectModel.h; path = iOS/Source/BagelProjectModel.h; sourceTree = "<group>"; };
-		639E743337AC03BC31C3541489D4D9DA /* BagelBrowser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BagelBrowser.m; path = iOS/Source/BagelBrowser.m; sourceTree = "<group>"; };
+		3611ED8B69AEB3F82DD063CA88247A62 /* Bagel-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Bagel-Info.plist"; sourceTree = "<group>"; };
+		37B9ED674B8155116C6ADDE1B8A23482 /* Guarantee.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Guarantee.swift; path = Sources/Guarantee.swift; sourceTree = "<group>"; };
+		39943308F7986AB7E394BA0AAC49D11B /* PromiseKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PromiseKit-umbrella.h"; sourceTree = "<group>"; };
+		3B55121336BE7420D38825A079E68BEF /* GCDAsyncSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncSocket.m; path = Source/GCD/GCDAsyncSocket.m; sourceTree = "<group>"; };
+		3E46805AA1220B936F45258A54F57F15 /* hang.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = hang.m; path = Sources/hang.m; sourceTree = "<group>"; };
+		3FF35B8E2BCF3D75E86F6D592324F0F5 /* Deprecations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deprecations.swift; path = Sources/Deprecations.swift; sourceTree = "<group>"; };
+		42A0462945A90BDF43417159255024CF /* BagelBaseModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BagelBaseModel.m; path = iOS/Source/BagelBaseModel.m; sourceTree = "<group>"; };
+		4D86632253CB3662DC3AD50604072BEC /* CocoaAsyncSocket-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-umbrella.h"; sourceTree = "<group>"; };
+		5025636446BD319D8E0F7E4DC487F9C3 /* Pods-MoonCat-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MoonCat-frameworks.sh"; sourceTree = "<group>"; };
+		5439338DE4B4A580F28D5974FBE8DD70 /* BagelUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BagelUtility.h; path = iOS/Source/BagelUtility.h; sourceTree = "<group>"; };
+		5478202504AFC3EE6CDE9D7D61D8D66F /* LogEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LogEvent.swift; path = Sources/LogEvent.swift; sourceTree = "<group>"; };
+		54BE8524843B7C1B141D4372DB9B1BF6 /* GoogleMaps.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleMaps.xcconfig; sourceTree = "<group>"; };
+		69EAA78B0F5273A92CA062CFD4A24C40 /* BagelRequestPacket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BagelRequestPacket.h; path = iOS/Source/BagelRequestPacket.h; sourceTree = "<group>"; };
 		6CBEFE4F9E22AFDC6347A739BB35FF8C /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CocoaAsyncSocket.framework; path = CocoaAsyncSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6F0565D2CF6F28296D6F4396139A076B /* when.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = when.swift; path = Sources/when.swift; sourceTree = "<group>"; };
-		726F89F158E3123FCEB3E79434DBB5EA /* Guarantee.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Guarantee.swift; path = Sources/Guarantee.swift; sourceTree = "<group>"; };
-		7272D43323581500FA19EBE585CAAC96 /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Sources/Error.swift; sourceTree = "<group>"; };
-		747F702357CF40850F7231134638FFD8 /* Deprecations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deprecations.swift; path = Sources/Deprecations.swift; sourceTree = "<group>"; };
-		7990E7FBF6F64D0D9185E85FD1E43D63 /* CocoaAsyncSocket.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CocoaAsyncSocket.xcconfig; sourceTree = "<group>"; };
-		7C47F7E46BA30C6575E6826FBC90B368 /* Pods-MoonCat.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MoonCat.modulemap"; sourceTree = "<group>"; };
-		7F81AC473A0F949C13B4197C0063240E /* Configuration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = Sources/Configuration.swift; sourceTree = "<group>"; };
-		7F8514AB86EF3E5122A813FDE9587768 /* PromiseKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PromiseKit.h; path = Sources/PromiseKit.h; sourceTree = "<group>"; };
-		841BB2089C015967DCBDECB29036FCCB /* Bagel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bagel-umbrella.h"; sourceTree = "<group>"; };
-		8854FEB41144CEC5735916F634450C2A /* BagelBaseModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BagelBaseModel.m; path = iOS/Source/BagelBaseModel.m; sourceTree = "<group>"; };
-		88F7E130E2EF627C9E5C6F778D8EB103 /* after.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = after.m; path = Sources/after.m; sourceTree = "<group>"; };
-		8C576BB5C775B2F1031C3BD686C39000 /* CocoaAsyncSocket-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-prefix.pch"; sourceTree = "<group>"; };
-		8E0023D854FA914843ADC219583AD1C9 /* AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AnyPromise.h; path = Sources/AnyPromise.h; sourceTree = "<group>"; };
-		91026C9400B0174A86FE6A79F9E67FF9 /* CocoaAsyncSocket-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CocoaAsyncSocket-dummy.m"; sourceTree = "<group>"; };
-		911B2EFD7F5756FD5E9BFCCCBE14479F /* BagelURLSessionInjector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BagelURLSessionInjector.m; path = iOS/Source/BagelURLSessionInjector.m; sourceTree = "<group>"; };
-		9965B0ED51452FBF53D946B61BE284F8 /* PromiseKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PromiseKit-umbrella.h"; sourceTree = "<group>"; };
+		6D7AA4364709A6CD4E9C9B4233C54A58 /* PromiseKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PromiseKit-prefix.pch"; sourceTree = "<group>"; };
+		6DC5260E34FFC1844EB1045732A02086 /* AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AnyPromise.m; path = Sources/AnyPromise.m; sourceTree = "<group>"; };
+		6EE58AE8861114E79BF5DD37F7592FDC /* BagelRequestPacket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BagelRequestPacket.m; path = iOS/Source/BagelRequestPacket.m; sourceTree = "<group>"; };
+		6F97301CF449F11285350880E8CA1088 /* fwd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = fwd.h; path = Sources/fwd.h; sourceTree = "<group>"; };
+		7058A160125D85AA064C4D32FD38CA51 /* Resolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Resolver.swift; path = Sources/Resolver.swift; sourceTree = "<group>"; };
+		7092D005059607703790345B228692F7 /* Pods-MoonCat-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MoonCat-resources.sh"; sourceTree = "<group>"; };
+		735816D7A78414568BBD391079AD5ACA /* Bagel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bagel-prefix.pch"; sourceTree = "<group>"; };
+		74CE81F0CBCB2E4EE54944D9BC469B21 /* Thenable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Thenable.swift; path = Sources/Thenable.swift; sourceTree = "<group>"; };
+		75B2ECFB6BF433096F99A0EB54F0A5D9 /* BagelRequestCarrier.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BagelRequestCarrier.h; path = iOS/Source/BagelRequestCarrier.h; sourceTree = "<group>"; };
+		775CC710A39D84ECB4A296B35D1D67E5 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncUdpSocket.h; path = Source/GCD/GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		7BD971571221111C47704C321B35DB06 /* BagelURLSessionInjector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BagelURLSessionInjector.m; path = iOS/Source/BagelURLSessionInjector.m; sourceTree = "<group>"; };
+		8C60F48A5F4860C0D4C1ECE0AD50F25A /* CocoaAsyncSocket.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CocoaAsyncSocket.xcconfig; sourceTree = "<group>"; };
+		8E673B89E0C0E587A5324D1786D45F15 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncSocket.h; path = Source/GCD/GCDAsyncSocket.h; sourceTree = "<group>"; };
+		90DEF8C85E190A290933116485B0079A /* Bagel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Bagel.modulemap; sourceTree = "<group>"; };
+		947F530B76ADE5F5F430EC989E2E85F5 /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		95C1848F1B2886BC22E202662C0AAE9F /* GooglePlaces.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GooglePlaces.xcconfig; sourceTree = "<group>"; };
+		998273FFF2B0DB7A956EE59C69EAE72A /* PromiseKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PromiseKit.xcconfig; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9DB785103B172792DB569370A3DD5134 /* BagelRequestCarrier.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BagelRequestCarrier.h; path = iOS/Source/BagelRequestCarrier.h; sourceTree = "<group>"; };
-		9F16F6B9C8B97C8BD779BDC02E10CD28 /* BagelProjectModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BagelProjectModel.m; path = iOS/Source/BagelProjectModel.m; sourceTree = "<group>"; };
-		A125A73E9CD81DDBA0DF87B8B0F5C388 /* BagelRequestInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BagelRequestInfo.h; path = iOS/Source/BagelRequestInfo.h; sourceTree = "<group>"; };
-		A23E63083DA4AF36756F1F928DAFAF19 /* hang.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = hang.swift; path = Sources/hang.swift; sourceTree = "<group>"; };
-		A836452DC0A4DF192BFBE1835D0E9470 /* Pods-MoonCat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MoonCat.debug.xcconfig"; sourceTree = "<group>"; };
-		AC1C0B68453D53C55F1B5849EBD1F505 /* Bagel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bagel-prefix.pch"; sourceTree = "<group>"; };
-		AD1A04FCA932D1AC08B3321256054F2E /* Bagel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Bagel.m; path = iOS/Source/Bagel.m; sourceTree = "<group>"; };
-		AFEAFE51B4FB3B91D1229D4BB1A8EC2B /* BagelBaseModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BagelBaseModel.h; path = iOS/Source/BagelBaseModel.h; sourceTree = "<group>"; };
-		B19393D0F9E67A0815FB893DE85D5A8C /* PromiseKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PromiseKit-prefix.pch"; sourceTree = "<group>"; };
-		B3C4A12E36A273F5A679FF8FF5DDE8C6 /* Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Promise.swift; path = Sources/Promise.swift; sourceTree = "<group>"; };
-		B43889E10D894FCB326F9D23231C2590 /* hang.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = hang.m; path = Sources/hang.m; sourceTree = "<group>"; };
+		9E083CC03A469D591688FA7EEA1E7357 /* CustomStringConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomStringConvertible.swift; path = Sources/CustomStringConvertible.swift; sourceTree = "<group>"; };
+		A0C29CAA1EADC70E2AAC87C351B90D36 /* Pods-MoonCat-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MoonCat-dummy.m"; sourceTree = "<group>"; };
+		A15E8E2F25C5B2394D7AE99DF37BCCCA /* Pods-MoonCat-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MoonCat-Info.plist"; sourceTree = "<group>"; };
+		A37E74F9C62933CABA07356E4BB9A316 /* BagelDeviceModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BagelDeviceModel.m; path = iOS/Source/BagelDeviceModel.m; sourceTree = "<group>"; };
+		A72A9598D716C875C0FABF5E7B94FE6A /* Bagel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Bagel.h; path = iOS/Source/Bagel.h; sourceTree = "<group>"; };
+		A94531811C1282AB7F4E846394A79ADF /* join.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = join.m; path = Sources/join.m; sourceTree = "<group>"; };
+		AB8F4B21CA1BC4D4E664EC98AAD1A50C /* CocoaAsyncSocket-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-prefix.pch"; sourceTree = "<group>"; };
+		AB90DDC94F7A1239CFE951B05EFE3523 /* BagelRequestInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BagelRequestInfo.h; path = iOS/Source/BagelRequestInfo.h; sourceTree = "<group>"; };
+		ABB2B6ACF6EF591181C2AAD203CB14DD /* BagelController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BagelController.m; path = iOS/Source/BagelController.m; sourceTree = "<group>"; };
+		ABC1B6A2DA897B3782CA9B1F01002594 /* race.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = race.m; path = Sources/race.m; sourceTree = "<group>"; };
+		AEC2B4A6C2DBD3605FB61F5F6CD2FC3A /* Configuration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = Sources/Configuration.swift; sourceTree = "<group>"; };
+		AF1CAB5BFD80A07E91CEB62903CF2915 /* PromiseKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PromiseKit.modulemap; sourceTree = "<group>"; };
+		B062B5941EE4D2F2B7FDE9ABA2537362 /* CocoaAsyncSocket-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CocoaAsyncSocket-dummy.m"; sourceTree = "<group>"; };
+		B1815985AC7F16E254323CB949F5F02C /* firstly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = firstly.swift; path = Sources/firstly.swift; sourceTree = "<group>"; };
+		B3263D541986E01765BB496163E5A1CA /* after.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = after.m; path = Sources/after.m; sourceTree = "<group>"; };
 		B512600EE91944374AE42102A75BE750 /* Pods_MoonCat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MoonCat.framework; path = "Pods-MoonCat.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B52E61805329E9D0D9F44520978EBFCA /* BagelBrowser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BagelBrowser.h; path = iOS/Source/BagelBrowser.h; sourceTree = "<group>"; };
-		B5944D2658BFB2C78CF1909526EF6804 /* Catchable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Catchable.swift; path = Sources/Catchable.swift; sourceTree = "<group>"; };
-		C19F7961ABC2DA08B52A4FD82B07FCC1 /* Pods-MoonCat-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MoonCat-acknowledgements.plist"; sourceTree = "<group>"; };
-		C7A1D2F84B6E5DB3751B712608888106 /* CustomStringConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomStringConvertible.swift; path = Sources/CustomStringConvertible.swift; sourceTree = "<group>"; };
-		C8167392CC0A1542A17FF93AD5061560 /* PromiseKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PromiseKit-dummy.m"; sourceTree = "<group>"; };
-		CCB6653EB6E361A916A15E51CF244951 /* Pods-MoonCat-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MoonCat-acknowledgements.markdown"; sourceTree = "<group>"; };
-		CD23909C8684883FAD6BAA3CC02D6081 /* CocoaAsyncSocket-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-umbrella.h"; sourceTree = "<group>"; };
-		CEF9A3F1EC1E275696FCCF0F09F426E2 /* BagelController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BagelController.h; path = iOS/Source/BagelController.h; sourceTree = "<group>"; };
-		CFC65B36C2FAAA317851DE3AB02CE08B /* Thenable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Thenable.swift; path = Sources/Thenable.swift; sourceTree = "<group>"; };
-		D0B1C4E403FAAB16F6A809DACA22A062 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncUdpSocket.m; path = Source/GCD/GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
-		D330767496C927CDF01D3BB1E8AEE46F /* AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AnyPromise.m; path = Sources/AnyPromise.m; sourceTree = "<group>"; };
-		D3B370BF433A002E9E138C8CCD0A9063 /* fwd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = fwd.h; path = Sources/fwd.h; sourceTree = "<group>"; };
+		B6117C450CD127FD408D4639763B110B /* when.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = when.swift; path = Sources/when.swift; sourceTree = "<group>"; };
+		B8E4F08AEF281D9B953D1D8DA78D7A46 /* PromiseKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PromiseKit-Info.plist"; sourceTree = "<group>"; };
+		BAE13307E1DC10BA79024F285F9BA14D /* PromiseKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PromiseKit-dummy.m"; sourceTree = "<group>"; };
+		BBA1456E53295B060FF62FBCA2298A29 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		BDCFC61CB9E01B479C3B33740FFD00E3 /* Catchable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Catchable.swift; path = Sources/Catchable.swift; sourceTree = "<group>"; };
+		C0BE0163489AC1E3BAEE7E0800F18A41 /* CocoaAsyncSocket-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CocoaAsyncSocket-Info.plist"; sourceTree = "<group>"; };
+		C23A986D7ACAB5F1643498EFB76B69CF /* BagelProjectModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BagelProjectModel.h; path = iOS/Source/BagelProjectModel.h; sourceTree = "<group>"; };
+		C314B09002B69080887126C6B003D62C /* Pods-MoonCat.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MoonCat.modulemap"; sourceTree = "<group>"; };
+		C5B1D906B14BC9124AA924EE2B6646DB /* AnyPromise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyPromise.swift; path = Sources/AnyPromise.swift; sourceTree = "<group>"; };
+		C670BE8B43CC970EACDB6D12689F41DE /* Bagel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Bagel-dummy.m"; sourceTree = "<group>"; };
+		C71C5A56896F0465D3EB2FE5984926CA /* Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Promise.swift; path = Sources/Promise.swift; sourceTree = "<group>"; };
+		CBF384F4869EA8008D59FC5850CC38C8 /* Pods-MoonCat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MoonCat.debug.xcconfig"; sourceTree = "<group>"; };
+		CC22B71AFC3AC4464F6C78F7095C2909 /* dispatch_promise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = dispatch_promise.m; path = Sources/dispatch_promise.m; sourceTree = "<group>"; };
+		CC97C5535F73CD91284D92700F186CFC /* Bagel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Bagel.m; path = iOS/Source/Bagel.m; sourceTree = "<group>"; };
+		D18FC7AF0D634EF956ECE4495D1529BD /* Bagel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bagel-umbrella.h"; sourceTree = "<group>"; };
+		D3A328C0A10EDB5EAB4F84525EAC6C42 /* BagelConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BagelConfiguration.h; path = iOS/Source/BagelConfiguration.h; sourceTree = "<group>"; };
+		D4BB17AF5054AFE5B88276E08492CE54 /* BagelRequestInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BagelRequestInfo.m; path = iOS/Source/BagelRequestInfo.m; sourceTree = "<group>"; };
 		D5F157F703F8134396B2E2D2D64ED7AC /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaAsyncSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DFA111D2ADC081A9F71AD7110CEC1E18 /* BagelURLConnectionInjector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BagelURLConnectionInjector.h; path = iOS/Source/BagelURLConnectionInjector.h; sourceTree = "<group>"; };
-		E1626EA407D2266E1C1807D06A84E77D /* CocoaAsyncSocket.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CocoaAsyncSocket.modulemap; sourceTree = "<group>"; };
-		E302BDA1ECBFDB45C99443E6D3A9D83C /* BagelConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BagelConfiguration.m; path = iOS/Source/BagelConfiguration.m; sourceTree = "<group>"; };
+		D646FBD5B455A94A4DA36E357A7A4A0A /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
+		DDC4AF8656D87FF9F724B7D3A6CA182F /* Pods-MoonCat-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MoonCat-acknowledgements.plist"; sourceTree = "<group>"; };
+		E224BCB62F065DD5260EF67BC352A841 /* BagelBrowser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BagelBrowser.m; path = iOS/Source/BagelBrowser.m; sourceTree = "<group>"; };
 		E484F037B807D7B1ECF003384573173D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		E584711CAB18F03D299A21C9A90BCE42 /* PromiseKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PromiseKit-Info.plist"; sourceTree = "<group>"; };
-		E63F723575DB3E078A916920DEFEA18B /* AnyPromise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyPromise.swift; path = Sources/AnyPromise.swift; sourceTree = "<group>"; };
-		E7D821A12B1EFEDF1D19DD3C3A499A85 /* when.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = when.m; path = Sources/when.m; sourceTree = "<group>"; };
-		EA56FD90113D1941CC0038A0A442445D /* PromiseKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PromiseKit.xcconfig; sourceTree = "<group>"; };
-		ED1DB70251C40B2F978CA24D2A3323B6 /* BagelRequestInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BagelRequestInfo.m; path = iOS/Source/BagelRequestInfo.m; sourceTree = "<group>"; };
-		EEAA407C74BA8A8CA0EED2A6C16C0600 /* BagelURLSessionInjector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BagelURLSessionInjector.h; path = iOS/Source/BagelURLSessionInjector.h; sourceTree = "<group>"; };
-		EF8DD606EF8266D361BA072D6838EEA1 /* Bagel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Bagel.modulemap; sourceTree = "<group>"; };
-		EFC4D3172475B82DF5F4FEEF5427AF39 /* BagelUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BagelUtility.m; path = iOS/Source/BagelUtility.m; sourceTree = "<group>"; };
-		F8AA987623A76CBBD972B48C9D2D5409 /* CocoaAsyncSocket-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CocoaAsyncSocket-Info.plist"; sourceTree = "<group>"; };
-		FDE5BFD249CA6FB098C903550689E24F /* Bagel-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Bagel-Info.plist"; sourceTree = "<group>"; };
+		EEE8E77ABDE4BF02F6A9BEB2F80E2A05 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
+		EFCC54F352EE3934D648D332905ADDA4 /* Bagel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Bagel.xcconfig; sourceTree = "<group>"; };
+		F45945C697374A0E2983192F7AE5B60F /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncUdpSocket.m; path = Source/GCD/GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		F5B46F6B53EC58B8672F0F680F9A937F /* BagelDeviceModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BagelDeviceModel.h; path = iOS/Source/BagelDeviceModel.h; sourceTree = "<group>"; };
+		F776B85ADCB379470CDBC4DC7897BCF8 /* Box.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Box.swift; path = Sources/Box.swift; sourceTree = "<group>"; };
+		FD9E1ADADEA12ABAE6919665A34FD508 /* PromiseKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PromiseKit.h; path = Sources/PromiseKit.h; sourceTree = "<group>"; };
+		FFB86E1D5B2E728117030AA07EC07115 /* BagelConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BagelConfiguration.m; path = iOS/Source/BagelConfiguration.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +280,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7EC8D11B4579A28A7C96AF08DDFA63EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23952E4A71F9148A994C29446D257B4A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9A0F21B808FA2D4BD302345ED78FFF87 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -236,78 +296,41 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C350790B5C6284F029FF2EDDB025B633 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				27C0FF19DABB7CAECC1C3D4F10B0238E /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0545291C1AD93C1271FE03FB0102DA2E /* Support Files */ = {
+		090BAC764B9B4C4A3FDB235C656293D5 /* CorePromise */ = {
 			isa = PBXGroup;
 			children = (
-				E1626EA407D2266E1C1807D06A84E77D /* CocoaAsyncSocket.modulemap */,
-				7990E7FBF6F64D0D9185E85FD1E43D63 /* CocoaAsyncSocket.xcconfig */,
-				91026C9400B0174A86FE6A79F9E67FF9 /* CocoaAsyncSocket-dummy.m */,
-				F8AA987623A76CBBD972B48C9D2D5409 /* CocoaAsyncSocket-Info.plist */,
-				8C576BB5C775B2F1031C3BD686C39000 /* CocoaAsyncSocket-prefix.pch */,
-				CD23909C8684883FAD6BAA3CC02D6081 /* CocoaAsyncSocket-umbrella.h */,
+				B3263D541986E01765BB496163E5A1CA /* after.m */,
+				094AA186211D4761C5A8510671003D72 /* after.swift */,
+				2191E998C8171C15A6DE56EF4D918867 /* AnyPromise.h */,
+				6DC5260E34FFC1844EB1045732A02086 /* AnyPromise.m */,
+				C5B1D906B14BC9124AA924EE2B6646DB /* AnyPromise.swift */,
+				F776B85ADCB379470CDBC4DC7897BCF8 /* Box.swift */,
+				BDCFC61CB9E01B479C3B33740FFD00E3 /* Catchable.swift */,
+				AEC2B4A6C2DBD3605FB61F5F6CD2FC3A /* Configuration.swift */,
+				9E083CC03A469D591688FA7EEA1E7357 /* CustomStringConvertible.swift */,
+				3FF35B8E2BCF3D75E86F6D592324F0F5 /* Deprecations.swift */,
+				CC22B71AFC3AC4464F6C78F7095C2909 /* dispatch_promise.m */,
+				0623FE6B5CE9BA3B8447800C370F2558 /* Error.swift */,
+				B1815985AC7F16E254323CB949F5F02C /* firstly.swift */,
+				6F97301CF449F11285350880E8CA1088 /* fwd.h */,
+				37B9ED674B8155116C6ADDE1B8A23482 /* Guarantee.swift */,
+				3E46805AA1220B936F45258A54F57F15 /* hang.m */,
+				116D7DA215667B09B5B51F4E01CB650A /* hang.swift */,
+				A94531811C1282AB7F4E846394A79ADF /* join.m */,
+				5478202504AFC3EE6CDE9D7D61D8D66F /* LogEvent.swift */,
+				C71C5A56896F0465D3EB2FE5984926CA /* Promise.swift */,
+				FD9E1ADADEA12ABAE6919665A34FD508 /* PromiseKit.h */,
+				ABC1B6A2DA897B3782CA9B1F01002594 /* race.m */,
+				24BCD573688ADA10A9DCA9849A3095C5 /* race.swift */,
+				7058A160125D85AA064C4D32FD38CA51 /* Resolver.swift */,
+				74CE81F0CBCB2E4EE54944D9BC469B21 /* Thenable.swift */,
+				0C90E636A30DE8DE544C24DABFD8F06A /* when.m */,
+				B6117C450CD127FD408D4639763B110B /* when.swift */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/CocoaAsyncSocket";
-			sourceTree = "<group>";
-		};
-		0B7EE338B414C434DE0D25B42A78D792 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				2D8AFD3342403A6E33C4FB7BA05C53E0 /* PromiseKit.modulemap */,
-				EA56FD90113D1941CC0038A0A442445D /* PromiseKit.xcconfig */,
-				C8167392CC0A1542A17FF93AD5061560 /* PromiseKit-dummy.m */,
-				E584711CAB18F03D299A21C9A90BCE42 /* PromiseKit-Info.plist */,
-				B19393D0F9E67A0815FB893DE85D5A8C /* PromiseKit-prefix.pch */,
-				9965B0ED51452FBF53D946B61BE284F8 /* PromiseKit-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/PromiseKit";
-			sourceTree = "<group>";
-		};
-		0EA4F614A8916CBCB186B7DEFB270DC2 /* Bagel */ = {
-			isa = PBXGroup;
-			children = (
-				10B4E0D03A4594F84A63498D4AAFAD90 /* Bagel.h */,
-				AD1A04FCA932D1AC08B3321256054F2E /* Bagel.m */,
-				AFEAFE51B4FB3B91D1229D4BB1A8EC2B /* BagelBaseModel.h */,
-				8854FEB41144CEC5735916F634450C2A /* BagelBaseModel.m */,
-				B52E61805329E9D0D9F44520978EBFCA /* BagelBrowser.h */,
-				639E743337AC03BC31C3541489D4D9DA /* BagelBrowser.m */,
-				08BE375857539B865B21DCFBA58D5DF0 /* BagelConfiguration.h */,
-				E302BDA1ECBFDB45C99443E6D3A9D83C /* BagelConfiguration.m */,
-				CEF9A3F1EC1E275696FCCF0F09F426E2 /* BagelController.h */,
-				4A723AB2924D3850B816097C8589D201 /* BagelController.m */,
-				467E4912C657D3A65B79BCB446E4406E /* BagelDeviceModel.h */,
-				07982EE07E0BC42692D0234042C8BE8F /* BagelDeviceModel.m */,
-				50D444EC700CFC04954CE52E3D611AA1 /* BagelProjectModel.h */,
-				9F16F6B9C8B97C8BD779BDC02E10CD28 /* BagelProjectModel.m */,
-				9DB785103B172792DB569370A3DD5134 /* BagelRequestCarrier.h */,
-				3237ABE603E4789DA019D61E80A39DF5 /* BagelRequestCarrier.m */,
-				A125A73E9CD81DDBA0DF87B8B0F5C388 /* BagelRequestInfo.h */,
-				ED1DB70251C40B2F978CA24D2A3323B6 /* BagelRequestInfo.m */,
-				42923FADAD574197A0D4D8677D1A884E /* BagelRequestPacket.h */,
-				014A763BB4102F377C09C084A3FDE88B /* BagelRequestPacket.m */,
-				DFA111D2ADC081A9F71AD7110CEC1E18 /* BagelURLConnectionInjector.h */,
-				286BDC5583A2234414E8DF6ED1B6B1EC /* BagelURLConnectionInjector.m */,
-				EEAA407C74BA8A8CA0EED2A6C16C0600 /* BagelURLSessionInjector.h */,
-				911B2EFD7F5756FD5E9BFCCCBE14479F /* BagelURLSessionInjector.m */,
-				4405018865C36CA4D06928FA33912C9A /* BagelUtility.h */,
-				EFC4D3172475B82DF5F4FEEF5427AF39 /* BagelUtility.m */,
-				5FB5DDA1C8F9AA804E2150985A014911 /* Support Files */,
-			);
-			name = Bagel;
-			path = Bagel;
+			name = CorePromise;
 			sourceTree = "<group>";
 		};
 		1351332703ED6FE886A75409FCA55BC0 /* Products */ = {
@@ -330,25 +353,102 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		37786C1189D46C654A1F6A3F40082B18 /* PromiseKit */ = {
+		1DE929427B6981D9C4B9A19160DD3F0D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F862CF0E75B035A013CD9EB2C9169659 /* CorePromise */,
-				0B7EE338B414C434DE0D25B42A78D792 /* Support Files */,
+				22175CB68F0ED92EAF94CFB0F7670982 /* GoogleMaps.framework */,
+				D646FBD5B455A94A4DA36E357A7A4A0A /* GoogleMapsCore.framework */,
 			);
-			name = PromiseKit;
-			path = PromiseKit;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5FB5DDA1C8F9AA804E2150985A014911 /* Support Files */ = {
+		2085521C9965B71EEF4463B19D48E87E /* CocoaAsyncSocket */ = {
 			isa = PBXGroup;
 			children = (
-				EF8DD606EF8266D361BA072D6838EEA1 /* Bagel.modulemap */,
-				15D67C4C2DBFD4E48FF91032CFC8E76B /* Bagel.xcconfig */,
-				068C9DE53810238E1AF26546E17A1D5F /* Bagel-dummy.m */,
-				FDE5BFD249CA6FB098C903550689E24F /* Bagel-Info.plist */,
-				AC1C0B68453D53C55F1B5849EBD1F505 /* Bagel-prefix.pch */,
-				841BB2089C015967DCBDECB29036FCCB /* Bagel-umbrella.h */,
+				8E673B89E0C0E587A5324D1786D45F15 /* GCDAsyncSocket.h */,
+				3B55121336BE7420D38825A079E68BEF /* GCDAsyncSocket.m */,
+				775CC710A39D84ECB4A296B35D1D67E5 /* GCDAsyncUdpSocket.h */,
+				F45945C697374A0E2983192F7AE5B60F /* GCDAsyncUdpSocket.m */,
+				D59F808A56580E6ABDE76B1A41B8A099 /* Support Files */,
+			);
+			name = CocoaAsyncSocket;
+			path = CocoaAsyncSocket;
+			sourceTree = "<group>";
+		};
+		2135CFE6B40244FEE7362D64ED547DB2 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				BF3FD5F6FC61F622D0CE8AE05F4CF9FF /* Frameworks */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		49B699307451585B9850A437E8DC2B82 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				63A7B78F66E28333196247E5FCBDBA44 /* Pods-MoonCat */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		55D2C112DF817B8F0C225A27E5D60F21 /* GooglePlaces */ = {
+			isa = PBXGroup;
+			children = (
+				B4D91F7597C713307E0A8B7655DE022B /* Frameworks */,
+				D5A8DC4968018911587595A8F5162621 /* Resources */,
+				64C167FA6E360304632C4D2C63E1669B /* Support Files */,
+			);
+			name = GooglePlaces;
+			path = GooglePlaces;
+			sourceTree = "<group>";
+		};
+		614411E1E4E4E3159194124871738033 /* GoogleMaps */ = {
+			isa = PBXGroup;
+			children = (
+				2135CFE6B40244FEE7362D64ED547DB2 /* Base */,
+				EAFC511A25EE434CB41EC2EF4E1EDD11 /* Maps */,
+				FF4B557E83ECFF0B9FA80F88B22D37C1 /* Support Files */,
+			);
+			name = GoogleMaps;
+			path = GoogleMaps;
+			sourceTree = "<group>";
+		};
+		63A7B78F66E28333196247E5FCBDBA44 /* Pods-MoonCat */ = {
+			isa = PBXGroup;
+			children = (
+				C314B09002B69080887126C6B003D62C /* Pods-MoonCat.modulemap */,
+				048244A259C542F02CD903922709BAD1 /* Pods-MoonCat-acknowledgements.markdown */,
+				DDC4AF8656D87FF9F724B7D3A6CA182F /* Pods-MoonCat-acknowledgements.plist */,
+				A0C29CAA1EADC70E2AAC87C351B90D36 /* Pods-MoonCat-dummy.m */,
+				5025636446BD319D8E0F7E4DC487F9C3 /* Pods-MoonCat-frameworks.sh */,
+				A15E8E2F25C5B2394D7AE99DF37BCCCA /* Pods-MoonCat-Info.plist */,
+				7092D005059607703790345B228692F7 /* Pods-MoonCat-resources.sh */,
+				1AF224F2FB7C92E5FB989D39A805F02E /* Pods-MoonCat-umbrella.h */,
+				CBF384F4869EA8008D59FC5850CC38C8 /* Pods-MoonCat.debug.xcconfig */,
+				0C3482ED878A08F70B373657564FBA60 /* Pods-MoonCat.release.xcconfig */,
+			);
+			name = "Pods-MoonCat";
+			path = "Target Support Files/Pods-MoonCat";
+			sourceTree = "<group>";
+		};
+		64C167FA6E360304632C4D2C63E1669B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				95C1848F1B2886BC22E202662C0AAE9F /* GooglePlaces.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GooglePlaces";
+			sourceTree = "<group>";
+		};
+		7EC9F284BE360073EE95B079840521C1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				90DEF8C85E190A290933116485B0079A /* Bagel.modulemap */,
+				EFCC54F352EE3934D648D332905ADDA4 /* Bagel.xcconfig */,
+				C670BE8B43CC970EACDB6D12689F41DE /* Bagel-dummy.m */,
+				3611ED8B69AEB3F82DD063CA88247A62 /* Bagel-Info.plist */,
+				735816D7A78414568BBD391079AD5ACA /* Bagel-prefix.pch */,
+				D18FC7AF0D634EF956ECE4495D1529BD /* Bagel-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Bagel";
@@ -364,31 +464,63 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		B1765E781BD3D4DE346B459BC3EAE0C2 /* Pods-MoonCat */ = {
+		978E4C0DEA08A50E79DFBAF954514444 /* Bagel */ = {
 			isa = PBXGroup;
 			children = (
-				7C47F7E46BA30C6575E6826FBC90B368 /* Pods-MoonCat.modulemap */,
-				CCB6653EB6E361A916A15E51CF244951 /* Pods-MoonCat-acknowledgements.markdown */,
-				C19F7961ABC2DA08B52A4FD82B07FCC1 /* Pods-MoonCat-acknowledgements.plist */,
-				2369C140B60AC8ECE3184FB708411BC1 /* Pods-MoonCat-dummy.m */,
-				35FD51634809F48DBFB1229145CCAC09 /* Pods-MoonCat-frameworks.sh */,
-				29CD515A39E7E32A85A031390ABF1326 /* Pods-MoonCat-Info.plist */,
-				066C0B2A7EEBDB0029A39EC727EDF17F /* Pods-MoonCat-umbrella.h */,
-				A836452DC0A4DF192BFBE1835D0E9470 /* Pods-MoonCat.debug.xcconfig */,
-				2A77147B6525A0EEFC19C45364656266 /* Pods-MoonCat.release.xcconfig */,
+				A72A9598D716C875C0FABF5E7B94FE6A /* Bagel.h */,
+				CC97C5535F73CD91284D92700F186CFC /* Bagel.m */,
+				217028023A6A3EF477E824D059D3AB30 /* BagelBaseModel.h */,
+				42A0462945A90BDF43417159255024CF /* BagelBaseModel.m */,
+				187D90586F097893E9EB400A089D4A2A /* BagelBrowser.h */,
+				E224BCB62F065DD5260EF67BC352A841 /* BagelBrowser.m */,
+				D3A328C0A10EDB5EAB4F84525EAC6C42 /* BagelConfiguration.h */,
+				FFB86E1D5B2E728117030AA07EC07115 /* BagelConfiguration.m */,
+				299CF02E3B66BAF87ADE3CF76A848B53 /* BagelController.h */,
+				ABB2B6ACF6EF591181C2AAD203CB14DD /* BagelController.m */,
+				F5B46F6B53EC58B8672F0F680F9A937F /* BagelDeviceModel.h */,
+				A37E74F9C62933CABA07356E4BB9A316 /* BagelDeviceModel.m */,
+				C23A986D7ACAB5F1643498EFB76B69CF /* BagelProjectModel.h */,
+				257EF8D3F0810BD1F91EDFCD6FD55C1D /* BagelProjectModel.m */,
+				75B2ECFB6BF433096F99A0EB54F0A5D9 /* BagelRequestCarrier.h */,
+				0DCBDD987E848B4D633C3186B92AA95E /* BagelRequestCarrier.m */,
+				AB90DDC94F7A1239CFE951B05EFE3523 /* BagelRequestInfo.h */,
+				D4BB17AF5054AFE5B88276E08492CE54 /* BagelRequestInfo.m */,
+				69EAA78B0F5273A92CA062CFD4A24C40 /* BagelRequestPacket.h */,
+				6EE58AE8861114E79BF5DD37F7592FDC /* BagelRequestPacket.m */,
+				1D16F8147A242F2E03E658C7CA004D57 /* BagelURLConnectionInjector.h */,
+				06D8C1C3DD7D07B9AADCB4079440F754 /* BagelURLConnectionInjector.m */,
+				292B2C8773DEB4A747B649647B116767 /* BagelURLSessionInjector.h */,
+				7BD971571221111C47704C321B35DB06 /* BagelURLSessionInjector.m */,
+				5439338DE4B4A580F28D5974FBE8DD70 /* BagelUtility.h */,
+				1001DD61A45FF0AC6B0F441B90D69556 /* BagelUtility.m */,
+				7EC9F284BE360073EE95B079840521C1 /* Support Files */,
 			);
-			name = "Pods-MoonCat";
-			path = "Target Support Files/Pods-MoonCat";
+			name = Bagel;
+			path = Bagel;
 			sourceTree = "<group>";
 		};
-		CD9A09440AB708484CDF7008FA7659E0 /* Pods */ = {
+		A7D5D1B62349DDAC2E61A92E185D2C15 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0EA4F614A8916CBCB186B7DEFB270DC2 /* Bagel */,
-				EBFCA10BFAEC3C3379B6C6BEC163897E /* CocoaAsyncSocket */,
-				37786C1189D46C654A1F6A3F40082B18 /* PromiseKit */,
+				BBA1456E53295B060FF62FBCA2298A29 /* GoogleMaps.bundle */,
 			);
-			name = Pods;
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B4D91F7597C713307E0A8B7655DE022B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A214F65B7683032750F0AC5F4F4B199 /* GooglePlaces.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF3FD5F6FC61F622D0CE8AE05F4CF9FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EEE8E77ABDE4BF02F6A9BEB2F80E2A05 /* GoogleMapsBase.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -396,75 +528,96 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				1A3E0EE19DF23E1AD41A79EC8048EC9E /* Frameworks */,
-				CD9A09440AB708484CDF7008FA7659E0 /* Pods */,
+				EBF8B4E553267ACEAD12E57C3A20835A /* Pods */,
 				1351332703ED6FE886A75409FCA55BC0 /* Products */,
-				D221C92F8F923AAD5F821C286A64B9F7 /* Targets Support Files */,
+				49B699307451585B9850A437E8DC2B82 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D221C92F8F923AAD5F821C286A64B9F7 /* Targets Support Files */ = {
+		D5294CDD87687B46423A7D24461D37F2 /* PromiseKit */ = {
 			isa = PBXGroup;
 			children = (
-				B1765E781BD3D4DE346B459BC3EAE0C2 /* Pods-MoonCat */,
+				090BAC764B9B4C4A3FDB235C656293D5 /* CorePromise */,
+				F886F2F58E85A9C7A96A77E42A6608D0 /* Support Files */,
 			);
-			name = "Targets Support Files";
+			name = PromiseKit;
+			path = PromiseKit;
 			sourceTree = "<group>";
 		};
-		EBFCA10BFAEC3C3379B6C6BEC163897E /* CocoaAsyncSocket */ = {
+		D59F808A56580E6ABDE76B1A41B8A099 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				4762533F29C74504FA789E4281149836 /* GCDAsyncSocket.h */,
-				05CABB2BFD1E38E624DF077F399F05AB /* GCDAsyncSocket.m */,
-				259ABEBCF9CCBFB6CB30296AD48B5712 /* GCDAsyncUdpSocket.h */,
-				D0B1C4E403FAAB16F6A809DACA22A062 /* GCDAsyncUdpSocket.m */,
-				0545291C1AD93C1271FE03FB0102DA2E /* Support Files */,
+				1CCE54250D7DFD1257D82C42E4F20E1E /* CocoaAsyncSocket.modulemap */,
+				8C60F48A5F4860C0D4C1ECE0AD50F25A /* CocoaAsyncSocket.xcconfig */,
+				B062B5941EE4D2F2B7FDE9ABA2537362 /* CocoaAsyncSocket-dummy.m */,
+				C0BE0163489AC1E3BAEE7E0800F18A41 /* CocoaAsyncSocket-Info.plist */,
+				AB8F4B21CA1BC4D4E664EC98AAD1A50C /* CocoaAsyncSocket-prefix.pch */,
+				4D86632253CB3662DC3AD50604072BEC /* CocoaAsyncSocket-umbrella.h */,
 			);
-			name = CocoaAsyncSocket;
-			path = CocoaAsyncSocket;
+			name = "Support Files";
+			path = "../Target Support Files/CocoaAsyncSocket";
 			sourceTree = "<group>";
 		};
-		F862CF0E75B035A013CD9EB2C9169659 /* CorePromise */ = {
+		D5A8DC4968018911587595A8F5162621 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				88F7E130E2EF627C9E5C6F778D8EB103 /* after.m */,
-				4A32CBDDDD0C439D931AF23E568968D0 /* after.swift */,
-				8E0023D854FA914843ADC219583AD1C9 /* AnyPromise.h */,
-				D330767496C927CDF01D3BB1E8AEE46F /* AnyPromise.m */,
-				E63F723575DB3E078A916920DEFEA18B /* AnyPromise.swift */,
-				3A15097F524E79A05602050D9840ADB0 /* Box.swift */,
-				B5944D2658BFB2C78CF1909526EF6804 /* Catchable.swift */,
-				7F81AC473A0F949C13B4197C0063240E /* Configuration.swift */,
-				C7A1D2F84B6E5DB3751B712608888106 /* CustomStringConvertible.swift */,
-				747F702357CF40850F7231134638FFD8 /* Deprecations.swift */,
-				1A458E5152931A3E842BE0CF7B3737A5 /* dispatch_promise.m */,
-				7272D43323581500FA19EBE585CAAC96 /* Error.swift */,
-				111ABD7F5E64621379435295134B8402 /* firstly.swift */,
-				D3B370BF433A002E9E138C8CCD0A9063 /* fwd.h */,
-				726F89F158E3123FCEB3E79434DBB5EA /* Guarantee.swift */,
-				B43889E10D894FCB326F9D23231C2590 /* hang.m */,
-				A23E63083DA4AF36756F1F928DAFAF19 /* hang.swift */,
-				4919BA5A23D527678BA8E17DF66AADED /* join.m */,
-				3B46D46EE521725491EF633273289763 /* LogEvent.swift */,
-				B3C4A12E36A273F5A679FF8FF5DDE8C6 /* Promise.swift */,
-				7F8514AB86EF3E5122A813FDE9587768 /* PromiseKit.h */,
-				4F99D822F9A36D9B6B6B7B956D2FEB0A /* race.m */,
-				35A409B73FC37F0C5D13A44AF6557237 /* race.swift */,
-				1F8566B853F27EBB0761F2941839D262 /* Resolver.swift */,
-				CFC65B36C2FAAA317851DE3AB02CE08B /* Thenable.swift */,
-				E7D821A12B1EFEDF1D19DD3C3A499A85 /* when.m */,
-				6F0565D2CF6F28296D6F4396139A076B /* when.swift */,
+				947F530B76ADE5F5F430EC989E2E85F5 /* GooglePlaces.bundle */,
 			);
-			name = CorePromise;
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		EAFC511A25EE434CB41EC2EF4E1EDD11 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				1DE929427B6981D9C4B9A19160DD3F0D /* Frameworks */,
+				A7D5D1B62349DDAC2E61A92E185D2C15 /* Resources */,
+			);
+			name = Maps;
+			sourceTree = "<group>";
+		};
+		EBF8B4E553267ACEAD12E57C3A20835A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				978E4C0DEA08A50E79DFBAF954514444 /* Bagel */,
+				2085521C9965B71EEF4463B19D48E87E /* CocoaAsyncSocket */,
+				614411E1E4E4E3159194124871738033 /* GoogleMaps */,
+				55D2C112DF817B8F0C225A27E5D60F21 /* GooglePlaces */,
+				D5294CDD87687B46423A7D24461D37F2 /* PromiseKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F886F2F58E85A9C7A96A77E42A6608D0 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF1CAB5BFD80A07E91CEB62903CF2915 /* PromiseKit.modulemap */,
+				998273FFF2B0DB7A956EE59C69EAE72A /* PromiseKit.xcconfig */,
+				BAE13307E1DC10BA79024F285F9BA14D /* PromiseKit-dummy.m */,
+				B8E4F08AEF281D9B953D1D8DA78D7A46 /* PromiseKit-Info.plist */,
+				6D7AA4364709A6CD4E9C9B4233C54A58 /* PromiseKit-prefix.pch */,
+				39943308F7986AB7E394BA0AAC49D11B /* PromiseKit-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PromiseKit";
+			sourceTree = "<group>";
+		};
+		FF4B557E83ECFF0B9FA80F88B22D37C1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				54BE8524843B7C1B141D4372DB9B1BF6 /* GoogleMaps.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GoogleMaps";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		21339EFC4F960FBB6DC600D4FBABF6C0 /* Headers */ = {
+		0A0CB8DF08F5E04A9F13CE541A3C740B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06F36ADF559D49658DCCC986153700B4 /* Pods-MoonCat-umbrella.h in Headers */,
+				5CB58323E6E2787BCDCE2AD0697BEF5C /* Pods-MoonCat-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,19 +668,21 @@
 /* Begin PBXNativeTarget section */
 		326E43899E470937FC2039A19724EBD4 /* Pods-MoonCat */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3D796AEDA76B96100F231619B5F896E5 /* Build configuration list for PBXNativeTarget "Pods-MoonCat" */;
+			buildConfigurationList = 46FBB5B3415170DB2B3091B93E18BECF /* Build configuration list for PBXNativeTarget "Pods-MoonCat" */;
 			buildPhases = (
-				21339EFC4F960FBB6DC600D4FBABF6C0 /* Headers */,
-				FA314A0A8C7953C4C6C765437BC74145 /* Sources */,
-				C350790B5C6284F029FF2EDDB025B633 /* Frameworks */,
-				8B3AB2B8F53AD5CFA6E067B565E68A62 /* Resources */,
+				0A0CB8DF08F5E04A9F13CE541A3C740B /* Headers */,
+				4DBFE68F09941D1F5F9AAB2825BBBB1D /* Sources */,
+				7EC8D11B4579A28A7C96AF08DDFA63EF /* Frameworks */,
+				4B90185B0D11B874D31377ED4A348E68 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				27EED127A44CEC0B10CB30014A7DFC5F /* PBXTargetDependency */,
-				E1DBE5E2E903D8ACDA707CCA64F377F3 /* PBXTargetDependency */,
-				D79A4BD57DCBABCFB59EC01CB65900FB /* PBXTargetDependency */,
+				AB1F73EAB11E1F0D2EC4B8E9EE5D1EB0 /* PBXTargetDependency */,
+				A1A4E559242D301304EC61BB8B03D03A /* PBXTargetDependency */,
+				A02939296C2096D397519A40F9635BFB /* PBXTargetDependency */,
+				96B4D3E19A06FC7A87DD81666EA3C481 /* PBXTargetDependency */,
+				6F75A1BF6AB85EB7298F9BFF490A913A /* PBXTargetDependency */,
 			);
 			name = "Pods-MoonCat";
 			productName = "Pods-MoonCat";
@@ -604,6 +759,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = 1351332703ED6FE886A75409FCA55BC0 /* Products */;
@@ -612,6 +768,8 @@
 			targets = (
 				92077976CB3E088351E515981DC39115 /* Bagel */,
 				6083682834ABE0AE7BD1CBF06CADD036 /* CocoaAsyncSocket */,
+				E5B4BBC6DD552AC8943C7E22772FC1D3 /* GoogleMaps */,
+				0C1885900810601510E0C632060FAF26 /* GooglePlaces */,
 				326E43899E470937FC2039A19724EBD4 /* Pods-MoonCat */,
 				7C579CE66A1E7A9AA33CA5F97F9C22C5 /* PromiseKit */,
 			);
@@ -626,7 +784,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8B3AB2B8F53AD5CFA6E067B565E68A62 /* Resources */ = {
+		4B90185B0D11B874D31377ED4A348E68 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -682,6 +840,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4DBFE68F09941D1F5F9AAB2825BBBB1D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13ED0E09221A893C71B6349E3AD68504 /* Pods-MoonCat-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5DB58F84D9A996D117262FE433DE71F0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -713,22 +879,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FA314A0A8C7953C4C6C765437BC74145 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ECEACEE8073902583B73EAED446AFD8E /* Pods-MoonCat-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		27EED127A44CEC0B10CB30014A7DFC5F /* PBXTargetDependency */ = {
+		6F75A1BF6AB85EB7298F9BFF490A913A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Bagel;
-			target = 92077976CB3E088351E515981DC39115 /* Bagel */;
-			targetProxy = A6EE6596096CB8A88D773877617F4CF8 /* PBXContainerItemProxy */;
+			name = PromiseKit;
+			target = 7C579CE66A1E7A9AA33CA5F97F9C22C5 /* PromiseKit */;
+			targetProxy = E4BC701AA05B8F3164D49B60F5FF22FB /* PBXContainerItemProxy */;
+		};
+		96B4D3E19A06FC7A87DD81666EA3C481 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GooglePlaces;
+			target = 0C1885900810601510E0C632060FAF26 /* GooglePlaces */;
+			targetProxy = 121470B0699182E095B141FBE44863B5 /* PBXContainerItemProxy */;
+		};
+		A02939296C2096D397519A40F9635BFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GoogleMaps;
+			target = E5B4BBC6DD552AC8943C7E22772FC1D3 /* GoogleMaps */;
+			targetProxy = FB9B87BA409B32A44F6A85D3CDF4237C /* PBXContainerItemProxy */;
+		};
+		A1A4E559242D301304EC61BB8B03D03A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CocoaAsyncSocket;
+			target = 6083682834ABE0AE7BD1CBF06CADD036 /* CocoaAsyncSocket */;
+			targetProxy = D9E20DAC0CEDFD5F1906BECEBB3013E9 /* PBXContainerItemProxy */;
 		};
 		AA71513E3445CFB007674040B1795E28 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -736,17 +912,17 @@
 			target = 6083682834ABE0AE7BD1CBF06CADD036 /* CocoaAsyncSocket */;
 			targetProxy = EAB742075FE5C98FA8A4A7C0FCC35552 /* PBXContainerItemProxy */;
 		};
-		D79A4BD57DCBABCFB59EC01CB65900FB /* PBXTargetDependency */ = {
+		AB1F73EAB11E1F0D2EC4B8E9EE5D1EB0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = PromiseKit;
-			target = 7C579CE66A1E7A9AA33CA5F97F9C22C5 /* PromiseKit */;
-			targetProxy = C13BA98A0EC73EB844DAC0F05CB5EC5C /* PBXContainerItemProxy */;
+			name = Bagel;
+			target = 92077976CB3E088351E515981DC39115 /* Bagel */;
+			targetProxy = B72C0134289434AF57E197FFD2B426A6 /* PBXContainerItemProxy */;
 		};
-		E1DBE5E2E903D8ACDA707CCA64F377F3 /* PBXTargetDependency */ = {
+		D42315111F400C0605ACCD6B5CAF2178 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CocoaAsyncSocket;
-			target = 6083682834ABE0AE7BD1CBF06CADD036 /* CocoaAsyncSocket */;
-			targetProxy = E6831853FA87B21263F55EDC95770F77 /* PBXContainerItemProxy */;
+			name = GoogleMaps;
+			target = E5B4BBC6DD552AC8943C7E22772FC1D3 /* GoogleMaps */;
+			targetProxy = 6EB1C2DD30E6564FC3135C9E8002D8F7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -813,7 +989,7 @@
 		};
 		2BFB42D4B568145B4242498047DB33CD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7990E7FBF6F64D0D9185E85FD1E43D63 /* CocoaAsyncSocket.xcconfig */;
+			baseConfigurationReference = 8C60F48A5F4860C0D4C1ECE0AD50F25A /* CocoaAsyncSocket.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -846,9 +1022,95 @@
 			};
 			name = Debug;
 		};
-		47F66FD3B71461376E0037529C316FA5 /* Release */ = {
+		4AA46832D8A16AA4E4811383B204D2A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2A77147B6525A0EEFC19C45364656266 /* Pods-MoonCat.release.xcconfig */;
+			baseConfigurationReference = 54BE8524843B7C1B141D4372DB9B1BF6 /* GoogleMaps.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5197EDA640497DAC766A996739C1D1C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 998273FFF2B0DB7A956EE59C69EAE72A /* PromiseKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PromiseKit/PromiseKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PromiseKit/PromiseKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PromiseKit/PromiseKit.modulemap";
+				PRODUCT_MODULE_NAME = PromiseKit;
+				PRODUCT_NAME = PromiseKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5937317FCBE39CA15A5F1A15D0967CEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFCC54F352EE3934D648D332905ADDA4 /* Bagel.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Bagel/Bagel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Bagel/Bagel-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Bagel/Bagel.modulemap";
+				PRODUCT_MODULE_NAME = Bagel;
+				PRODUCT_NAME = Bagel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		69F2D5A8B3234213DED102BCD4C32B26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C3482ED878A08F70B373657564FBA60 /* Pods-MoonCat.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -885,79 +1147,25 @@
 			};
 			name = Release;
 		};
-		5197EDA640497DAC766A996739C1D1C1 /* Debug */ = {
+		907050E8ED96EF2CF04EC3D293E73BD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA56FD90113D1941CC0038A0A442445D /* PromiseKit.xcconfig */;
+			baseConfigurationReference = 95C1848F1B2886BC22E202662C0AAE9F /* GooglePlaces.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PromiseKit/PromiseKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PromiseKit/PromiseKit-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = "Target Support Files/PromiseKit/PromiseKit.modulemap";
-				PRODUCT_MODULE_NAME = PromiseKit;
-				PRODUCT_NAME = PromiseKit;
 				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		5937317FCBE39CA15A5F1A15D0967CEA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15D67C4C2DBFD4E48FF91032CFC8E76B /* Bagel.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Bagel/Bagel-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Bagel/Bagel-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/Bagel/Bagel.modulemap";
-				PRODUCT_MODULE_NAME = Bagel;
-				PRODUCT_NAME = Bagel;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
 		9C221B84C83838D5838D87DFC6F82093 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA56FD90113D1941CC0038A0A442445D /* PromiseKit.xcconfig */;
+			baseConfigurationReference = 998273FFF2B0DB7A956EE59C69EAE72A /* PromiseKit.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -993,7 +1201,7 @@
 		};
 		A41C7C57018EDD951D0B2A42CC133D4E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7990E7FBF6F64D0D9185E85FD1E43D63 /* CocoaAsyncSocket.xcconfig */;
+			baseConfigurationReference = 8C60F48A5F4860C0D4C1ECE0AD50F25A /* CocoaAsyncSocket.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1027,9 +1235,62 @@
 			};
 			name = Release;
 		};
-		C5CA6DA00AEEC160F094F5FCF2056090 /* Debug */ = {
+		C7565AEA7FCD8F66CAF546DC5AF1404F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A836452DC0A4DF192BFBE1835D0E9470 /* Pods-MoonCat.debug.xcconfig */;
+			baseConfigurationReference = 54BE8524843B7C1B141D4372DB9B1BF6 /* GoogleMaps.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D11DC068288AF9E246E1AB80B58457DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFCC54F352EE3934D648D332905ADDA4 /* Bagel.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Bagel/Bagel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Bagel/Bagel-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Bagel/Bagel.modulemap";
+				PRODUCT_MODULE_NAME = Bagel;
+				PRODUCT_NAME = Bagel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D8533B267A1E25964690451AC020BBF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBF384F4869EA8008D59FC5850CC38C8 /* Pods-MoonCat.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1065,39 +1326,20 @@
 			};
 			name = Debug;
 		};
-		D11DC068288AF9E246E1AB80B58457DB /* Release */ = {
+		DC85D7712D8EE6E340F053BC38E1FB63 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15D67C4C2DBFD4E48FF91032CFC8E76B /* Bagel.xcconfig */;
+			baseConfigurationReference = 95C1848F1B2886BC22E202662C0AAE9F /* GooglePlaces.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Bagel/Bagel-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Bagel/Bagel-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = "Target Support Files/Bagel/Bagel.modulemap";
-				PRODUCT_MODULE_NAME = Bagel;
-				PRODUCT_NAME = Bagel;
 				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -1168,6 +1410,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2FC2AC47FDB0310285CE777F18CD1532 /* Build configuration list for PBXAggregateTarget "GooglePlaces" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				907050E8ED96EF2CF04EC3D293E73BD9 /* Debug */,
+				DC85D7712D8EE6E340F053BC38E1FB63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		35B5FC0468CAC8FE95974416049B49E7 /* Build configuration list for PBXNativeTarget "CocoaAsyncSocket" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1177,11 +1428,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3D796AEDA76B96100F231619B5F896E5 /* Build configuration list for PBXNativeTarget "Pods-MoonCat" */ = {
+		46921981F609C5BA3CB72EC4EA41299D /* Build configuration list for PBXAggregateTarget "GoogleMaps" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C5CA6DA00AEEC160F094F5FCF2056090 /* Debug */,
-				47F66FD3B71461376E0037529C316FA5 /* Release */,
+				4AA46832D8A16AA4E4811383B204D2A4 /* Debug */,
+				C7565AEA7FCD8F66CAF546DC5AF1404F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46FBB5B3415170DB2B3091B93E18BECF /* Build configuration list for PBXNativeTarget "Pods-MoonCat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8533B267A1E25964690451AC020BBF2 /* Debug */,
+				69F2D5A8B3234213DED102BCD4C32B26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
