@@ -32,8 +32,25 @@ class Root_VC: UIViewController {
         
         self.view.addSubview(tabBar)
         
-        self.setReferenceImage(name: "ref1")
+//        self.setReferenceImage(name: "ref1")
         
+        let l = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 50))
+        l.backgroundColor = UIColor.blue
+        l.textAlignment = .center
+        l.textColor = UIColor.white
+        l.text = "New Event"
+        self.view.addSubview(l)
+        l.center = self.view.midPoint
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        l.addGestureRecognizer(tap)
+        l.isUserInteractionEnabled = true
+        
+    }
+    
+    @objc func handleTap() {
+        
+        // TODO: present the create event vc
     }
 
 
