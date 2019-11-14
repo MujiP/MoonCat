@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83D99CD12376736F007F96EE /* CreateEvent_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D99CD02376736F007F96EE /* CreateEvent_VC.swift */; };
+		83F4CF182377FEF900551751 /* EventInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F4CF172377FEF900551751 /* EventInfo.swift */; };
 		30CC631AEA92C04F13CA3463 /* Pods_MoonCat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE384059984994862B6A2B2 /* Pods_MoonCat.framework */; };
 		AE22F0D42378B774008256B4 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE22F0D32378B774008256B4 /* TabBar.swift */; };
 		AE22F0D62378B891008256B4 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE22F0D52378B891008256B4 /* Tab.swift */; };
@@ -52,6 +54,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		83D99CD02376736F007F96EE /* CreateEvent_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEvent_VC.swift; sourceTree = "<group>"; };
+		83F4CF172377FEF900551751 /* EventInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfo.swift; sourceTree = "<group>"; };
 		7246F606AF6640AB0E16373B /* Pods-MoonCat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoonCat.release.xcconfig"; path = "Target Support Files/Pods-MoonCat/Pods-MoonCat.release.xcconfig"; sourceTree = "<group>"; };
 		AE22F0D32378B774008256B4 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		AE22F0D52378B891008256B4 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
@@ -194,7 +198,9 @@
 			isa = PBXGroup;
 			children = (
 				AE6F993423726A6A00533DC2 /* AppDelegate.swift */,
+				83F4CF172377FEF900551751 /* EventInfo.swift */,
 				AE38149D237269F7001F9A73 /* Root_VC.swift */,
+				83D99CD02376736F007F96EE /* CreateEvent_VC.swift */,
 				AEB5BF46237BED6E00727337 /* ref1@2x.png */,
 				AE22F0FB237B72A2008256B4 /* A_VC.swift */,
 				AE3814A2237269F9001F9A73 /* Assets.xcassets */,
@@ -342,6 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83F4CF182377FEF900551751 /* EventInfo.swift in Sources */,
 				AE22F0F8237B6F5E008256B4 /* SlideAnimation.swift in Sources */,
 				AE22F0D82378BB42008256B4 /* SpacingStrategy.swift in Sources */,
 				AEB5BF49237CC6D700727337 /* PromiseKitExtensions.swift in Sources */,
@@ -357,6 +364,7 @@
 				AEB5BF4C237CC88E00727337 /* 🎟Event.swift in Sources */,
 				AE22F0DC2378CE51008256B4 /* TabConfig.swift in Sources */,
 				AE38149E237269F7001F9A73 /* Root_VC.swift in Sources */,
+				83D99CD12376736F007F96EE /* CreateEvent_VC.swift in Sources */,
 				AE22F0D62378B891008256B4 /* Tab.swift in Sources */,
 				AE22F0E52378D7D7008256B4 /* X_UILabel.swift in Sources */,
 				AE22F0EB2378D7D7008256B4 /* X_UIViewController.swift in Sources */,
