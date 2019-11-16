@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ Performs the transition animation between tabs in a TabBar.
+ */
 protocol AnimationStrategy {
     
     /** Animate the transition. Indices are provided to determine direction. */

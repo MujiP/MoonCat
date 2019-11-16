@@ -8,13 +8,16 @@
 
 import UIKit
 
+/**
+ Performs only horizontal layout of tabs in a TabBar.
+ Has some default methods available to assist the conforming type in that responsibility.
+ */
 protocol SpacingStrategy {
     
     /**
-     Use the available methods to space the tabs appropriately, then add them as subviews.
-     The tabs are not added as subviews in case a strategy needs to add them to a container view, and add that instead.
+     Use the available methods to space the tabs appropriately.
      */
-    func layout(tabs: [Tab], tabBar: TabBar)
+    func layout(tabs: [Tab], tabBar: TabBar_VC)
 }
 
 extension SpacingStrategy {
@@ -25,18 +28,18 @@ extension SpacingStrategy {
      - Parameter padding: The amount of padding to apply between tabs.
      Pass 0 for tabs to be placed next to each other with no gaps.
      
-     - Parameter startWithPadding: Pass true for a padding to be applied before the first tab is placed.
+     - Parameter startPadding: The amount of padding to be applied before the first tab is placed.
      
      Tabs are only spaced (positioned horizontally); they are not positioned vertically.
      
      */
-    func space(tabs: [Tab], padding: CGFloat, startWithPadding: Bool) {
+    func space(tabs: [Tab], padding: CGFloat, startPadding: CGFloat) {
         
         // For vertical positioning, the superview needs to be given, so we can center them vertically using the height of it.
         // But then, we might as well add them as subviews to the passed in superview.
         // Don't get into vertical placement, because then it's no longer spacing; it becomes positioning and adding as subviews.
         
-        var x: CGFloat = startWithPadding ? padding : 0
+        var x: CGFloat = startPadding
         
         for each in tabs {
             each.frame.origin.x = x
@@ -44,7 +47,7 @@ extension SpacingStrategy {
             x += padding
             
             // DEBUG
-//            each.backgroundColor = UIColor.red.withAlphaComponent(0.2)
+//            each.backgroundColor = UIColor.blue.withAlphaComponent(0.2)
         }
         
         

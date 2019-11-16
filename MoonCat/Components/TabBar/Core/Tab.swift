@@ -24,7 +24,7 @@ class Tab: UIView {
     let activeImage: UIImageView
     let inactiveImage: UIImageView
     let type: UIViewController.Type
-    weak var parent: TabBar!
+    weak var parent: TabBar_VC!
     
     /**
      Subclasses should override and call super, then add/store their additional chrome views.
@@ -32,7 +32,7 @@ class Tab: UIView {
      - Precondition: Images exist for both strings, and they should be the same size,
      as self is given a size to match one of them. Images should be large enough to be tapped.
      */
-    required init(config: TabConfig, parent: TabBar, index: Int) {
+    required init(config: TabConfig, parent: TabBar_VC, index: Int) {
         
         // Note: Construction with a meta type (Tab.Type) needs to have a required initializer.
         

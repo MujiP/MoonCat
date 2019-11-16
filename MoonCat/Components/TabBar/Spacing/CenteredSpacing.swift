@@ -13,20 +13,16 @@ struct CenteredSpacing: SpacingStrategy {
     
     let padding: CGFloat
     
-    func layout(tabs: [Tab], tabBar: TabBar) {
+    func layout(tabs: [Tab], tabBar: TabBar_VC) {
         
         let maxW = self.collectiveWidth(tabs: tabs, padding: self.padding)
-        let container = UIView(frame: CGRect(x: 0, y: 0, width: maxW, height: tabBar.bounds.height))
         
-        self.space(tabs: tabs, padding: self.padding, startWithPadding: false)
+        // Alter the default space method to take in a startPadding that doesn't necessarily have to be equal to the inter tab padding.
+        // Then the only thing this struct needs to do is calculate the correct start padding.
         
-        for each in tabs {
-            container.addSubview(each)
-            each.center.y = container.bounds.height / 2
-        }
         
-        tabBar.addSubview(container)
-        container.center = tabBar.midPoint
+        let startX = (tabBar.view.bounds.width - maxW) / 2
+        self.space(tabs: tabs, padding: self.padding, startPadding: startX)
     }
     
 }

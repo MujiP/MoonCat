@@ -1,5 +1,5 @@
 //
-//  TabBar.swift
+//  TabBar_VC.swift
 //  MoonCat
 //
 //  Created by Muji Paracha on 2019-11-10.
@@ -14,13 +14,13 @@ import UIKit
  Stores a collection of tabs and their associated views.
  Performs the parenting of a tab's vc on behalf of the parent, and manages its view, whose size will match the parent,
  and will be added to the bottom of the parent's view, hence overlay TabBar.
- Tab vc's are created lazily, and are retained between tab switches.
+ A tab's vc is created lazily, and is retained between tab switches.
  
  When a tab is pressed, if self doesn't have a view, it'll vend a vc from the tab,
- parent it, retain the view, and passes an animator the old and new views.
+ parent it, retain the view, and pass an animator the old and new views.
  All the client has to do is, nothing.
  */
-class TabBar: UIView {
+class TabBar_VC: UIViewController {
     
     /*
         🈯️        💤        💤        💤     (Associated Views)
@@ -28,47 +28,62 @@ class TabBar: UIView {
       Pressed     Not       Not       Not     (Tabs are like buttons)
      */
     
-    var views = [Int: UIView]()
-    var tabs = [Tab]()
-    var atIndex: Int
-    let parent: UIViewController
-    let animator: AnimationStrategy
+    private var views = [Int: UIView]()
+    private let animator: AnimationStrategy
     
-    /**
-     Subclasses should layout their chrome elements here, after calling super.
-     */
+    // These properties are marked as final so subclasses can still use them for positioning / animating chrome elements
+    
+    final var tabs = [Tab]()
+    final var atIndex: Int
+    final let spacer: SpacingStrategy
+    
     init(config: [TabConfig],
          startIndex: Int,
          animationStrategy: AnimationStrategy,
          spacingStrategy: SpacingStrategy,
-         parent: UIViewController,
-         tabType: Tab.Type,
-         height: CGFloat,
-         y_origin: CGFloat) {
+         tabType: Tab.Type) {
         
-        self.parent = parent
         self.animator = animationStrategy
+        self.spacer = spacingStrategy
         self.atIndex = startIndex
         
-        super.init(frame: CGRect(x: 0, y: y_origin, width: parent.view.bounds.width, height: height))
+        super.init(nibName: nil, bundle: nil)
         
-        // Create all the tabs, then pass them to the spacing strategy
-        // Don't add tabs as subviews; allow the spacing strategy to do that.
+        // Since we are using the spacing strategy only for layout, it makes more sense for self to directly add its subviews, and allow the spacer to just lay them out.
         
         for i in 0..<config.count {
             let c = config[i]
             let tab = tabType.init(config: c, parent: self, index: i)
             self.tabs.append(tab)
+            self.view.addSubview(tab)
         }
-        
-        spacingStrategy.layout(tabs: self.tabs, tabBar: self)
-        vendIfNeeded(tab: tabs[startIndex])
-        tabs[startIndex].press()
 
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func didMove(toParent parent: UIViewController?) {
+        vendIfNeeded(tab: tabs[atIndex])
+        tabs[atIndex].press()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // This is the best place to do initial placement by frame, when the main view is layed out with autolayout.
+        
+        // We want the tabs to be layed out depending on the frame of self, which may use auto layout, or may use a fixed frame,
+        // so lay them out here, where the frame is accurate.
+        
+        // Use the provided SpacingStrategy
+        // Center the tabs vertically.
+        
+        self.spacer.layout(tabs: self.tabs, tabBar: self)
+        
+        for each in tabs {
+            each.center.y = self.view.bounds.height / 2
+            each.frame = each.frame.integral
+        }
     }
     
     /**
@@ -83,7 +98,11 @@ class TabBar: UIView {
         }
         
         let newVC = tab.vend()
-        self.parent.welcomeChild(newVC, frame: self.parent.view.bounds, atIndex: 0)
+        self.parent!.welcomeChild(newVC) { (v) in
+            v.frame = self.parent!.view.bounds
+            self.parent!.view.insertSubview(v, at: 0)
+        }
+        
         self.views[index] = newVC.view
         
         // Note: We put the new view right at the bottom, instead of below self.

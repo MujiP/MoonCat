@@ -8,6 +8,7 @@
 //
 
 import Foundation
+
 struct EventInfo {
     // structure def goes here
     /*
