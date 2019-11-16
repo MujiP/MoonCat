@@ -9,45 +9,21 @@ import UIKit
 
 extension UIViewController {
     
-    func welcomeChild(_ newVC: UIViewController, frame: CGRect) {
-        
-        // Performs the VC dance
-        
+    /**
+     Performs the VC dance of adding a new child. The passed in block will receive the view.
+     You can add it as a subview normally, or insert it at a particular index; however you like.
+     And you can layout the view by frame or by activating constraints within the block.
+     */
+    func welcomeChild(_ newVC: UIViewController, _ ch: (UIView) -> ()) {
         self.addChild(newVC)
-        newVC.view.frame = frame
-        self.view.addSubview(newVC.view)
+        ch(newVC.view)
         newVC.didMove(toParent: self)
-        
     }
     
-    func welcomeChild(_ newVC: UIViewController, frame: CGRect, below: UIView) {
-        
-        // Performs the VC dance
-        // Precondition: below must be in the view hierarchy
-        
-        self.addChild(newVC)
-        newVC.view.frame = frame
-        self.view.insertSubview(newVC.view, belowSubview: below)
-        newVC.didMove(toParent: self)
-        
-    }
-    
-    func welcomeChild(_ newVC: UIViewController, frame: CGRect, atIndex index: Int) {
-        
-        // Performs the VC dance
-        // Precondition: below must be in the view hierarchy
-        
-        self.addChild(newVC)
-        newVC.view.frame = frame
-        self.view.insertSubview(newVC.view, at: index)
-        newVC.didMove(toParent: self)
-        
-    }
-    
+    /**
+     Performs the VC dance of removing a child.
+     */
     func leave() {
-        
-        // Performs the VC dance
-        
         self.willMove(toParent: nil)
         self.view.removeFromSuperview()
         self.removeFromParent()
