@@ -29,7 +29,7 @@ class TabBar_VC: UIViewController {
      */
     
     private var views = [Int: UIView]()
-    private let animator: AnimationStrategy
+    private let transitionStyle: TabTransitionStyle
     
     // These properties are marked as final so subclasses can still use them for positioning / animating chrome elements
     
@@ -39,11 +39,11 @@ class TabBar_VC: UIViewController {
     
     init(config: [TabConfig],
          startIndex: Int,
-         animationStrategy: AnimationStrategy,
+         transitionStyle: TabTransitionStyle,
          layoutStyle: TabLayoutStyle,
          tabType: Tab.Type) {
         
-        self.animator = animationStrategy
+        self.transitionStyle = transitionStyle
         self.atIndex = startIndex
         self.layoutStyle = layoutStyle
         
@@ -112,7 +112,7 @@ class TabBar_VC: UIViewController {
         tabs[atIndex].unpress()
         let toView = self.views[index]!
         let fromView = self.views[atIndex]!
-        self.animator.animate(fromView: fromView, toView: toView, fromIndex: atIndex, toIndex: index)
+        self.transitionStyle.animate(fromView: fromView, toView: toView, fromIndex: atIndex, toIndex: index)
         self.atIndex = index
     }
     

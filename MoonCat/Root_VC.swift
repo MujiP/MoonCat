@@ -22,7 +22,7 @@ class Root_VC: UIViewController {
             TabConfig("study_active", "study_inactive", A_VC.self),
             TabConfig("other_active", "other_inactive", A_VC.self),
         ], startIndex: 0,
-           animationStrategy: FadeAnimation(),
+           transitionStyle: .fade,
            layoutStyle: .equal,
            tabType: Tab.self)
         
