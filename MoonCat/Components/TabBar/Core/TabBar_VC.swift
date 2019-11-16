@@ -35,17 +35,17 @@ class TabBar_VC: UIViewController {
     
     final var tabs = [Tab]()
     final var atIndex: Int
-    final let spacer: SpacingStrategy
+    final let layoutStyle: TabLayoutStyle
     
     init(config: [TabConfig],
          startIndex: Int,
          animationStrategy: AnimationStrategy,
-         spacingStrategy: SpacingStrategy,
+         layoutStyle: TabLayoutStyle,
          tabType: Tab.Type) {
         
         self.animator = animationStrategy
-        self.spacer = spacingStrategy
         self.atIndex = startIndex
+        self.layoutStyle = layoutStyle
         
         super.init(nibName: nil, bundle: nil)
         
@@ -71,19 +71,10 @@ class TabBar_VC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         // This is the best place to do initial placement by frame, when the main view is layed out with autolayout.
-        
         // We want the tabs to be layed out depending on the frame of self, which may use auto layout, or may use a fixed frame,
         // so lay them out here, where the frame is accurate.
         
-        // Use the provided SpacingStrategy
-        // Center the tabs vertically.
-        
-        self.spacer.layout(tabs: self.tabs, tabBar: self)
-        
-        for each in tabs {
-            each.center.y = self.view.bounds.height / 2
-            each.frame = each.frame.integral
-        }
+        self.layoutStyle.layout(tabs: self.tabs, tabBar: self)
     }
     
     /**

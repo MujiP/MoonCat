@@ -23,7 +23,7 @@ class Root_VC: UIViewController {
             TabConfig("other_active", "other_inactive", A_VC.self),
         ], startIndex: 0,
            animationStrategy: FadeAnimation(),
-           spacingStrategy: EqualSpacing(),
+           layoutStyle: .equal,
            tabType: Tab.self)
         
         self.welcomeChild(vc) { (v) in
