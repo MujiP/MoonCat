@@ -33,7 +33,7 @@ class Root_VC: UIViewController {
                 v.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 10),
                 v.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -10),
                 v.heightAnchor.constraint(equalToConstant: 50),
-                v.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+                v.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0)
             ])
         }
 
@@ -54,27 +54,25 @@ class Root_VC: UIViewController {
         
 //        self.setReferenceImage(name: "ref1")
         
-//        let l = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 50))
-//        l.backgroundColor = UIColor.blue
-//        l.textAlignment = .center
-//        l.textColor = UIColor.white
-//        l.text = "New Event"
-//        self.view.addSubview(l)
-//        l.center = self.view.midPoint
-//
-//        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-//        l.addGestureRecognizer(tap)
-//        l.isUserInteractionEnabled = true
+        let l = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 50))
+        l.backgroundColor = UIColor.blue
+        l.textAlignment = .center
+        l.textColor = UIColor.white
+        l.text = "New Event"
+        self.view.addSubview(l)
+        l.center = self.view.midPoint
+
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        l.addGestureRecognizer(tap)
+        l.isUserInteractionEnabled = true
         
     }
     
     @objc func handleTap() {
-        
-//        // TODO: present the create event vc
-//        let vc = CreateEvent_VC()
-//        self.welcomeChild(vc, frame: self.view.bounds)
-        
-        
+        self.welcomeChild(CreateEvent_VC()) { (v) in
+            v.frame = self.view.bounds
+            self.view.addSubview(v)
+        }
     }
 
 

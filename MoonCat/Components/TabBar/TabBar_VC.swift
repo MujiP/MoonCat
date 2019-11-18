@@ -1,6 +1,5 @@
 //
 //  TabBar_VC.swift
-//  MoonCat
 //
 //  Created by Muji Paracha on 2019-11-10.
 //  Copyright © 2019 Muji Paracha. All rights reserved.
@@ -66,7 +65,6 @@ class TabBar_VC: UIViewController {
     
     override func didMove(toParent parent: UIViewController?) {
         vendIfNeeded(tab: tabs[atIndex])
-        tabs[atIndex].press()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -75,6 +73,27 @@ class TabBar_VC: UIViewController {
         // so lay them out here, where the frame is accurate.
         
         self.layoutStyle.layout(tabs: self.tabs, tabBar: self)
+        
+        
+        // Bug: didMove is called before, which press / unpresses tabs, which calls their setImages method.
+        // Now, they are layed out (including resized), and that then recenters some assets, which overrides some of what was done in setImages()
+        // Fix: Move the press / unpress calls to viewDidAppear, after the layout.
+        
+        
+        // Although layout will try to 'self-correct' issues in case a style resizes the tabs,
+        // by recentering the views (which were already centered at creation),
+        // A subclass tab may have repositioned those views in the setImages method,
+        // so if layout were to be called after setImages, it would be 'self-correcting' incorrectly.
+        // So account for this possibility that subclasses may position their views uniquely;
+        // layout before setImages can be called, so that it's self-correct reverts back to the recentered state.
+        
+        for each in tabs {
+            each.layoutContent()
+            each.unpress()
+        }
+        
+        tabs[atIndex].press()
+        
     }
     
     /**
@@ -105,7 +124,6 @@ class TabBar_VC: UIViewController {
      Subclasses can override to perform animation of their chrome elements. Must call super.
      */
     func tabWasPressed(_ tab: Tab) {
-        
         vendIfNeeded(tab: tab)
         let index = tab.index
         

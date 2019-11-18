@@ -1,6 +1,5 @@
 //
 //  TabConfig.swift
-//  MoonCat
 //
 //  Created by Muji Paracha on 2019-11-10.
 //  Copyright © 2019 Muji Paracha. All rights reserved.

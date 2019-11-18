@@ -1,6 +1,5 @@
 //
 //  TabLayoutStyle.swift
-//  MoonCat
 //
 //  Created by Muji Paracha on 2019-11-16.
 //  Copyright © 2019 Muji Paracha. All rights reserved.
@@ -47,6 +46,7 @@ enum TabLayoutStyle {
 
             for each in tabs {
                 each.bounds.size = size
+                each.recenter()
             }
             
             self.space(tabs: tabs, padding: 0, startPadding: 0)
