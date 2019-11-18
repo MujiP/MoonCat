@@ -46,7 +46,6 @@ enum TabLayoutStyle {
 
             for each in tabs {
                 each.bounds.size = size
-                each.recenter()
             }
             
             self.space(tabs: tabs, padding: 0, startPadding: 0)
