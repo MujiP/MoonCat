@@ -48,7 +48,8 @@ class TabBar_VC: UIViewController {
         
         super.init(nibName: nil, bundle: nil)
         
-        // Since we are using the spacing strategy only for layout, it makes more sense for self to directly add its subviews, and allow the spacer to just lay them out.
+        // Add and store the tabs.
+        // Layout will be done in viewDidAppear, when self's frame is guaranteed.
         
         for i in 0..<config.count {
             let c = config[i]
@@ -72,20 +73,8 @@ class TabBar_VC: UIViewController {
         // We want the tabs to be layed out depending on the frame of self, which may use auto layout, or may use a fixed frame,
         // so lay them out here, where the frame is accurate.
         
+        // There may be frame dependant code in the tab's setImages method, so make sure layout is called before.
         self.layoutStyle.layout(tabs: self.tabs, tabBar: self)
-        
-        
-        // Bug: didMove is called before, which press / unpresses tabs, which calls their setImages method.
-        // Now, they are layed out (including resized), and that then recenters some assets, which overrides some of what was done in setImages()
-        // Fix: Move the press / unpress calls to viewDidAppear, after the layout.
-        
-        
-        // Although layout will try to 'self-correct' issues in case a style resizes the tabs,
-        // by recentering the views (which were already centered at creation),
-        // A subclass tab may have repositioned those views in the setImages method,
-        // so if layout were to be called after setImages, it would be 'self-correcting' incorrectly.
-        // So account for this possibility that subclasses may position their views uniquely;
-        // layout before setImages can be called, so that it's self-correct reverts back to the recentered state.
         
         for each in tabs {
             each.layoutContent()
