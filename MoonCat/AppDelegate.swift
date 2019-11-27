@@ -19,10 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        GMSServices.provideAPIKey("AIzaSyCOY869ROmeICjxedqC-Sycsqtjm7zU_cY")
-        GMSPlacesClient.provideAPIKey("AIzaSyCOY869ROmeICjxedqC-Sycsqtjm7zU_cY")
-//        GMSServices.provideAPIKey("AIzaSyBuxnws1p2hIfPka2kJOfQMBk2xRLrrXmA")
-//        GMSPlacesClient.provideAPIKey("AIzaSyBuxnws1p2hIfPka2kJOfQMBk2xRLrrXmA")
+//         GMSServices.provideAPIKey("AIzaSyCOY869ROmeICjxedqC-Sycsqtjm7zU_cY")
+//         GMSPlacesClient.provideAPIKey("AIzaSyCOY869ROmeICjxedqC-Sycsqtjm7zU_cY")
+        GMSServices.provideAPIKey("AIzaSyBuxnws1p2hIfPka2kJOfQMBk2xRLrrXmA")
+        GMSPlacesClient.provideAPIKey("AIzaSyBuxnws1p2hIfPka2kJOfQMBk2xRLrrXmA")
         
         Bagel.start()
         
