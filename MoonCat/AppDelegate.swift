@@ -21,11 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GMSServices.provideAPIKey("AIzaSyCOY869ROmeICjxedqC-Sycsqtjm7zU_cY")
         GMSPlacesClient.provideAPIKey("AIzaSyCOY869ROmeICjxedqC-Sycsqtjm7zU_cY")
+//        GMSServices.provideAPIKey("AIzaSyBuxnws1p2hIfPka2kJOfQMBk2xRLrrXmA")
+//        GMSPlacesClient.provideAPIKey("AIzaSyBuxnws1p2hIfPka2kJOfQMBk2xRLrrXmA")
         
         Bagel.start()
         
         self.window = UIWindow()
-        self.window?.rootViewController = Root_VC()
+        self.window?.rootViewController = EventInfo_VC()
         self.window?.makeKeyAndVisible()
         
         return true
