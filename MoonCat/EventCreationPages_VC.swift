@@ -8,34 +8,10 @@
 
 import UIKit
 
-class EventCreationView: UIView{
-    override init(frame: CGRect){
-        super.init(frame: frame)
-        setupPagingView()
-    }
+protocol EventCreationPage_VC: UIViewController{
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("Not using this")
-    }
+    func setupTextView()
     
-    private func setupPagingView(){
-        
-    }
-    
-    private func setupTagEntryView(){
-        
-    }
-    
-    private func setupLocationCompletingView(){
-        
-    }
-    
-    private func setupTimeSlotView(){
-        
-    }
-    
-    private func setupPeopleView(){
-        
-    }
+    func setupTextField()
     
 }
