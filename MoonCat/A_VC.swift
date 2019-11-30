@@ -13,7 +13,7 @@ class A_VC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.green
+        self.view.backgroundColor = UIColor.systemRed
         
         print("Hello from A_VC")
     }
@@ -25,7 +25,7 @@ class A_VC1: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.blue
+        self.view.backgroundColor = UIColor.systemYellow
         
         print("Hello from A_VC")
     }
@@ -37,7 +37,7 @@ class A_VC2: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.red
+        self.view.backgroundColor = UIColor.systemGreen
         
         print("Hello from A_VC")
     }
@@ -49,7 +49,7 @@ class A_VC3: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.yellow
+        self.view.backgroundColor = UIColor.systemTeal
         
         print("Hello from A_VC")
     }

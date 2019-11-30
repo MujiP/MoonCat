@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Bagel.start()
         
-        // Setup transition style and navagation
+        // Setup transition style and navigation
         let pageViewController = EventCreation_VC(transitionStyle: UIPageViewController.TransitionStyle.scroll, navigationOrientation: UIPageViewController.NavigationOrientation.horizontal)
         self.window = UIWindow()
         self.window?.rootViewController = pageViewController
