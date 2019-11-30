@@ -10,6 +10,7 @@
 		30CC631AEA92C04F13CA3463 /* Pods_MoonCat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE384059984994862B6A2B2 /* Pods_MoonCat.framework */; };
 		4AD5F8242391D2D500922C57 /* EventCreation_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD5F8222391D2D500922C57 /* EventCreation_VC.swift */; };
 		4AD5F8252391D2D500922C57 /* EventCreationPage_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD5F8232391D2D500922C57 /* EventCreationPage_VC.swift */; };
+		4AD5F8292393134B00922C57 /* EventCreationLayouts_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD5F8282393134B00922C57 /* EventCreationLayouts_VC.swift */; };
 		83D99CD12376736F007F96EE /* CreateEvent_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D99CD02376736F007F96EE /* CreateEvent_VC.swift */; };
 		83F4CF182377FEF900551751 /* EventInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F4CF172377FEF900551751 /* EventInfo.swift */; };
 		AE22F0D42378B774008256B4 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE22F0D32378B774008256B4 /* TabBar.swift */; };
@@ -59,6 +60,7 @@
 /* Begin PBXFileReference section */
 		4AD5F8222391D2D500922C57 /* EventCreation_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCreation_VC.swift; sourceTree = "<group>"; };
 		4AD5F8232391D2D500922C57 /* EventCreationPage_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCreationPage_VC.swift; sourceTree = "<group>"; };
+		4AD5F8282393134B00922C57 /* EventCreationLayouts_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCreationLayouts_VC.swift; sourceTree = "<group>"; };
 		7246F606AF6640AB0E16373B /* Pods-MoonCat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoonCat.release.xcconfig"; path = "Target Support Files/Pods-MoonCat/Pods-MoonCat.release.xcconfig"; sourceTree = "<group>"; };
 		83D99CD02376736F007F96EE /* CreateEvent_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEvent_VC.swift; sourceTree = "<group>"; };
 		83F4CF172377FEF900551751 /* EventInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfo.swift; sourceTree = "<group>"; };
@@ -210,8 +212,9 @@
 				83D99CD02376736F007F96EE /* CreateEvent_VC.swift */,
 				4AD5F8222391D2D500922C57 /* EventCreation_VC.swift */,
 				4AD5F8232391D2D500922C57 /* EventCreationPage_VC.swift */,
-				AEB5BF46237BED6E00727337 /* ref1@2x.png */,
 				AE22F0FB237B72A2008256B4 /* A_VC.swift */,
+				4AD5F8282393134B00922C57 /* EventCreationLayouts_VC.swift */,
+				AEB5BF46237BED6E00727337 /* ref1@2x.png */,
 				AE3814A2237269F9001F9A73 /* Assets.xcassets */,
 				AEB5BF4A237CC74D00727337 /* DarkThunder */,
 				AE22F0DD2378D7D7008256B4 /* Extensions */,
@@ -382,6 +385,7 @@
 				AEB5BF49237CC6D700727337 /* PromiseKitExtensions.swift in Sources */,
 				AE52FD23237B9A3500468DBE /* GazelleTabBar.swift in Sources */,
 				AE22F0FC237B72A2008256B4 /* A_VC.swift in Sources */,
+				4AD5F8292393134B00922C57 /* EventCreationLayouts_VC.swift in Sources */,
 				AE22F0F6237B6EE8008256B4 /* FadeAnimation.swift in Sources */,
 				AE22F0D42378B774008256B4 /* TabBar.swift in Sources */,
 				AE6F993523726A6A00533DC2 /* AppDelegate.swift in Sources */,

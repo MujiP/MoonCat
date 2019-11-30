@@ -112,10 +112,9 @@ class EventCreationPage_VC: UIViewController, UITextViewDelegate{
     }
     
     // Set up the page title View
-    func setUpTitle(title: String) {
+    func setUpTitle() {
         // style
         titleLabel.numberOfLines = 0
-        titleLabel.text = title
         titleLabel.textAlignment = .center
         titleLabel.textColor = UIColor.black
         titleLabel.adjustsFontSizeToFitWidth = false
@@ -123,10 +122,9 @@ class EventCreationPage_VC: UIViewController, UITextViewDelegate{
     }
     
     // Set up the page subtitle view (e.g, for further user instructions
-    func setupSubTitle(subtitle: String){
+    func setupSubTitle(){
         // style
         subtitleLabel.numberOfLines = 0
-        subtitleLabel.text = subtitle
         subtitleLabel.textAlignment = .center
         subtitleLabel.textColor = UIColor.gray
         subtitleLabel.adjustsFontSizeToFitWidth = false
@@ -135,13 +133,11 @@ class EventCreationPage_VC: UIViewController, UITextViewDelegate{
     
     // MARK: - DataEntry
     // Set up text filed view for user input
-    func setupTextField(defaultText: String, color: UIColor){
+    func setupTextField(){
         // style
-        textField.text = defaultText
         textField.textColor = UIColor.lightGray
         textField.textAlignment = .center
         textField.font = UIFont(name: "verdana", size: 14.0)
-        textField.backgroundColor = color
         // close keyboard if user clicks done
         textField.returnKeyType = .done
         textField.delegate = self

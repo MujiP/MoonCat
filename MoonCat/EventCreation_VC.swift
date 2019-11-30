@@ -42,11 +42,9 @@ class PageDataSource: NSObject, UIPageViewControllerDataSource {
     // load pages as UIViews
     private func setPages() -> Void{
         //TODO
-        let page0 = A_VC()
-        let page1 = A_VC1()
-        let page2 = A_VC2()
-        let page3 = A_VC3()
-        self.pages.append(contentsOf: [page0, page1, page2, page3])
+        let page1 = DescEntryPage()
+        let page2 = TimeSelectPage()
+        self.pages.append(contentsOf: [page1, page2])
     }
     
     
