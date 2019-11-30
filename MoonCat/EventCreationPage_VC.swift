@@ -7,69 +7,144 @@
 //
 import UIKit
 
-class EventCreationPages_VC: UIViewController, UITextViewDelegate{
+class EventCreationPage_VC: UIViewController, UITextViewDelegate{
     let titleLabel = UILabel()
     let subtitleLabel = UILabel()
     let topDecorator = UIView()
     let topControl = UIStackView()
+    let bodyContainer = UIStackView()
+    let topNavigation = UINavigationBar()
     var textField = UITextView()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = .white
+    
+    func setupTopNavigation(){
+//        topNavigation.barStyle = .blackTranslucent
+        let navItem = UINavigationItem(title: "")
+        let create = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
+        let cancel = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: nil)
+        navItem.rightBarButtonItem = create
+        navItem.leftBarButtonItem = cancel
+        topNavigation.setItems([navItem], animated: false)
+        view.addSubview(topNavigation)
+        topNavigation.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            topNavigation.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor),
+            topNavigation.leadingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.leadingAnchor),
+            topNavigation.trailingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.trailingAnchor),
+            topNavigation.heightAnchor.constraint(equalToConstant: view.frame.height/18)
+        ])
+    }
+    
+    // MARK: - TopControl
+    func setupTopControl() {
         
+        // TODO: Add actual control
+        // TODO: Make button icons in grafitti style
+        let cancelButton = UIButton(type: .custom)
+        cancelButton.setTitle("Cancel", for: .normal)
+        cancelButton.setTitleColor(.systemBlue, for: .normal)
+
+        let createButton = UIButton(type: .custom)
+        createButton.setTitle("Create", for: .normal)
+        createButton.setTitleColor(.systemGray, for: .disabled)
+        createButton.setTitleColor(.systemBlue, for: .normal)
+
+        
+        // reserved
+        let topTitle = UILabel()
+        topTitle.numberOfLines = 0
+        topTitle.textAlignment = .center
+        topTitle.text = " "
+        topTitle.textColor = UIColor.black
+        topTitle.adjustsFontSizeToFitWidth = false
+        topTitle.font = .boldSystemFont(ofSize: 20)
+        
+        topControl.addArrangedSubview(cancelButton)
+        topControl.addArrangedSubview(topTitle)
+        topControl.addArrangedSubview(createButton)
+
+//        topControl.layoutMargins = UIEdgeInsets(top: 2, left: 20, bottom: 2, right: 20)
+//        topControl.isLayoutMarginsRelativeArrangement = true
+        topControl.axis = .horizontal
+        topControl.distribution = .fillEqually
+        view.addSubview(topControl)
+        topControl.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            topControl.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor),
+            topControl.leadingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.leadingAnchor),
+            topControl.trailingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.trailingAnchor),
+            topControl.heightAnchor.constraint(equalToConstant: view.frame.height/18)
+        ])
     }
     
-    // function for setting up the main title of the page
-    func setUpTitle() {
-       titleLabel.numberOfLines = 0
-       titleLabel.textAlignment = .center
-       titleLabel.textColor = UIColor.black
-       titleLabel.adjustsFontSizeToFitWidth = false
-       titleLabel.font = titleLabel.font.withSize(20)
-       titleLabel.translatesAutoresizingMaskIntoConstraints = false
-       self.view.addSubview(titleLabel)
-       NSLayoutConstraint.activate([
-           titleLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 130.0),
-           titleLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0),
-           titleLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.0)
-       ])
+    func setupTopDecor(color: UIColor){
+        topDecorator.backgroundColor = color
+        topDecorator.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(topDecorator)
+        NSLayoutConstraint.activate([topDecorator.leadingAnchor.constraint(equalTo:view.leadingAnchor),
+        topDecorator.trailingAnchor.constraint(equalTo:view.trailingAnchor),
+        topDecorator.heightAnchor.constraint(equalToConstant: view.frame.height/9)])
     }
     
-    // function for adding a subtitle below main title (e.g, for further user instructions
-    func setupSubTitle(){
+    // MARK: - PageBody
+    
+    // Holding content with stackview for easy auto layout
+    func setupBodyContainer() {
+        bodyContainer.axis = .vertical
+        bodyContainer.layoutMargins = UIEdgeInsets(top: 2, left: 10, bottom: 2, right: 10)
+        bodyContainer.isLayoutMarginsRelativeArrangement = true
+        bodyContainer.distribution = .fillEqually
+        bodyContainer.spacing = .ulpOfOne
+        view.addSubview(bodyContainer)
+        bodyContainer.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            bodyContainer.topAnchor.constraint(equalTo:topControl.bottomAnchor),
+            bodyContainer.leadingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.leadingAnchor),
+            bodyContainer.trailingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.trailingAnchor),
+            bodyContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
+    
+    // Add views into page body from top down
+    func addToBodyContainer(views: Array<UIView>){
+        for view in views{
+            bodyContainer.addArrangedSubview(view)
+        }
+    }
+    
+    // Set up the page title View
+    func setUpTitle(title: String) {
+        // style
+        titleLabel.numberOfLines = 0
+        titleLabel.text = title
+        titleLabel.textAlignment = .center
+        titleLabel.textColor = UIColor.black
+        titleLabel.adjustsFontSizeToFitWidth = false
+        titleLabel.font = .monospacedDigitSystemFont(ofSize: 30, weight: .heavy)
+    }
+    
+    // Set up the page subtitle view (e.g, for further user instructions
+    func setupSubTitle(subtitle: String){
+        // style
         subtitleLabel.numberOfLines = 0
+        subtitleLabel.text = subtitle
         subtitleLabel.textAlignment = .center
         subtitleLabel.textColor = UIColor.gray
         subtitleLabel.adjustsFontSizeToFitWidth = false
         subtitleLabel.font = subtitleLabel.font.withSize(18)
-        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(subtitleLabel)
-        NSLayoutConstraint.activate([
-            subtitleLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 160.0),
-            subtitleLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0),
-            subtitleLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.0),
-        ])
     }
     
     // MARK: - DataEntry
-    // function to set up a text view that allows user to type multiple lines of text
-    func setupTextField(){
-        //textField.text = "Let others know what your event is about..."
+    // Set up text filed view for user input
+    func setupTextField(defaultText: String, color: UIColor){
+        // style
+        textField.text = defaultText
         textField.textColor = UIColor.lightGray
         textField.textAlignment = .center
         textField.font = UIFont(name: "verdana", size: 14.0)
+        textField.backgroundColor = color
         // close keyboard if user clicks done
         textField.returnKeyType = .done
         textField.delegate = self
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(textField)
-        NSLayoutConstraint.activate([
-            textField.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 200.0),
-            textField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0),
-            textField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.0),
-            textField.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -16.0)
-        ])
         
     }
     
@@ -100,62 +175,7 @@ class EventCreationPages_VC: UIViewController, UITextViewDelegate{
         return true
     }
 
-    /*
-    // MARK: - Navigation
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
-    // MARK: - TopControl
-    func setupTopControl() {
-        
-        
-        let cancelButton = UIButton(type: .system)
-        cancelButton.setTitle("Cancel", for: .normal)
-        cancelButton.setTitleColor(.systemBlue, for: .normal)
-        
-        
-        let createButton = UIButton(type: .system)
-        createButton.setTitle("Create", for: .normal)
-        createButton.setTitleColor(.systemGray, for: .disabled)
-        createButton.setTitleColor(.systemBlue, for: .normal)
-        
-        // reserved
-        let topTitle = UILabel()
-        topTitle.numberOfLines = 0
-        topTitle.textAlignment = .center
-        topTitle.text = " "
-        topTitle.textColor = UIColor.black
-        topTitle.adjustsFontSizeToFitWidth = false
-        topTitle.font = .boldSystemFont(ofSize: 20)
-        
-        topControl.addArrangedSubview(cancelButton)
-        topControl.addArrangedSubview(createButton)
-        topControl.addArrangedSubview(topTitle)
-        
-        topControl.axis = .horizontal
-        topControl.distribution = .fillEqually
-        view.addSubview(topControl)
-        topControl.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            topControl.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor),
-            topControl.leadingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.leadingAnchor),
-            topControl.trailingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.trailingAnchor),
-            topControl.heightAnchor.constraint(equalToConstant: view.frame.height/18)
-        ])
-    }
-    
-    func setupTopDecor(){
-        topDecorator.backgroundColor = .groupTableViewBackground
-        topDecorator.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(topDecorator)
-        NSLayoutConstraint.activate([topDecorator.leadingAnchor.constraint(equalTo:view.leadingAnchor),
-        topDecorator.trailingAnchor.constraint(equalTo:view.trailingAnchor),
-        topDecorator.heightAnchor.constraint(equalToConstant: view.frame.height/9)])
-    }
 }
 
 

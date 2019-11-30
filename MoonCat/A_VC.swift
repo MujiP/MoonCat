@@ -8,91 +8,46 @@
 import UIKit
 
 // Description
-class A_VC: UIViewController, UITextViewDelegate {
-    var titleLabel = UILabel()
-    var textField = UITextView()
-     let placeholder = "Let others know what your event is about..."
-    let pageTitle = "Event Description"
+class A_VC: EventCreationPage_VC {
+    let pageTitle:String = "Tell people more about your awesome event!"
+    let placeholder:String = "Say..."
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemYellow
         
-        self.view.backgroundColor = UIColor.white
-        setupTextField()
-        setUpTitle()
-        print("Hello from A_VC")
+        setupTopDecor(color: UIColor.init(white: 1, alpha: 0.80))
+        setupTopControl()
+        //setupTopNavigation()
+        setUpTitle(title: pageTitle)
+        setupTextField(defaultText: placeholder, color: UIColor.init(white: 0.95, alpha: 0.5))
+        setupBodyContainer()
+        addToBodyContainer(views: [self.titleLabel, self.textField])
+        print("live")
     }
     
-    func setUpTitle() {
-       titleLabel.numberOfLines = 0
-       titleLabel.textAlignment = .center
-        titleLabel.text = pageTitle
-       titleLabel.textColor = UIColor.black
-       titleLabel.adjustsFontSizeToFitWidth = false
-       titleLabel.font = titleLabel.font.withSize(20)
-       titleLabel.translatesAutoresizingMaskIntoConstraints = false
-       self.view.addSubview(titleLabel)
-       NSLayoutConstraint.activate([
-           titleLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 130.0),
-           titleLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0),
-           titleLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.0)
-       ])
-    }
-    
-    func setupTextField(){
-        textField.text = placeholder
-        textField.textColor = UIColor.lightGray
-        textField.textAlignment = .center
-        textField.font = UIFont(name: "verdana", size: 14.0)
-        textField.returnKeyType = .done
-        textField.delegate = self
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(textField)
-        NSLayoutConstraint.activate([
-            textField.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 200.0),
-            textField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0),
-            textField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.0),
-            textField.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -16.0)
-        ])
-        
-    }
-    
-    //MARK: - UITextViewDelegates
-    func textViewDidBeginEditing(_ textView: UITextView) {
-           if textField.text == placeholder{
-               textField.text = ""
-               textField.textColor = UIColor.black
-               textField.font = UIFont(name: "verdana", size: 14.0)
-           }
-           
-       }
-       
-    func textViewDidEndEditing(_ textView: UITextView) {
-           if textField.text == ""{
-               textField.text = placeholder
-               textField.textColor = UIColor.lightGray
-               textField.font = UIFont(name: "verdana", size: 14.0)
-           }
-       }
-       
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-           if text == "\n"{
-               textField.resignFirstResponder()
-           }
-           
-           return true
-       }
+ 
 
 }
 
 // Tags
-class A_VC1: UIViewController {
+class A_VC1: EventCreationPage_VC {
+    let pageTitle:String = "Event Description"
+    let placeholder:String = "Let others know what your event is about..."
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.systemYellow
+        self.view.backgroundColor = .white
         
-        print("Hello from A_VC")
+        setupTopDecor(color: UIColor.groupTableViewBackground)
+        setupTopControl()
+        //setupTopNavigation()
+        setUpTitle(title: pageTitle)
+        setupTextField(defaultText: placeholder, color:UIColor.white)
+        setupBodyContainer()
+        addToBodyContainer(views: [self.titleLabel, self.textField])
+        print("Minimal")
     }
 
 }

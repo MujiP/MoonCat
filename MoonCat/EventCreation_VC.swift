@@ -99,8 +99,6 @@ class PageDataSource: NSObject, UIPageViewControllerDataSource {
         return self.pages.count
     }
     
-    // unfinished
-    // error handling
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
         return currentIndex
     }
