@@ -27,9 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Bagel.start()
         
         // Setup transition style and navigation
-        let pageViewController = EventCreation_VC(transitionStyle: UIPageViewController.TransitionStyle.scroll, navigationOrientation: UIPageViewController.NavigationOrientation.horizontal)
         self.window = UIWindow()
-        self.window?.rootViewController = pageViewController
+        
+        // let eventCreation_VC = EventCreation_VC(transitionStyle: UIPageViewController.TransitionStyle.scroll, navigationOrientation: UIPageViewController.NavigationOrientation.horizontal)
+        // self.window?.rootViewController = eventCreation_VC()
+        self.window?.rootViewController = Root_VC()
         self.window?.makeKeyAndVisible()
         
         return true

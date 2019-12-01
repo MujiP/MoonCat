@@ -39,10 +39,14 @@ class EventCreationPage_VC: UIViewController{
     
 // MARK: - Controls
     @objc func didFinishCreateEvent(){
-        assert(eventDesc.isEmpty)
-        assert(startDateTime.isEmpty)
-        assert(location.isEmpty)
-        assert(maxPeople.isEmpty)
+        print(eventDesc)
+        print(startDateTime)
+        print(location)
+        print(maxPeople)
+        assert(!eventDesc.isEmpty)
+        assert(!startDateTime.isEmpty)
+        assert(!location.isEmpty)
+        assert(!maxPeople.isEmpty)
 
         //MARK: ------ export data here: -------
         
@@ -66,6 +70,34 @@ class EventCreationPage_VC: UIViewController{
 // MARK: - Shared Views
     
     // MARK: - TopNavigation
+    func setupTopNavigation(){
+        // Hacky transparent
+        topNavigation.setBackgroundImage(UIImage(), for: .default)
+        topNavigation.shadowImage = UIImage()
+        topNavigation.isTranslucent = true
+
+        
+        // system icon
+        topNavigation.tintColor = .black
+        let navItem = UINavigationItem(title: "")
+        // let create = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
+        let cancel = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(cancelEventCreation))
+        navItem.rightBarButtonItem = cancel
+        // navItem.rightBarButtonItem = create
+        topNavigation.setItems([navItem], animated: true)
+        
+        // Auto layout
+        view.insertSubview(topNavigation, aboveSubview: topDecorator)
+        topNavigation.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            topNavigation.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor),
+            topNavigation.leadingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.leadingAnchor),
+            topNavigation.trailingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.trailingAnchor),
+            topNavigation.heightAnchor.constraint(equalToConstant: view.frame.height/18)
+        ])
+    }
+    
+    // Unused
     func setupTopControl() {
         
         // Button
@@ -111,34 +143,6 @@ class EventCreationPage_VC: UIViewController{
             topControl.leadingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.leadingAnchor),
             topControl.trailingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.trailingAnchor),
             topControl.heightAnchor.constraint(equalToConstant: view.frame.height/18)
-        ])
-    }
-    
-    // Unused
-    func setupTopNavigation(){
-        // Hacky transparent
-        topNavigation.setBackgroundImage(UIImage(), for: .default)
-        topNavigation.shadowImage = UIImage()
-        topNavigation.isTranslucent = true
-
-        
-        // system icon
-        topNavigation.tintColor = .black
-        let navItem = UINavigationItem(title: "")
-        // let create = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
-        let cancel = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: nil)
-        navItem.rightBarButtonItem = cancel
-        // navItem.rightBarButtonItem = create
-        topNavigation.setItems([navItem], animated: true)
-        
-        // Auto layout
-        view.addSubview(topNavigation)
-        topNavigation.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            topNavigation.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor),
-            topNavigation.leadingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.leadingAnchor),
-            topNavigation.trailingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.trailingAnchor),
-            topNavigation.heightAnchor.constraint(equalToConstant: view.frame.height/18)
         ])
     }
     
