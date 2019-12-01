@@ -13,6 +13,16 @@ extension UIView {
         return CGPoint(x: self.bounds.midX, y: self.bounds.midY)
     }
     
+    func pinTo(_ v: UIView) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.leadingAnchor.constraint(equalTo: v.leadingAnchor),
+            self.trailingAnchor.constraint(equalTo: v.trailingAnchor),
+            self.topAnchor.constraint(equalTo: v.topAnchor),
+            self.bottomAnchor.constraint(equalTo: v.bottomAnchor)
+        ])
+    }
+    
     var intrinsicWidthConstraint: NSLayoutConstraint {
         return self.widthAnchor.constraint(equalToConstant: self.bounds.width)
     }
