@@ -11,7 +11,6 @@
 		4AD5F8242391D2D500922C57 /* EventCreation_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD5F8222391D2D500922C57 /* EventCreation_VC.swift */; };
 		4AD5F8252391D2D500922C57 /* EventCreationPage_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD5F8232391D2D500922C57 /* EventCreationPage_VC.swift */; };
 		4AD5F8292393134B00922C57 /* EventCreationLayouts_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD5F8282393134B00922C57 /* EventCreationLayouts_VC.swift */; };
-		83D99CD12376736F007F96EE /* CreateEvent_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D99CD02376736F007F96EE /* CreateEvent_VC.swift */; };
 		83F4CF182377FEF900551751 /* EventInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F4CF172377FEF900551751 /* EventInfo.swift */; };
 		AE22F0D42378B774008256B4 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE22F0D32378B774008256B4 /* TabBar.swift */; };
 		AE22F0D62378B891008256B4 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE22F0D52378B891008256B4 /* Tab.swift */; };
@@ -40,7 +39,6 @@
 		AEB5BF47237BED6E00727337 /* ref1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB5BF46237BED6E00727337 /* ref1@2x.png */; };
 		AEB5BF49237CC6D700727337 /* PromiseKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB5BF48237CC6D700727337 /* PromiseKitExtensions.swift */; };
 		AEB5BF4C237CC88E00727337 /* 🎟Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB5BF4B237CC88E00727337 /* 🎟Event.swift */; };
-		B3DDA131237D21BA000C20EA /* AutoComplete_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DDA130237D21BA000C20EA /* AutoComplete_VC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -62,7 +60,6 @@
 		4AD5F8232391D2D500922C57 /* EventCreationPage_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCreationPage_VC.swift; sourceTree = "<group>"; };
 		4AD5F8282393134B00922C57 /* EventCreationLayouts_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCreationLayouts_VC.swift; sourceTree = "<group>"; };
 		7246F606AF6640AB0E16373B /* Pods-MoonCat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoonCat.release.xcconfig"; path = "Target Support Files/Pods-MoonCat/Pods-MoonCat.release.xcconfig"; sourceTree = "<group>"; };
-		83D99CD02376736F007F96EE /* CreateEvent_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEvent_VC.swift; sourceTree = "<group>"; };
 		83F4CF172377FEF900551751 /* EventInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfo.swift; sourceTree = "<group>"; };
 		AE22F0D32378B774008256B4 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		AE22F0D52378B891008256B4 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
@@ -93,7 +90,6 @@
 		AEB5BF48237CC6D700727337 /* PromiseKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromiseKitExtensions.swift; sourceTree = "<group>"; };
 		AEB5BF4B237CC88E00727337 /* 🎟Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎟Event.swift"; sourceTree = "<group>"; };
 		B24AF53C344CB3394E946627 /* Pods-MoonCat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoonCat.debug.xcconfig"; path = "Target Support Files/Pods-MoonCat/Pods-MoonCat.debug.xcconfig"; sourceTree = "<group>"; };
-		B3DDA130237D21BA000C20EA /* AutoComplete_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoComplete_VC.swift; sourceTree = "<group>"; };
 		CBE384059984994862B6A2B2 /* Pods_MoonCat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoonCat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -208,8 +204,6 @@
 				AE6F993423726A6A00533DC2 /* AppDelegate.swift */,
 				83F4CF172377FEF900551751 /* EventInfo.swift */,
 				AE38149D237269F7001F9A73 /* Root_VC.swift */,
-				B3DDA130237D21BA000C20EA /* AutoComplete_VC.swift */,
-				83D99CD02376736F007F96EE /* CreateEvent_VC.swift */,
 				4AD5F8222391D2D500922C57 /* EventCreation_VC.swift */,
 				4AD5F8232391D2D500922C57 /* EventCreationPage_VC.swift */,
 				4AD5F8282393134B00922C57 /* EventCreationLayouts_VC.swift */,
@@ -378,7 +372,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3DDA131237D21BA000C20EA /* AutoComplete_VC.swift in Sources */,
 				83F4CF182377FEF900551751 /* EventInfo.swift in Sources */,
 				AE22F0F8237B6F5E008256B4 /* SlideAnimation.swift in Sources */,
 				AE22F0D82378BB42008256B4 /* SpacingStrategy.swift in Sources */,
@@ -397,7 +390,6 @@
 				AEB5BF4C237CC88E00727337 /* 🎟Event.swift in Sources */,
 				AE22F0DC2378CE51008256B4 /* TabConfig.swift in Sources */,
 				AE38149E237269F7001F9A73 /* Root_VC.swift in Sources */,
-				83D99CD12376736F007F96EE /* CreateEvent_VC.swift in Sources */,
 				AE22F0D62378B891008256B4 /* Tab.swift in Sources */,
 				AE22F0E52378D7D7008256B4 /* X_UILabel.swift in Sources */,
 				4AD5F8252391D2D500922C57 /* EventCreationPage_VC.swift in Sources */,

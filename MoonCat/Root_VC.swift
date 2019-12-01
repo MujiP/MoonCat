@@ -51,8 +51,8 @@ class Root_VC: UIViewController {
     @objc func handleTap() {
         
         // TODO: present the create event vc
-        let vc = CreateEvent_VC()
-        self.welcomeChild(vc, frame: self.view.bounds)
+        let create = EventCreation_VC(transitionStyle: UIPageViewController.TransitionStyle.scroll, navigationOrientation: UIPageViewController.NavigationOrientation.horizontal)
+        self.welcomeChild(create, frame: self.view.bounds)
     }
 
 

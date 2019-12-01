@@ -45,12 +45,15 @@ class PageDataSource: NSObject, UIPageViewControllerDataSource {
         //
         let page1 = live()
         let page2 = live2()
-        let page3 = DescEntryPage()
-        let page4 = TimeSelectPage()
-        let page5 = LocationEntryPage()
-        let page6 = TagEntryPage()
-        let page7 = MemberRestrainPage()
-        self.pages.append(contentsOf: [page1, page2, page3, page4, page5, page6, page7])
+        let page3 = live3()
+        let page4 = live4()
+        let page5 = live5()
+        let page6 = DescEntryPage()
+        let page7 = TimeSelectPage()
+        let page8 = LocationEntryPage()
+        let page9 = TagEntryPage()
+        let page10 = MemberRestrainPage()
+        self.pages.append(contentsOf: [page1, page2, page3, page4, page5, page6, page7, page8, page9, page10])
     }
     
     

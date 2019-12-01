@@ -35,6 +35,7 @@ class EventCreationPage_VC: UIViewController{
     var endTime = String()
     var location = String()
     var maxPeople = String()
+    var tags = [String]()
 
     
     
@@ -42,6 +43,8 @@ class EventCreationPage_VC: UIViewController{
     @objc func didFinishCreateEvent(){
         assert(eventDesc.isEmpty)
         assert(startTime.isEmpty)
+        assert(location.isEmpty)
+        assert(maxPeople.isEmpty)
         let data = EventInfo(eventName: eventDesc,
                              location: location,
                              category: category,
