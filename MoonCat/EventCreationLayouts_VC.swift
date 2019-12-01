@@ -2,7 +2,7 @@
 //  EventCreationLayouts_VC.swift
 //  MoonCat
 //
-//  Created by Kirk on 11/30/19.
+//  Created by Kirk Lu on 11/30/19.
 //  Copyright © 2019 Bolusaur. All rights reserved.
 //
 
@@ -19,7 +19,7 @@ class DescEntryPage: EventCreationPage_VC, UITextViewDelegate{
         super.viewDidLoad()
         view.backgroundColor = .white
         setupTopDecor(color: .groupTableViewBackground)
-        setupTopControl()
+        setupTopNavigation()
         setupTextField()
         setUpTitle()
         setupBodyContainer()
@@ -78,7 +78,7 @@ class TimeSelectPage: EventCreationPage_VC, UITextFieldDelegate{
         self.bodyContainer.isLayoutMarginsRelativeArrangement = true
         // Top Navigation
         setupTopDecor(color: .groupTableViewBackground)
-        setupTopControl()
+        setupTopNavigation()
 
         // Body Content
         setUpTitle()
@@ -174,7 +174,7 @@ class LocationEntryPage: EventCreationPage_VC, UITextFieldDelegate{
         view.backgroundColor = .white
         
         setupTopDecor(color: .groupTableViewBackground)
-        setupTopControl()
+        setupTopNavigation()
         setUpTitle()
         setupLocation()
         
@@ -301,7 +301,7 @@ class TagEntryPage: EventCreationPage_VC{
         
         
         setupTopDecor(color: .groupTableViewBackground)
-        setupTopControl()
+        setupTopNavigation()
         setUpTitle()
         setupBodyContainer()
         addToContainer(views: [titleLabel, tagList], container: bodyContainer)
@@ -385,7 +385,7 @@ class MemberRestrainPage: EventCreationPage_VC, UIPickerViewDataSource, UIPicker
         view.backgroundColor = .white
         // Top Navigation
         setupTopDecor(color: .groupTableViewBackground)
-        setupTopControl()
+        setupTopNavigation()
 
         // Body Content
         setUpTitle()
@@ -455,7 +455,7 @@ class live: DescEntryPage {
         
         // Top navigation
         setupTopDecor(color: UIColor.init(white: 1, alpha: 0.80))
-        setupTopControl()
+        setupTopNavigation()
         
         // Body Content
         setUpTitle()
@@ -486,7 +486,7 @@ class live2: TimeSelectPage{
         self.bodyContainer.isLayoutMarginsRelativeArrangement = true
         // Top Navigation
         setupTopDecor(color: UIColor.init(white: 1, alpha: 0.70))
-        setupTopControl()
+        setupTopNavigation()
 
         // Body Content
         setUpTitle()
@@ -515,7 +515,7 @@ class live3: LocationEntryPage {
         view.backgroundColor = .systemGreen
         
         setupTopDecor(color: UIColor.init(white: 1, alpha: 0.70))
-        setupTopControl()
+        setupTopNavigation()
         setUpTitle()
         setupLocation()
         
@@ -541,7 +541,7 @@ class live4: TagEntryPage {
         
         
         setupTopDecor(color: UIColor.init(white: 1, alpha: 0.70))
-        setupTopControl()
+        setupTopNavigation()
         setUpTitle()
         titleLabel.textColor = .white
 
@@ -557,7 +557,7 @@ class live5: MemberRestrainPage {
         view.backgroundColor = .systemOrange
         // Top Navigation
         setupTopDecor(color: UIColor.init(white: 1, alpha: 0.70))
-        setupTopControl()
+        setupTopNavigation()
 
         // Body Content
         setUpTitle()

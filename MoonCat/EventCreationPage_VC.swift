@@ -10,7 +10,7 @@ import UIKit
 
 // Parent VC for one page to be extend and/or override
 class EventCreationPage_VC: UIViewController{
-    // MARK: - View Initialization
+    // MARK: - Shard View Initialization
     // Top navigation
     let topDecorator = UIView()    // Colored background
     let topControl = UIStackView() // Navigation with horizontal stack view or..
@@ -28,12 +28,10 @@ class EventCreationPage_VC: UIViewController{
     var textField = UITextView()    // Simple DataEntry point
     
     // MARK: - Data Initialzation
-    var category = String()
-    var eventName = String()
     var eventDesc = String()
-    var startTime = String()
-    var endTime = String()
+    var startDateTime = String()
     var location = String()
+    var aera = String()
     var maxPeople = String()
     var tags = [String]()
 
@@ -42,18 +40,11 @@ class EventCreationPage_VC: UIViewController{
 // MARK: - Controls
     @objc func didFinishCreateEvent(){
         assert(eventDesc.isEmpty)
-        assert(startTime.isEmpty)
+        assert(startDateTime.isEmpty)
         assert(location.isEmpty)
         assert(maxPeople.isEmpty)
-        let data = EventInfo(eventName: eventDesc,
-                             location: location,
-                             category: category,
-                             startTime: startTime,
-                             endTime: endTime,
-                             description: eventDesc,
-                             maxNumPeople: eventName,
-                             showContact: false)
-        //MARK: - export data
+
+        //MARK: ------ export data here: -------
         
         
         dismiss(animated: true, completion: nil)
@@ -65,29 +56,28 @@ class EventCreationPage_VC: UIViewController{
     }
     
     func reloadData(){
-        category = ""
-        eventName = ""
         eventDesc = ""
-        startTime = ""
-        endTime = ""
+        startDateTime = ""
         location = ""
         maxPeople = ""
+        tags.removeAll()
     }
 
-// MARK: - Views
-    // MARK: - TopControl
+// MARK: - Shared Views
+    
+    // MARK: - TopNavigation
     func setupTopControl() {
         
-        // Buttons
-        // TODO: Add actual control
-        // TODO: Make button icons in grafitti style
-        let cancelButton = UIButton(type: .custom)
+        // Button
+        let cancelButton = UIButton(type: .system)
         cancelButton.setTitle("Cancel", for: .normal)
         cancelButton.setTitleColor(.systemBlue, for: .normal)
         cancelButton.addTarget(self, action: #selector(self.cancelEventCreation), for: .touchUpInside)
 
+
+        // reserved button - unused
         let createButton = UIButton(type: .custom)
-        createButton.setTitle("Create", for: .normal)
+        createButton.setTitle("", for: .normal)
         createButton.setTitleColor(.systemGray, for: .disabled)
         createButton.setTitleColor(.systemBlue, for: .normal)
         createButton.addTarget(self, action: #selector(self.didFinishCreateEvent), for: .touchUpInside)
@@ -95,7 +85,7 @@ class EventCreationPage_VC: UIViewController{
         createButton.isEnabled = false
 
         
-        // reserved title
+        // reserved title - unused
         let topTitle = UILabel()
         topTitle.numberOfLines = 0
         topTitle.textAlignment = .center
@@ -105,9 +95,10 @@ class EventCreationPage_VC: UIViewController{
         topTitle.font = .boldSystemFont(ofSize: 20)
         
         // Stack setup
-        topControl.addArrangedSubview(cancelButton)
-        topControl.addArrangedSubview(topTitle)
         topControl.addArrangedSubview(createButton)
+        topControl.addArrangedSubview(topTitle)
+        topControl.addArrangedSubview(cancelButton)
+
 
         topControl.axis = .horizontal
         topControl.distribution = .fillEqually
@@ -123,13 +114,24 @@ class EventCreationPage_VC: UIViewController{
         ])
     }
     
+    // Unused
     func setupTopNavigation(){
+        // Hacky transparent
+        topNavigation.setBackgroundImage(UIImage(), for: .default)
+        topNavigation.shadowImage = UIImage()
+        topNavigation.isTranslucent = true
+
+        
+        // system icon
+        topNavigation.tintColor = .black
         let navItem = UINavigationItem(title: "")
-        let create = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
+        // let create = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
         let cancel = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: nil)
-        navItem.rightBarButtonItem = create
-        navItem.leftBarButtonItem = cancel
-        topNavigation.setItems([navItem], animated: false)
+        navItem.rightBarButtonItem = cancel
+        // navItem.rightBarButtonItem = create
+        topNavigation.setItems([navItem], animated: true)
+        
+        // Auto layout
         view.addSubview(topNavigation)
         topNavigation.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -140,7 +142,7 @@ class EventCreationPage_VC: UIViewController{
         ])
     }
     
-    // Background Setup
+    // Top Navigtion Background Setup
     func setupTopDecor(color: UIColor){
         topDecorator.backgroundColor = color
         topDecorator.translatesAutoresizingMaskIntoConstraints = false
@@ -161,7 +163,7 @@ class EventCreationPage_VC: UIViewController{
         view.addSubview(bodyContainer)
         bodyContainer.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            bodyContainer.topAnchor.constraint(equalTo:topControl.bottomAnchor),
+            bodyContainer.topAnchor.constraint(equalTo:topNavigation.bottomAnchor),
             bodyContainer.leadingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.leadingAnchor),
             bodyContainer.trailingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.trailingAnchor),
             bodyContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
@@ -209,7 +211,6 @@ class EventCreationPage_VC: UIViewController{
         subtitleLabel.font = subtitleLabel.font.withSize(18)
     }
     
-    // MARK: - DataEntry
     // Set up text filed view for user input
     func setupTextField(){
         // style
@@ -226,19 +227,22 @@ class EventCreationPage_VC: UIViewController{
 // Custom textField for picker
 class PickerTextField: UITextField, UITextFieldDelegate{
     
-    
+    // disable edit
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return false
     }
     
+    // disable cursor
     override func caretRect(for position: UITextPosition) -> CGRect {
         return CGRect.zero
     }
-
+    
+    // disable selection
     override func selectionRects(for range: UITextRange) -> [UITextSelectionRect] {
         return []
     }
 
+    // disable copy/paste/selectall action
     override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
         if action == #selector(copy(_:)) || action == #selector(selectAll(_:)) || action == #selector(paste(_:)) {
             return false
