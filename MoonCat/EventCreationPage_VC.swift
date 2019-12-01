@@ -9,17 +9,69 @@ import UIKit
 
 
 // Parent VC for one page to be extend and/or override
-class EventCreationPage_VC: UIViewController, UITextViewDelegate{
-    let titleLabel = UILabel()
-    let subtitleLabel = UILabel()
-    let topDecorator = UIView()
-    let topControl = UIStackView()
-    let bodyContainer = UIStackView()
-    let topNavigation = UINavigationBar()
-    var textField = UITextView()
+class EventCreationPage_VC: UIViewController{
+    // Top navigation
+    let topDecorator = UIView()    // Colored background
+    let topControl = UIStackView() // Navigation with horizontal stack view or..
+    let topNavigation = UINavigationBar() // Navigation with normal navigation bar
+    
+    // Body containers
+    let bodyContainer = UIStackView()   // Whole body vertical stack containter
+    let slotContainer = UIStackView()   // Nested stack container
+    
+    // Titles
+    let titleLabel = UILabel()      // instruction
+    let subtitleLabel = UILabel()   // more
+
+
+    var textField = UITextView()    // Simple DataEntry point
+    
+    
+    // MARK: - TopControl
+    func setupTopControl() {
+        
+        // Buttons
+        // TODO: Add actual control
+        // TODO: Make button icons in grafitti style
+        let cancelButton = UIButton(type: .custom)
+        cancelButton.setTitle("Cancel", for: .normal)
+        cancelButton.setTitleColor(.systemBlue, for: .normal)
+
+        let createButton = UIButton(type: .custom)
+        createButton.setTitle("Create", for: .normal)
+        createButton.setTitleColor(.systemGray, for: .disabled)
+        createButton.setTitleColor(.systemBlue, for: .normal)
+
+        
+        // reserved title
+        let topTitle = UILabel()
+        topTitle.numberOfLines = 0
+        topTitle.textAlignment = .center
+        topTitle.text = " "
+        topTitle.textColor = UIColor.black
+        topTitle.adjustsFontSizeToFitWidth = false
+        topTitle.font = .boldSystemFont(ofSize: 20)
+        
+        // Stack setup
+        topControl.addArrangedSubview(cancelButton)
+        topControl.addArrangedSubview(topTitle)
+        topControl.addArrangedSubview(createButton)
+
+        topControl.axis = .horizontal
+        topControl.distribution = .fillEqually
+        
+        // autolayout
+        view.addSubview(topControl)
+        topControl.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            topControl.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor),
+            topControl.leadingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.leadingAnchor),
+            topControl.trailingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.trailingAnchor),
+            topControl.heightAnchor.constraint(equalToConstant: view.frame.height/18)
+        ])
+    }
     
     func setupTopNavigation(){
-//        topNavigation.barStyle = .blackTranslucent
         let navItem = UINavigationItem(title: "")
         let create = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
         let cancel = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: nil)
@@ -36,48 +88,7 @@ class EventCreationPage_VC: UIViewController, UITextViewDelegate{
         ])
     }
     
-    // MARK: - TopControl
-    func setupTopControl() {
-        
-        // TODO: Add actual control
-        // TODO: Make button icons in grafitti style
-        let cancelButton = UIButton(type: .custom)
-        cancelButton.setTitle("Cancel", for: .normal)
-        cancelButton.setTitleColor(.systemBlue, for: .normal)
-
-        let createButton = UIButton(type: .custom)
-        createButton.setTitle("Create", for: .normal)
-        createButton.setTitleColor(.systemGray, for: .disabled)
-        createButton.setTitleColor(.systemBlue, for: .normal)
-
-        
-        // reserved
-        let topTitle = UILabel()
-        topTitle.numberOfLines = 0
-        topTitle.textAlignment = .center
-        topTitle.text = " "
-        topTitle.textColor = UIColor.black
-        topTitle.adjustsFontSizeToFitWidth = false
-        topTitle.font = .boldSystemFont(ofSize: 20)
-        
-        topControl.addArrangedSubview(cancelButton)
-        topControl.addArrangedSubview(topTitle)
-        topControl.addArrangedSubview(createButton)
-
-//        topControl.layoutMargins = UIEdgeInsets(top: 2, left: 20, bottom: 2, right: 20)
-//        topControl.isLayoutMarginsRelativeArrangement = true
-        topControl.axis = .horizontal
-        topControl.distribution = .fillEqually
-        view.addSubview(topControl)
-        topControl.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            topControl.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor),
-            topControl.leadingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.leadingAnchor),
-            topControl.trailingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.trailingAnchor),
-            topControl.heightAnchor.constraint(equalToConstant: view.frame.height/18)
-        ])
-    }
-    
+    // Background Setup
     func setupTopDecor(color: UIColor){
         topDecorator.backgroundColor = color
         topDecorator.translatesAutoresizingMaskIntoConstraints = false
@@ -106,12 +117,26 @@ class EventCreationPage_VC: UIViewController, UITextViewDelegate{
         ])
     }
     
+        // MARK: - FIX THISSSSSSSSSSSSSSS
+    func setUpSlotContainer(){
+        slotContainer.axis = .vertical
+        slotContainer.layoutMargins =
+            UIEdgeInsets(top: 0,
+                        left: view.frame.width / 8,
+                        bottom:view.frame.height / 3,
+                        right: view.frame.width / 8)
+        slotContainer.isLayoutMarginsRelativeArrangement = true
+        slotContainer.distribution = .fillEqually
+    }
+    
     // Add views into page body from top down
-    func addToBodyContainer(views: Array<UIView>){
+    func addToContainer(views: Array<UIView>, container: UIStackView){
         for view in views{
             bodyContainer.addArrangedSubview(view)
         }
     }
+    
+    
     
     // Set up the page title View
     func setUpTitle() {
@@ -141,9 +166,7 @@ class EventCreationPage_VC: UIViewController, UITextViewDelegate{
         textField.textAlignment = .center
         textField.font = UIFont(name: "verdana", size: 14.0)
         // close keyboard if user clicks done
-        textField.returnKeyType = .done
-        textField.delegate = self
-        
+        textField.returnKeyType = .done        
     }
 
 

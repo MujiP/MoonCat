@@ -10,7 +10,7 @@ import UIKit
 import GooglePlaces
 
 // MARK: - description
-class DescEntryPage: EventCreationPage_VC{
+class DescEntryPage: EventCreationPage_VC, UITextViewDelegate{
 
     var placeholder = "Let others know what your event is about..."
     var pageTitle = "Event Description"
@@ -22,7 +22,7 @@ class DescEntryPage: EventCreationPage_VC{
         setupTextField()
         setUpTitle()
         setupBodyContainer()
-        addToBodyContainer(views: [self.titleLabel, self.textField])
+        addToContainer(views: [self.titleLabel, self.textField], container: bodyContainer)
         print("Description")
     }
     
@@ -68,7 +68,6 @@ class DescEntryPage: EventCreationPage_VC{
 class TimeSelectPage: EventCreationPage_VC, UITextFieldDelegate{
     let doneTimePick = UIToolbar()
     let pageTitle = "When is it happening..?"
-    let slotContainer = UIStackView()
     let timePicker = UIDatePicker()
     let startTimeText = PickerTextField()
     override func viewDidLoad() {
@@ -82,14 +81,12 @@ class TimeSelectPage: EventCreationPage_VC, UITextFieldDelegate{
         // Body Content
         setUpTitle()
         setUpStartTime()
-        setUptimeSlotContainer()
-
+        
+        setUpSlotContainer()
         slotContainer.addArrangedSubview(startTimeText)
-//        timeSlotContainer.addArrangedSubview(UIView())
-//        timeSlotContainer.addArrangedSubview(UIView())
 
         setupBodyContainer()
-        addToBodyContainer(views: [self.titleLabel, self.slotContainer])
+        addToContainer(views: [self.titleLabel, self.slotContainer], container: bodyContainer)
         print("Time")
     }
     
@@ -114,53 +111,53 @@ class TimeSelectPage: EventCreationPage_VC, UITextFieldDelegate{
         slotContainer.distribution = .fillEqually
     }
     
-        func setUpStartTime(){
-            // shape style
-            startTimeText.backgroundColor = .white
-            startTimeText.borderStyle = .roundedRect
-            startTimeText.layer.cornerRadius = 8.0
-            startTimeText.layer.masksToBounds = true
-            startTimeText.layer.borderWidth = 1.0
-            startTimeText.layer.borderColor = UIColor.lightGray.cgColor
-            startTimeText.translatesAutoresizingMaskIntoConstraints = false
-            
-            // text style
-            startTimeText.text = "Pick a time ../"
-            startTimeText.textColor = UIColor.lightGray
-            startTimeText.font = UIFont(name: "verdana", size: 14.0)
-            startTimeText.textAlignment = .center
-            startTimeText.delegate = self
-            
-            // picker
-            timePicker.datePickerMode  = .dateAndTime
-            timePicker.backgroundColor = .white
-            startTimeText.inputView = timePicker
-            createStartToolBar() // create the tool bar for date picker
-            startTimeText.inputAccessoryView = doneTimePick
-        }
-    
-        func createStartToolBar(){
-            // set up tool bar
-            doneTimePick.autoresizingMask = .flexibleHeight
-            doneTimePick.barStyle = .default
-            doneTimePick.barTintColor = .white
-            doneTimePick.backgroundColor = .white
-            doneTimePick.isTranslucent = false
-            
-            // add done button to toolbar
-            let startDoneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(startButtonTap(_:)))
-            startDoneButton.tintColor = .systemTeal
-            doneTimePick.items = [startDoneButton]
-        }
+    func setUpStartTime(){
+        // shape style
+        startTimeText.backgroundColor = .white
+        startTimeText.borderStyle = .roundedRect
+        startTimeText.layer.cornerRadius = 8.0
+        startTimeText.layer.masksToBounds = true
+        startTimeText.layer.borderWidth = 1.0
+        startTimeText.layer.borderColor = UIColor.lightGray.cgColor
+        startTimeText.translatesAutoresizingMaskIntoConstraints = false
         
-        @objc func startButtonTap(_ button: UIBarButtonItem){
-            // close date picker
-            startTimeText.resignFirstResponder()
-            let format = DateFormatter()
-            format.dateFormat = "dd-MM-yyyy HH:mm"
-            startTimeText.text = format.string(from: timePicker.date)
-        }
+        // text style
+        startTimeText.text = "Pick a time ../"
+        startTimeText.textColor = UIColor.lightGray
+        startTimeText.font = UIFont(name: "verdana", size: 14.0)
+        startTimeText.textAlignment = .center
+        startTimeText.delegate = self
+        
+        // picker
+        timePicker.datePickerMode  = .dateAndTime
+        timePicker.backgroundColor = .white
+        startTimeText.inputView = timePicker
+        createStartToolBar() // create the tool bar for date picker
+        startTimeText.inputAccessoryView = doneTimePick
+    }
+
+    func createStartToolBar(){
+        // set up tool bar
+        doneTimePick.autoresizingMask = .flexibleHeight
+        doneTimePick.barStyle = .default
+        doneTimePick.barTintColor = .white
+        doneTimePick.backgroundColor = .white
+        doneTimePick.isTranslucent = false
+        
+        // add done button to toolbar
+        let startDoneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(startButtonTap(_:)))
+        startDoneButton.tintColor = .systemTeal
+        doneTimePick.items = [startDoneButton]
+    }
     
+    @objc func startButtonTap(_ button: UIBarButtonItem){
+        // close date picker
+        startTimeText.resignFirstResponder()
+        let format = DateFormatter()
+        format.dateFormat = "dd-MM-yyyy HH:mm"
+        startTimeText.text = format.string(from: timePicker.date)
+    }
+
 }
 
 // MARK: - Max Number of people
@@ -239,12 +236,17 @@ class LocationEntryPage: EventCreationPage_VC, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        
         setupTopDecor(color: .groupTableViewBackground)
         setupTopControl()
         setUpTitle()
         setupLocation()
+        
+        setUpSlotContainer()
+        slotContainer.addArrangedSubview(locationText)
+        
         setupBodyContainer()
-        addToBodyContainer(views: [self.titleLabel, self.locationText])
+        addToContainer(views: [self.titleLabel, slotContainer], container: bodyContainer)
         print("Location")
     }
     
@@ -368,7 +370,7 @@ class tagEntryPage: EventCreationPage_VC, UIPickerViewDelegate, UIPickerViewData
         setupTags()
         setupTagButtons()
         setupBodyContainer()
-        addToBodyContainer(views: [self.titleLabel, self.textField])
+        addToContainer(views: [self.titleLabel, self.textField], container: bodyContainer)
         print("Tag")
      }
     override func setUpTitle() {
@@ -579,7 +581,7 @@ class live: DescEntryPage {
         setupTextField()
         textField.backgroundColor = .init(white: 0.95, alpha: 0.5)
         setupBodyContainer()
-        addToBodyContainer(views: [self.titleLabel, self.textField])
+        addToContainer(views: [self.titleLabel, self.textField], container: bodyContainer)
         print("live")
     }
     
@@ -619,7 +621,7 @@ class live2: TimeSelectPage{
 
         
         setupBodyContainer()
-        addToBodyContainer(views: [self.titleLabel, self.slotContainer])
+        addToContainer(views: [self.titleLabel, self.slotContainer], container: bodyContainer)
         print("Time")
     }
     
