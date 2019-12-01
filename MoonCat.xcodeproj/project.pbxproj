@@ -53,6 +53,8 @@
 		AEF7DF4B2392396A00C1BFF1 /* CircularLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7DF4A2392396A00C1BFF1 /* CircularLoader.swift */; };
 		AEF7DF512393315200C1BFF1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7DF502393315200C1BFF1 /* User.swift */; };
 		B3DDA131237D21BA000C20EA /* AutoComplete_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DDA130237D21BA000C20EA /* AutoComplete_VC.swift */; };
+		B3E9C6BA2393C27E00CEEAF7 /* ProfileGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9C6B82393C27E00CEEAF7 /* ProfileGroup.swift */; };
+		B3E9C6BB2393C27E00CEEAF7 /* Playground2_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9C6B92393C27E00CEEAF7 /* Playground2_VC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -118,6 +120,8 @@
 		AEF7DF502393315200C1BFF1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B24AF53C344CB3394E946627 /* Pods-MoonCat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoonCat.debug.xcconfig"; path = "Target Support Files/Pods-MoonCat/Pods-MoonCat.debug.xcconfig"; sourceTree = "<group>"; };
 		B3DDA130237D21BA000C20EA /* AutoComplete_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoComplete_VC.swift; sourceTree = "<group>"; };
+		B3E9C6B82393C27E00CEEAF7 /* ProfileGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileGroup.swift; sourceTree = "<group>"; };
+		B3E9C6B92393C27E00CEEAF7 /* Playground2_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playground2_VC.swift; sourceTree = "<group>"; };
 		CBE384059984994862B6A2B2 /* Pods_MoonCat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoonCat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -211,6 +215,8 @@
 				AEF7DF3C2390BE8E00C1BFF1 /* AllEvents_VC.swift */,
 				AEF7DF3E2390BEA400C1BFF1 /* YourEvents_VC.swift */,
 				AEF7DF2C238F964900C1BFF1 /* Event.swift */,
+				B3E9C6B92393C27E00CEEAF7 /* Playground2_VC.swift */,
+				B3E9C6B82393C27E00CEEAF7 /* ProfileGroup.swift */,
 				AEF7DF402390BF1E00C1BFF1 /* Displaying.swift */,
 				AE38149D237269F7001F9A73 /* Root_VC.swift */,
 				AEF7DF34238F9D5200C1BFF1 /* ref1@2x.png */,
@@ -393,6 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEF7DF33238F9B4D00C1BFF1 /* Tag.swift in Sources */,
+				B3E9C6BB2393C27E00CEEAF7 /* Playground2_VC.swift in Sources */,
 				B3DDA131237D21BA000C20EA /* AutoComplete_VC.swift in Sources */,
 				83F4CF182377FEF900551751 /* EventInfo.swift in Sources */,
 				AEF7DF4923922FC000C1BFF1 /* 🎟Leave.swift in Sources */,
@@ -419,6 +426,7 @@
 				AEF7DF3723907F8E00C1BFF1 /* Header.swift in Sources */,
 				AE22F0E92378D7D7008256B4 /* DevExtensions.swift in Sources */,
 				AEF7DF0D238CC3DA00C1BFF1 /* TabTransitionStyle.swift in Sources */,
+				B3E9C6BA2393C27E00CEEAF7 /* ProfileGroup.swift in Sources */,
 				AEB5BF4C237CC88E00727337 /* 🎟Event.swift in Sources */,
 				AE38149E237269F7001F9A73 /* Root_VC.swift in Sources */,
 				83D99CD12376736F007F96EE /* CreateEvent_VC.swift in Sources */,
