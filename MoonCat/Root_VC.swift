@@ -13,67 +13,41 @@ class Root_VC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         self.view.backgroundColor = UIColor.white
+        self.setupTabBar()
 
-        let vc = GazelleTabBar_VC(config: [
-            TabConfig("all_active", "all_inactive", A_VC.self),
-            TabConfig("coffee_active", "coffee_inactive", A_VC.self),
-            TabConfig("food_active", "food_inactive", A_VC.self),
-            TabConfig("study_active", "study_inactive", A_VC.self),
-            TabConfig("other_active", "other_inactive", A_VC.self),
-        ], startIndex: 0,
-           transitionStyle: .fade,
-           layoutStyle: .equal,
-           tabType: Tab.self)
+        
+    }
+    
+    func setupTabBar() {
+        let vc = TabBar_VC(config: [
+            TabConfig("list_active", "list_inactive", AllEvents_VC.self),
+            TabConfig("star_active", "star_inactive", YourEvents_VC.self)
+            ], startIndex: 0,
+               transitionStyle: .slide,
+               layoutStyle: .center(padding: 50),
+               tabType: Tab.self)
+        
         
         self.welcomeChild(vc) { (v) in
             self.view.addSubview(v)
             v.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
-                v.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 10),
-                v.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -10),
+                v.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0),
+                v.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0),
                 v.heightAnchor.constraint(equalToConstant: 50),
-                v.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0)
+                v.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0)
             ])
+            
+            let b = BlurView()
+            self.view.insertSubview(b, at: 0)
+            b.pinTo(v)
+            
         }
-
-
-//
-//        tabBar.backgroundColor = UIColor.red.withAlphaComponent(0.2)
-//
-//        self.view.addSubview(tabBar)
-//        tabBar.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            tabBar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-//            tabBar.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-//            tabBar.heightAnchor.constraint(equalToConstant: 50),
-//            tabBar.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100)
-//        ])
-        
-        
-        
-//        self.setReferenceImage(name: "ref1")
-        
-        let l = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 50))
-        l.backgroundColor = UIColor.blue
-        l.textAlignment = .center
-        l.textColor = UIColor.white
-        l.text = "New Event"
-        self.view.addSubview(l)
-        l.center = self.view.midPoint
-
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-        l.addGestureRecognizer(tap)
-        l.isUserInteractionEnabled = true
-        
     }
     
-    @objc func handleTap() {
-        self.welcomeChild(CreateEvent_VC()) { (v) in
-            v.frame = self.view.bounds
-            self.view.addSubview(v)
-        }
-    }
+
 
 
 }

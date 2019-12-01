@@ -47,6 +47,8 @@ class Tab: UIView {
         
         super.init(frame: activeImage.bounds)
         
+//        self.backgroundColor = UIColor.blue.withAlphaComponent(0.2)
+        
         self.addSubview(activeImage)
         self.addSubview(inactiveImage)
 
@@ -65,6 +67,9 @@ class Tab: UIView {
     func layoutContent() {
         self.inactiveImage.center = self.midPoint
         self.activeImage.center = self.midPoint
+        
+        self.inactiveImage.frame = self.inactiveImage.frame.integral
+        self.activeImage.frame = self.activeImage.frame.integral
     }
     
     /**
