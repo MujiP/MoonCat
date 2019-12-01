@@ -68,7 +68,7 @@ class DescEntryPage: EventCreationPage_VC, UITextViewDelegate{
 
 // MARK: - Time Selection
 class TimeSelectPage: EventCreationPage_VC, UITextFieldDelegate{
-    let doneTimePick = UIToolbar()
+    let doneTimePick = UIToolbar.init(frame: .init(x: 0, y: 0, width: 100, height: 100))
     let pageTitle = "When is it happening..?"
     let timePicker = UIDatePicker()
     let startTimeText = PickerTextField()
@@ -92,8 +92,8 @@ class TimeSelectPage: EventCreationPage_VC, UITextFieldDelegate{
         print("Time")
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(true)
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(true)
 //            startTimeText.becomeFirstResponder()
 //    }
     
@@ -140,7 +140,10 @@ class TimeSelectPage: EventCreationPage_VC, UITextFieldDelegate{
 
     func createStartToolBar(){
         // set up tool bar
-        doneTimePick.autoresizingMask = .flexibleHeight
+        
+//        doneTimePick.autoresizingMask = .flexibleHeight
+        doneTimePick.translatesAutoresizingMaskIntoConstraints = false
+        
         doneTimePick.barStyle = .default
         doneTimePick.barTintColor = .white
         doneTimePick.backgroundColor = .white
