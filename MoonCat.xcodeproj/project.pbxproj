@@ -52,6 +52,7 @@
 		AEF7DF4923922FC000C1BFF1 /* 🎟Leave.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7DF4823922FC000C1BFF1 /* 🎟Leave.swift */; };
 		AEF7DF4B2392396A00C1BFF1 /* CircularLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7DF4A2392396A00C1BFF1 /* CircularLoader.swift */; };
 		AEF7DF512393315200C1BFF1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7DF502393315200C1BFF1 /* User.swift */; };
+		B3DDA131237D21BA000C20EA /* AutoComplete_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DDA130237D21BA000C20EA /* AutoComplete_VC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -116,6 +117,7 @@
 		AEF7DF4A2392396A00C1BFF1 /* CircularLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularLoader.swift; sourceTree = "<group>"; };
 		AEF7DF502393315200C1BFF1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B24AF53C344CB3394E946627 /* Pods-MoonCat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoonCat.debug.xcconfig"; path = "Target Support Files/Pods-MoonCat/Pods-MoonCat.debug.xcconfig"; sourceTree = "<group>"; };
+		B3DDA130237D21BA000C20EA /* AutoComplete_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoComplete_VC.swift; sourceTree = "<group>"; };
 		CBE384059984994862B6A2B2 /* Pods_MoonCat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoonCat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -214,6 +216,7 @@
 				AEF7DF34238F9D5200C1BFF1 /* ref1@2x.png */,
 				AEF7DF1E238CE42700C1BFF1 /* proxima-nova-regular.ttf */,
 				AEF7DF20238CE48700C1BFF1 /* proxima-nova-semibold.ttf */,
+				B3DDA130237D21BA000C20EA /* AutoComplete_VC.swift */,
 				83D99CD02376736F007F96EE /* CreateEvent_VC.swift */,
 				AEF7DF17238CD4DE00C1BFF1 /* Events_TVC.swift */,
 				AEF7DF19238CD54A00C1BFF1 /* Cell.swift */,
@@ -263,6 +266,7 @@
 				AE381494237269F7001F9A73 /* Resources */,
 				AE6F99402372DB7100533DC2 /* Embed Frameworks */,
 				46D483B6987FC8C48F453223 /* [CP] Embed Pods Frameworks */,
+				7CD7341D18B9E66E8F747690 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -342,6 +346,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoonCat/Pods-MoonCat-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7CD7341D18B9E66E8F747690 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoonCat/Pods-MoonCat-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoonCat/Pods-MoonCat-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoonCat/Pods-MoonCat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A95617BE3AC4FC72061C8EAF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -372,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEF7DF33238F9B4D00C1BFF1 /* Tag.swift in Sources */,
+				B3DDA131237D21BA000C20EA /* AutoComplete_VC.swift in Sources */,
 				83F4CF182377FEF900551751 /* EventInfo.swift in Sources */,
 				AEF7DF4923922FC000C1BFF1 /* 🎟Leave.swift in Sources */,
 				AEF7DF3F2390BEA400C1BFF1 /* YourEvents_VC.swift in Sources */,
