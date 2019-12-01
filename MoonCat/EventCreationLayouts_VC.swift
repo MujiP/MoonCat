@@ -10,11 +10,12 @@ import UIKit
 import GooglePlaces
 import TagListView
 
-// MARK: - description
+// MARK: - Description Entry
 class DescEntryPage: EventCreationPage_VC, UITextViewDelegate{
 
-    var placeholder = "Let others know what your event is about..."
-    var pageTitle = "Event Description"
+    var pageTitle = "Tell people more about your awesome event!"
+    var placeholder = "Say..."
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -42,7 +43,7 @@ class DescEntryPage: EventCreationPage_VC, UITextViewDelegate{
         if textField.text == placeholder{
             textField.text = ""
             textField.textColor = UIColor.black
-            textField.font = UIFont(name: "verdana", size: 14.0)
+            
         }
         
     }
@@ -51,17 +52,20 @@ class DescEntryPage: EventCreationPage_VC, UITextViewDelegate{
         if textField.text == ""{
             textField.text = placeholder
             textField.textColor = UIColor.lightGray
-            textField.font = UIFont(name: "verdana", size: 14.0)
         }
         self.eventDesc = textField.text
         
     }
        
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-       if text == "\n"{
-           textField.resignFirstResponder()
-       }
-       return true
+        
+        if text == "\n"{
+            textField.resignFirstResponder()
+        }
+        
+        // limit max input length
+        return textView.text.count + (text.count - range.length) <= 140
+
     }
 
 }
@@ -468,17 +472,6 @@ class live: DescEntryPage {
         addToContainer(views: [self.titleLabel, self.textField], container: bodyContainer)
         print("live")
     }
-    
-    override func setUpTitle() {
-         super.setUpTitle()
-         self.titleLabel.text = "Tell people more about your awesome event!"
-     }
-     
-    override func setupTextField(){
-         super.setupTextField()
-         self.textField.text = "Say..."
-         textField.delegate = self
-     }
 }
 
 // live 2

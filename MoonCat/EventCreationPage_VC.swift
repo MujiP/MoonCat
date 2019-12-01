@@ -203,6 +203,7 @@ class EventCreationPage_VC: UIViewController{
         titleLabel.textColor = UIColor.black
         titleLabel.adjustsFontSizeToFitWidth = false
         titleLabel.font = .monospacedDigitSystemFont(ofSize: 30, weight: .heavy)
+        // titleLabel.font = UIFont(name: "ProximaNova-Semibold", size: 30)
     }
     
     // Set up the page subtitle view (e.g, for further user instructions
@@ -220,7 +221,7 @@ class EventCreationPage_VC: UIViewController{
         // style
         textField.textColor = UIColor.lightGray
         textField.textAlignment = .center
-        textField.font = UIFont(name: "verdana", size: 14.0)
+        textField.font = UIFont(name: "ProximaNova-Regular", size: 20)
         // close keyboard if user clicks done
         textField.returnKeyType = .done        
     }
