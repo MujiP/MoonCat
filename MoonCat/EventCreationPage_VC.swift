@@ -10,6 +10,7 @@ import UIKit
 
 // Parent VC for one page to be extend and/or override
 class EventCreationPage_VC: UIViewController{
+    // MARK: - View Initialization
     // Top navigation
     let topDecorator = UIView()    // Colored background
     let topControl = UIStackView() // Navigation with horizontal stack view or..
@@ -26,7 +27,51 @@ class EventCreationPage_VC: UIViewController{
 
     var textField = UITextView()    // Simple DataEntry point
     
+    // MARK: - Data Initialzation
+    var category = String()
+    var eventName = String()
+    var eventDesc = String()
+    var startTime = String()
+    var endTime = String()
+    var location = String()
+    var maxPeople = String()
+
     
+    
+// MARK: - Controls
+    @objc func didFinishCreateEvent(){
+        assert(eventDesc.isEmpty)
+        assert(startTime.isEmpty)
+        let data = EventInfo(eventName: eventDesc,
+                             location: location,
+                             category: category,
+                             startTime: startTime,
+                             endTime: endTime,
+                             description: eventDesc,
+                             maxNumPeople: eventName,
+                             showContact: false)
+        //MARK: - export data
+        
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func cancelEventCreation(){
+        reloadData()
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func reloadData(){
+        category = ""
+        eventName = ""
+        eventDesc = ""
+        startTime = ""
+        endTime = ""
+        location = ""
+        maxPeople = ""
+    }
+
+// MARK: - Views
     // MARK: - TopControl
     func setupTopControl() {
         
@@ -36,11 +81,15 @@ class EventCreationPage_VC: UIViewController{
         let cancelButton = UIButton(type: .custom)
         cancelButton.setTitle("Cancel", for: .normal)
         cancelButton.setTitleColor(.systemBlue, for: .normal)
+        cancelButton.addTarget(self, action: #selector(self.cancelEventCreation), for: .touchUpInside)
 
         let createButton = UIButton(type: .custom)
         createButton.setTitle("Create", for: .normal)
         createButton.setTitleColor(.systemGray, for: .disabled)
         createButton.setTitleColor(.systemBlue, for: .normal)
+        createButton.addTarget(self, action: #selector(self.didFinishCreateEvent), for: .touchUpInside)
+        
+        createButton.isEnabled = false
 
         
         // reserved title
@@ -99,7 +148,6 @@ class EventCreationPage_VC: UIViewController{
     }
     
     // MARK: - PageBody
-    
     // Holding content with stackview for easy auto layout
     func setupBodyContainer() {
         bodyContainer.axis = .vertical
@@ -172,7 +220,7 @@ class EventCreationPage_VC: UIViewController{
 
 }
 
-// TextField for picker
+// Custom textField for picker
 class PickerTextField: UITextField, UITextFieldDelegate{
     
     

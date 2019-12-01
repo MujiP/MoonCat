@@ -499,70 +499,73 @@ class TagEntryPage: EventCreationPage_VC, UIPickerViewDelegate, UIPickerViewData
 }
 
 // MARK: - Max Number of people
-class MemberRestrainPage: EventCreationPage_VC, UITextFieldDelegate{
-    let maxNumLabel = UILabel()
-    let maxNum = UITextField()
-    let pageTitle = "Set a maximum number of people"
-    let subtitle = "Choose the maximum number of people you want to attend your event. Once this number is reached your event will become private."
+class MemberRestrainPage: EventCreationPage_VC, UIPickerViewDataSource, UIPickerViewDelegate{
+    let pageTitle = "How many people would you prefer there to be?"
+    let numPicker = UIPickerView()
+    let createButton = UIButton()
+    var numValue = [String]()
      
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         // Top Navigation
-        setupTopDecor(color: UIColor.init(white: 1, alpha: 0.80))
+        setupTopDecor(color: .groupTableViewBackground)
         setupTopControl()
 
         // Body Content
         setUpTitle()
-        setupSubTitle()
-        setUpMaxNum()
+        setUpValue()
+        setUpPicker()
+        setUpCreateButton()
+        
+        setupBodyContainer()
+        addToContainer(views: [titleLabel, numPicker, createButton], container: bodyContainer)
+        
         print("Member")
     }
      
     override func setUpTitle() {
          super.setUpTitle()
          self.titleLabel.text = pageTitle
-     }
-     
-    
-    override func setupSubTitle() {
-        super.setupSubTitle()
-        self.subtitleLabel.text = subtitle
     }
     
-    func setUpMaxNum(){
-        maxNumLabel.numberOfLines = 0
-        maxNumLabel.textAlignment = .center
-        maxNumLabel.text = "Max. Number Of People"
-        maxNumLabel.textColor = .black
-        maxNumLabel.font = maxNumLabel.font.withSize(20)
-        maxNumLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(maxNumLabel)
-        NSLayoutConstraint.activate([
-            maxNumLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 290.0),
-            maxNumLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 90.0),
-            maxNumLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -90.0)
-        ])
-        
-        maxNum.backgroundColor = .white
-        maxNum.borderStyle = .roundedRect
-        maxNum.layer.cornerRadius = 8.0
-        maxNum.layer.masksToBounds = true
-        maxNum.layer.borderWidth = 1.0
-        maxNum.layer.borderColor = UIColor.lightGray.cgColor
-        maxNum.delegate = self
-        maxNum.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(maxNum)
-        NSLayoutConstraint.activate([
-            maxNum.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 350.0),
-            maxNum.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 130.0),
-            maxNum.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -130.0)
-        ])
-        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            self.view.endEditing(true)
-            return true
+    func setUpPicker(){
+        numPicker.dataSource = self
+        numPicker.delegate = self
+    }
+    
+    func setUpValue(){
+        for i in 1...15{
+            numValue.append(String(i))
         }
+        numValue.append("Unlimited")
     }
+    
+    func setUpCreateButton(){
+        createButton.setTitle("Create!", for: .normal)
+        createButton.setTitleColor(.systemBlue, for: .normal)
+        createButton.addTarget(self, action: #selector(self.didFinishCreateEvent), for: .touchUpInside)
+    }
+    
+    override func didFinishCreateEvent() {
+        self.maxPeople = self.pickerView(numPicker, titleForRow: numPicker.selectedRow(inComponent: 0), forComponent: 0)!
+        super.didFinishCreateEvent()
+    }
+    
+    // Picker data source
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return numValue.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return numValue[row]
+    }
+    
 }
     
 
