@@ -160,72 +160,6 @@ class TimeSelectPage: EventCreationPage_VC, UITextFieldDelegate{
 
 }
 
-// MARK: - Max Number of people
-class MemberRestrainPage: EventCreationPage_VC, UITextFieldDelegate{
-    let maxNumLabel = UILabel()
-    let maxNum = UITextField()
-    let pageTitle = "Set a maximum number of people"
-    let subtitle = "Choose the maximum number of people you want to attend your event. Once this number is reached your event will become private."
-     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white
-        // Top Navigation
-        setupTopDecor(color: UIColor.init(white: 1, alpha: 0.80))
-        setupTopControl()
-
-        // Body Content
-        setUpTitle()
-        setupSubTitle()
-        setUpMaxNum()
-        print("Member")
-    }
-     
-    override func setUpTitle() {
-         super.setUpTitle()
-         self.titleLabel.text = pageTitle
-     }
-     
-    
-    override func setupSubTitle() {
-        super.setupSubTitle()
-        self.subtitleLabel.text = subtitle
-    }
-    
-    func setUpMaxNum(){
-        maxNumLabel.numberOfLines = 0
-        maxNumLabel.textAlignment = .center
-        maxNumLabel.text = "Max. Number Of People"
-        maxNumLabel.textColor = .black
-        maxNumLabel.font = maxNumLabel.font.withSize(20)
-        maxNumLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(maxNumLabel)
-        NSLayoutConstraint.activate([
-            maxNumLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 290.0),
-            maxNumLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 90.0),
-            maxNumLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -90.0)
-        ])
-        
-        maxNum.backgroundColor = .white
-        maxNum.borderStyle = .roundedRect
-        maxNum.layer.cornerRadius = 8.0
-        maxNum.layer.masksToBounds = true
-        maxNum.layer.borderWidth = 1.0
-        maxNum.layer.borderColor = UIColor.lightGray.cgColor
-        maxNum.delegate = self
-        maxNum.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(maxNum)
-        NSLayoutConstraint.activate([
-            maxNum.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 350.0),
-            maxNum.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 130.0),
-            maxNum.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -130.0)
-        ])
-        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            self.view.endEditing(true)
-            return true
-        }
-    }
-}
     
 // MARK: - Location Entry
 class LocationEntryPage: EventCreationPage_VC, UITextFieldDelegate{
@@ -342,7 +276,7 @@ extension LocationEntryPage: GMSAutocompleteViewControllerDelegate{
     
     
 // MARK: - Tag Entry
-class tagEntryPage: EventCreationPage_VC, UIPickerViewDelegate, UIPickerViewDataSource{
+class TagEntryPage: EventCreationPage_VC, UIPickerViewDelegate, UIPickerViewDataSource{
     let pageTitle = "Add tags to your event!"
     let subtitle = "Select up to three tags for your event. You should add at least one"
     let catArray = ["Coffee", "Food", "Study", "Other"]
@@ -369,8 +303,8 @@ class tagEntryPage: EventCreationPage_VC, UIPickerViewDelegate, UIPickerViewData
         setupSubTitle()
         setupTags()
         setupTagButtons()
-        setupBodyContainer()
-        addToContainer(views: [self.titleLabel, self.textField], container: bodyContainer)
+//        setupBodyContainer()
+//        addToContainer(views: [self.titleLabel, self.textField], container: bodyContainer)
         print("Tag")
      }
     override func setUpTitle() {
@@ -561,6 +495,73 @@ class tagEntryPage: EventCreationPage_VC, UIPickerViewDelegate, UIPickerViewData
          let row = catArray[row]
          return row
         
+    }
+}
+
+// MARK: - Max Number of people
+class MemberRestrainPage: EventCreationPage_VC, UITextFieldDelegate{
+    let maxNumLabel = UILabel()
+    let maxNum = UITextField()
+    let pageTitle = "Set a maximum number of people"
+    let subtitle = "Choose the maximum number of people you want to attend your event. Once this number is reached your event will become private."
+     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+        // Top Navigation
+        setupTopDecor(color: UIColor.init(white: 1, alpha: 0.80))
+        setupTopControl()
+
+        // Body Content
+        setUpTitle()
+        setupSubTitle()
+        setUpMaxNum()
+        print("Member")
+    }
+     
+    override func setUpTitle() {
+         super.setUpTitle()
+         self.titleLabel.text = pageTitle
+     }
+     
+    
+    override func setupSubTitle() {
+        super.setupSubTitle()
+        self.subtitleLabel.text = subtitle
+    }
+    
+    func setUpMaxNum(){
+        maxNumLabel.numberOfLines = 0
+        maxNumLabel.textAlignment = .center
+        maxNumLabel.text = "Max. Number Of People"
+        maxNumLabel.textColor = .black
+        maxNumLabel.font = maxNumLabel.font.withSize(20)
+        maxNumLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(maxNumLabel)
+        NSLayoutConstraint.activate([
+            maxNumLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 290.0),
+            maxNumLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 90.0),
+            maxNumLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -90.0)
+        ])
+        
+        maxNum.backgroundColor = .white
+        maxNum.borderStyle = .roundedRect
+        maxNum.layer.cornerRadius = 8.0
+        maxNum.layer.masksToBounds = true
+        maxNum.layer.borderWidth = 1.0
+        maxNum.layer.borderColor = UIColor.lightGray.cgColor
+        maxNum.delegate = self
+        maxNum.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(maxNum)
+        NSLayoutConstraint.activate([
+            maxNum.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 350.0),
+            maxNum.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 130.0),
+            maxNum.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -130.0)
+        ])
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            self.view.endEditing(true)
+            return true
+        }
     }
 }
     
