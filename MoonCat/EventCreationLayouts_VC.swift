@@ -8,77 +8,17 @@
 
 import UIKit
 
-// MARK: - Designs
-// live color
-class live: EventCreationPage_VC {
-    let pageTitle:String = "Tell people more about your awesome event!"
-    let placeholder:String = "Say..."
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemYellow
-        
-        setupTopDecor(color: UIColor.init(white: 1, alpha: 0.80))
-        setupTopControl()
-        // setupTopNavigation()
-        setUpTitle()
-        setupTextField()
-        setupBodyContainer()
-        addToBodyContainer(views: [self.titleLabel, self.textField])
-        print("live")
-    }
-    
-    override func setUpTitle() {
-        super.setUpTitle()
-        self.titleLabel.text = pageTitle
-    }
-    
-    override func setupTextField() {
-        super.setupTextField()
-        self.textField.text = placeholder
-        self.textField.backgroundColor = .init(white: 0.95, alpha: 0.5)
-    }
-}
-
-class minimal: EventCreationPage_VC {
-    let pageTitle:String = "Event Description"
-    let placeholder:String = "Let others know what your event is about..."
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.view.backgroundColor = .white
-        
-        setupTopDecor(color: UIColor.groupTableViewBackground)
-        setupTopControl()
-        //setupTopNavigation()
-        setUpTitle()
-        setupTextField()
-        setupBodyContainer()
-        addToBodyContainer(views: [self.titleLabel, self.textField])
-        print("Minimal")
-    }
-    
-    override func setUpTitle() {
-        super.setUpTitle()
-        self.titleLabel.text = pageTitle
-    }
-    
-    override func setupTextField() {
-        super.setupTextField()
-        self.textField.text = placeholder
-        self.textField.backgroundColor = .white
-    }
-}
 
 // MARK: - description
 class DescEntryPage: EventCreationPage_VC{
 
-    let placeholder = "Let others know what your event is about..."
-    let pageTitle = "Event Description"
+    var placeholder = "Let others know what your event is about..."
+    var pageTitle = "Event Description"
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTopDecor(color: UIColor.init(white: 1, alpha: 0.80))
+        view.backgroundColor = .white
+        setupTopDecor(color: .groupTableViewBackground)
         setupTopControl()
         setupTextField()
         setUpTitle()
@@ -95,9 +35,10 @@ class DescEntryPage: EventCreationPage_VC{
    override func setupTextField(){
         super.setupTextField()
         self.textField.text = placeholder
+        textField.delegate = self
     }
     
-   override func textViewDidBeginEditing(_ textView: UITextView) {
+    func textViewDidBeginEditing(_ textView: UITextView) {
            if textField.text == placeholder{
                textField.text = ""
                textField.textColor = UIColor.black
@@ -106,7 +47,7 @@ class DescEntryPage: EventCreationPage_VC{
            
        }
        
-   override func textViewDidEndEditing(_ textView: UITextView) {
+    func textViewDidEndEditing(_ textView: UITextView) {
            if textField.text == ""{
                textField.text = placeholder
                textField.textColor = UIColor.lightGray
@@ -114,7 +55,7 @@ class DescEntryPage: EventCreationPage_VC{
            }
        }
        
-    override func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
            if text == "\n"{
                textField.resignFirstResponder()
            }
@@ -126,71 +67,101 @@ class DescEntryPage: EventCreationPage_VC{
 
 // MARK: - Time Selection
 class TimeSelectPage: EventCreationPage_VC, UITextFieldDelegate{
-    let startDoneBar = UIToolbar()
-    let pageTitle = "When is it happening?"
-    let startDatePicker = UIDatePicker()
-    let startDateText = UITextField()
+    let doneTimePick = UIToolbar()
+    let pageTitle = "When is it happening..?"
+    let timeSlotContainer = UIStackView()
+    let timePicker = UIDatePicker()
+    let startTimeText = PickerTextField()
     override func viewDidLoad() {
-    super.viewDidLoad()
+        super.viewDidLoad()
+        view.backgroundColor = .white
+        self.bodyContainer.isLayoutMarginsRelativeArrangement = true
         // Top Navigation
-        setupTopDecor(color: UIColor.init(white: 1, alpha: 0.80))
+        setupTopDecor(color: .groupTableViewBackground)
         setupTopControl()
 
         // Body Content
         setUpTitle()
         setUpStartTime()
-        
+        setUptimeSlotContainer()
+
+        timeSlotContainer.addArrangedSubview(startTimeText)
+//        timeSlotContainer.addArrangedSubview(UIView())
+//        timeSlotContainer.addArrangedSubview(UIView())
+
         setupBodyContainer()
-        addToBodyContainer(views: [self.titleLabel, self.startDateText])
+        addToBodyContainer(views: [self.titleLabel, self.timeSlotContainer])
         print("Time")
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(true)
+            startTimeText.becomeFirstResponder()
+    }
+    
     override func setUpTitle() {
          super.setUpTitle()
          self.titleLabel.text = pageTitle
-     }
-    
-    func setUpStartTime(){
-        startDateText.backgroundColor = .white
-        startDateText.borderStyle = .roundedRect
-        startDateText.layer.cornerRadius = 8.0
-        startDateText.layer.masksToBounds = true
-        startDateText.layer.borderWidth = 1.0
-        startDateText.layer.borderColor = UIColor.lightGray.cgColor
-        startDateText.translatesAutoresizingMaskIntoConstraints = false
-        startDatePicker.datePickerMode  = .dateAndTime
-        startDatePicker.backgroundColor = .white
-        startDateText.inputView = startDatePicker
-        createStartToolBar() // create the tool bar for date picker
-        startDateText.inputAccessoryView = startDoneBar
-//        self.view.addSubview(startDateText)
-//        NSLayoutConstraint.activate([
-//            startDateText.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 265.0),
-//            startDateText.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 200.0),
-//            startDateText.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -50.0)
-//        ])
     }
-
-    func createStartToolBar(){
-        // set up tool bar
-        startDoneBar.autoresizingMask = .flexibleHeight
-        startDoneBar.barStyle = .default
-        startDoneBar.barTintColor = .white
-        startDoneBar.backgroundColor = .white
-        startDoneBar.isTranslucent = false
         
-        // add done button to toolbar
-        let startDoneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(startButtonTap(_:)))
-        startDoneButton.tintColor = .systemTeal
-        startDoneBar.items = [startDoneButton]
+    func setUptimeSlotContainer(){
+        timeSlotContainer.axis = .vertical
+        timeSlotContainer.layoutMargins =
+            UIEdgeInsets(top: 0,
+                        left: view.frame.width / 8,
+                        bottom:view.frame.height / 3,
+                        right: view.frame.width / 8)
+        timeSlotContainer.isLayoutMarginsRelativeArrangement = true
+        timeSlotContainer.distribution = .fillEqually
     }
     
-    @objc func startButtonTap(_ button: UIBarButtonItem){
-        // close date picker
-        startDateText.resignFirstResponder()
-        let format = DateFormatter()
-        format.dateFormat = "dd-MM-yyyy HH:mm"
-        startDateText.text = format.string(from: startDatePicker.date)
-    }
+        func setUpStartTime(){
+            // shape style
+            startTimeText.backgroundColor = .white
+            startTimeText.borderStyle = .roundedRect
+            startTimeText.layer.cornerRadius = 8.0
+            startTimeText.layer.masksToBounds = true
+            startTimeText.layer.borderWidth = 1.0
+            startTimeText.layer.borderColor = UIColor.lightGray.cgColor
+            startTimeText.translatesAutoresizingMaskIntoConstraints = false
+            
+            // text style
+            startTimeText.text = "Pick a time ../"
+            startTimeText.textColor = UIColor.lightGray
+            startTimeText.font = UIFont(name: "verdana", size: 14.0)
+            startTimeText.textAlignment = .center
+            startTimeText.delegate = self
+            
+            // picker
+            timePicker.datePickerMode  = .dateAndTime
+            timePicker.backgroundColor = .white
+            startTimeText.inputView = timePicker
+            createStartToolBar() // create the tool bar for date picker
+            startTimeText.inputAccessoryView = doneTimePick
+        }
+    
+        func createStartToolBar(){
+            // set up tool bar
+            doneTimePick.autoresizingMask = .flexibleHeight
+            doneTimePick.barStyle = .default
+            doneTimePick.barTintColor = .white
+            doneTimePick.backgroundColor = .white
+            doneTimePick.isTranslucent = false
+            
+            // add done button to toolbar
+            let startDoneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(startButtonTap(_:)))
+            startDoneButton.tintColor = .systemTeal
+            doneTimePick.items = [startDoneButton]
+        }
+        
+        @objc func startButtonTap(_ button: UIBarButtonItem){
+            // close date picker
+            startTimeText.resignFirstResponder()
+            let format = DateFormatter()
+            format.dateFormat = "dd-MM-yyyy HH:mm"
+            startTimeText.text = format.string(from: timePicker.date)
+        }
+    
 }
 
 // MARK: - Max Number of people
@@ -202,6 +173,7 @@ class MemberRestrainPage: EventCreationPage_VC, UITextFieldDelegate{
      
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         // Top Navigation
         setupTopDecor(color: UIColor.init(white: 1, alpha: 0.80))
         setupTopControl()
@@ -276,6 +248,7 @@ class tagEntryPage: EventCreationPage_VC, UIPickerViewDelegate, UIPickerViewData
     let tagButton3 = UIButton()
     
     override func viewDidLoad() {
+        view.backgroundColor = .white
         super.viewDidLoad()
         // Top Navigation
         setupTopDecor(color: UIColor.init(white: 1, alpha: 0.80))
@@ -477,8 +450,72 @@ class tagEntryPage: EventCreationPage_VC, UIPickerViewDelegate, UIPickerViewData
      func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
          let row = catArray[row]
          return row
+        
+    }
+    }
+    
+}
+
+// MARK: - Designs
+// live color
+class live: DescEntryPage {
+
+    override func viewDidLoad() {
+        view.backgroundColor = .systemYellow
+        
+        // Top navigation
+        setupTopDecor(color: UIColor.init(white: 1, alpha: 0.80))
+        setupTopControl()
+        
+        // Body Content
+        setUpTitle()
+        setupTextField()
+        textField.backgroundColor = .init(white: 0.95, alpha: 0.5)
+        setupBodyContainer()
+        addToBodyContainer(views: [self.titleLabel, self.textField])
+        print("live")
+    }
+    
+    override func setUpTitle() {
+         super.setUpTitle()
+         self.titleLabel.text = "Tell people more about your awesome event!"
+     }
+     
+    override func setupTextField(){
+         super.setupTextField()
+         self.textField.text = "Say..."
+         textField.delegate = self
      }
 }
 
+// live 2
+class live2: TimeSelectPage{
+    
+    override func viewDidLoad() {
+        view.backgroundColor = .systemBlue
+        self.bodyContainer.isLayoutMarginsRelativeArrangement = true
+        // Top Navigation
+        setupTopDecor(color: UIColor.init(white: 1, alpha: 0.70))
+        setupTopControl()
+
+        // Body Content
+        setUpTitle()
+        titleLabel.textColor = UIColor.init(white: 0.95, alpha: 0.9)
+        setUpStartTime()
+        startTimeText.backgroundColor = UIColor.init(white: 0.95, alpha: 0.5)
+        startTimeText.textColor = .white
+        
+        setUptimeSlotContainer()
+
+        timeSlotContainer.addArrangedSubview(startTimeText)
+
+
+        
+        setupBodyContainer()
+        addToBodyContainer(views: [self.titleLabel, self.timeSlotContainer])
+        print("Time")
+    }
+    
+    
 
 }

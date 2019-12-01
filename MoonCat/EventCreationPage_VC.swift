@@ -143,39 +143,33 @@ class EventCreationPage_VC: UIViewController, UITextViewDelegate{
         textField.delegate = self
         
     }
-    
-    // set text view delegates to allow a placeholder to prompt user for text
-    //MARK: - UITextViewDelegates
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if textField.text == "Let others know what your event is about..."{
-            textField.text = ""
-            textField.textColor = UIColor.black
-            textField.font = UIFont(name: "verdana", size: 14.0)
-        }
-        
-    }
-    // if user types nothing or deletes everything, show placeholder(prompt) again
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if textField.text == ""{
-            textField.text = "Let others know what your event is about..."
-            textField.textColor = UIColor.lightGray
-            textField.font = UIFont(name: "verdana", size: 14.0)
-        }
-    }
-    // if user is done typing close the keyboard
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if text == "\n"{
-            textField.resignFirstResponder()
-        }
-        
-        return true
-    }
 
 
 }
 
-
+// TextField for picker
+class PickerTextField: UITextField, UITextFieldDelegate{
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return false
+    }
+    
+    override func caretRect(for position: UITextPosition) -> CGRect {
+        return CGRect.zero
+    }
+
+    override func selectionRects(for range: UITextRange) -> [UITextSelectionRect] {
+        return []
+    }
+
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        if action == #selector(copy(_:)) || action == #selector(selectAll(_:)) || action == #selector(paste(_:)) {
+            return false
+        }
+
+        return super.canPerformAction(action, withSender: sender)
+    }
+}
 
 
     

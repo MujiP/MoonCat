@@ -30,6 +30,7 @@ class EventCreation_VC: UIPageViewController, UIPageViewControllerDelegate{
 }
 
 
+// Handling pages source and swipe transition
 class PageDataSource: NSObject, UIPageViewControllerDataSource {
     var pages = [UIViewController]()
     var currentIndex: Int = 0
@@ -39,12 +40,14 @@ class PageDataSource: NSObject, UIPageViewControllerDataSource {
         setPages()
     }
     
-    // load pages as UIViews
+    // MARK: - load pages as UIViews here
     private func setPages() -> Void{
-        //TODO
-        let page1 = DescEntryPage()
-        let page2 = TimeSelectPage()
-        self.pages.append(contentsOf: [page1, page2])
+        //
+        let page1 = live()
+        let page2 = live2()
+        let page3 = DescEntryPage()
+        let page4 = TimeSelectPage()
+        self.pages.append(contentsOf: [page1, page2, page3, page4])
     }
     
     
