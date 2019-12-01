@@ -12,48 +12,42 @@ class Root_VC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
         
         self.view.backgroundColor = UIColor.white
-        
-        let tabBar = GazelleTabBar(config: [
-            TabConfig("all_active", "all_inactive", A_VC.self),
-            TabConfig("coffee_active", "coffee_inactive", A_VC.self),
-            TabConfig("food_active", "food_inactive", A_VC.self),
-            TabConfig("study_active", "study_inactive", A_VC.self),
-            TabConfig("other_active", "other_inactive", A_VC.self),
-        ], startIndex: 0,
-           animationStrategy: FadeAnimation(),
-           spacingStrategy: EqualSpacing(),
-           parent: self,
-           tabType: Tab.self,
-           height: 50,
-           y_origin: 20)
-        
-        self.view.addSubview(tabBar)
-        
-//        self.setReferenceImage(name: "ref1")
-        
-        let l = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 50))
-        l.backgroundColor = UIColor.blue
-        l.textAlignment = .center
-        l.textColor = UIColor.white
-        l.text = "New Event"
-        self.view.addSubview(l)
-        l.center = self.view.midPoint
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-        l.addGestureRecognizer(tap)
-        l.isUserInteractionEnabled = true
+        self.setupTabBar()
+
         
     }
     
-    @objc func handleTap() {
+    func setupTabBar() {
+        let vc = TabBar_VC(config: [
+            TabConfig("list_active", "list_inactive", AllEvents_VC.self),
+            TabConfig("star_active", "star_inactive", YourEvents_VC.self)
+            ], startIndex: 0,
+               transitionStyle: .slide,
+               layoutStyle: .center(padding: 50),
+               tabType: Tab.self)
         
-        // TODO: present the create event vc
-        let vc = CreateEvent_VC()
-        self.welcomeChild(vc, frame: self.view.bounds)
+        
+        self.welcomeChild(vc) { (v) in
+            self.view.addSubview(v)
+            v.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                v.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0),
+                v.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0),
+                v.heightAnchor.constraint(equalToConstant: 50),
+                v.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0)
+            ])
+            
+            let b = BlurView()
+            self.view.insertSubview(b, at: 0)
+            b.pinTo(v)
+            
+        }
     }
+    
+
 
 
 }
