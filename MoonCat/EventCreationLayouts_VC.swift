@@ -7,8 +7,7 @@
 //
 
 import UIKit
-
-
+import GooglePlaces
 
 // MARK: - description
 class DescEntryPage: EventCreationPage_VC{
@@ -69,7 +68,7 @@ class DescEntryPage: EventCreationPage_VC{
 class TimeSelectPage: EventCreationPage_VC, UITextFieldDelegate{
     let doneTimePick = UIToolbar()
     let pageTitle = "When is it happening..?"
-    let timeSlotContainer = UIStackView()
+    let slotContainer = UIStackView()
     let timePicker = UIDatePicker()
     let startTimeText = PickerTextField()
     override func viewDidLoad() {
@@ -85,19 +84,19 @@ class TimeSelectPage: EventCreationPage_VC, UITextFieldDelegate{
         setUpStartTime()
         setUptimeSlotContainer()
 
-        timeSlotContainer.addArrangedSubview(startTimeText)
+        slotContainer.addArrangedSubview(startTimeText)
 //        timeSlotContainer.addArrangedSubview(UIView())
 //        timeSlotContainer.addArrangedSubview(UIView())
 
         setupBodyContainer()
-        addToBodyContainer(views: [self.titleLabel, self.timeSlotContainer])
+        addToBodyContainer(views: [self.titleLabel, self.slotContainer])
         print("Time")
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillAppear(true)
-            startTimeText.becomeFirstResponder()
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(true)
+//            startTimeText.becomeFirstResponder()
+//    }
     
     override func setUpTitle() {
          super.setUpTitle()
@@ -105,14 +104,14 @@ class TimeSelectPage: EventCreationPage_VC, UITextFieldDelegate{
     }
         
     func setUptimeSlotContainer(){
-        timeSlotContainer.axis = .vertical
-        timeSlotContainer.layoutMargins =
+        slotContainer.axis = .vertical
+        slotContainer.layoutMargins =
             UIEdgeInsets(top: 0,
                         left: view.frame.width / 8,
                         bottom:view.frame.height / 3,
                         right: view.frame.width / 8)
-        timeSlotContainer.isLayoutMarginsRelativeArrangement = true
-        timeSlotContainer.distribution = .fillEqually
+        slotContainer.isLayoutMarginsRelativeArrangement = true
+        slotContainer.distribution = .fillEqually
     }
     
         func setUpStartTime(){
@@ -229,8 +228,117 @@ class MemberRestrainPage: EventCreationPage_VC, UITextFieldDelegate{
             return true
         }
     }
+}
     
+// MARK: - Location Entry
+class LocationEntryPage: EventCreationPage_VC, UITextFieldDelegate{
+    let pageTitle = "Set a location"
+    let placeholder = "Search here .."
+    let locationText = PickerTextField()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+        setupTopDecor(color: .groupTableViewBackground)
+        setupTopControl()
+        setUpTitle()
+        setupLocation()
+        setupBodyContainer()
+        addToBodyContainer(views: [self.titleLabel, self.locationText])
+        print("Location")
+    }
+    
+    override func setUpTitle() {
+         super.setUpTitle()
+         self.titleLabel.text = pageTitle
+     }
+     
+    func setupLocation(){
+        locationText.delegate = self
+        // shape style
+        locationText.backgroundColor = .white
+        locationText.borderStyle = .roundedRect
+        locationText.layer.cornerRadius = 8.0
+        locationText.layer.masksToBounds = true
+        locationText.layer.borderWidth = 1.0
+        locationText.layer.borderColor = UIColor.lightGray.cgColor
 
+        
+        // text style
+        locationText.text = placeholder
+        locationText.textColor = UIColor.lightGray
+        locationText.font = UIFont(name: "verdana", size: 14.0)
+        locationText.textAlignment = .center
+        locationText.addTarget(self, action: #selector(autocompleteClicked), for: .editingDidBegin)
+        locationText.layoutMargins =
+        UIEdgeInsets(top: 0,
+                    left: view.frame.width / 8,
+                    bottom:view.frame.height / 3,
+                    right: view.frame.width / 8)
+    }
+    
+    
+}
+
+// Google places search layout
+extension LocationEntryPage: GMSAutocompleteViewControllerDelegate{
+    
+    // Present the Autocomplete view controller when the textview is pressed.
+    @objc func autocompleteClicked(_ sender: UITextView) {
+        let autocompleteController = GMSAutocompleteViewController()
+        autocompleteController.delegate = self
+
+        // Specify the place data types to return.
+        let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) |
+        UInt(GMSPlaceField.placeID.rawValue))!
+        autocompleteController.placeFields = fields
+
+        // Specify a filter.
+        let filter = GMSAutocompleteFilter()
+        filter.type = .address
+        autocompleteController.autocompleteFilter = filter
+
+        // Display the autocomplete view controller.
+        present(autocompleteController, animated: true, completion: nil)
+    }
+    
+    
+    // MARK: - Handle the user's selection.
+    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+
+        
+        self.locationText.text = place.name
+        //TODO: store place data
+        // print("Place name: \(place.name)")
+        // print("Place ID: \(place.placeID)")
+        // print("Place attributions: \(place.attributions)")
+        
+        dismiss(animated: true, completion: nil)
+    }
+
+    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+        // TODO: handle the error.
+        print("Error: ", error.localizedDescription)
+    }
+
+    // User canceled the operation.
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+
+    // Turn the network activity indicator on and off again.
+    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+
+    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+    
+    
+}
+    
+    
 // MARK: - Tag Entry
 class tagEntryPage: EventCreationPage_VC, UIPickerViewDelegate, UIPickerViewDataSource{
     let pageTitle = "Add tags to your event!"
@@ -452,9 +560,8 @@ class tagEntryPage: EventCreationPage_VC, UIPickerViewDelegate, UIPickerViewData
          return row
         
     }
-    }
-    
 }
+    
 
 // MARK: - Designs
 // live color
@@ -507,12 +614,12 @@ class live2: TimeSelectPage{
         
         setUptimeSlotContainer()
 
-        timeSlotContainer.addArrangedSubview(startTimeText)
+        slotContainer.addArrangedSubview(startTimeText)
 
 
         
         setupBodyContainer()
-        addToBodyContainer(views: [self.titleLabel, self.timeSlotContainer])
+        addToBodyContainer(views: [self.titleLabel, self.slotContainer])
         print("Time")
     }
     

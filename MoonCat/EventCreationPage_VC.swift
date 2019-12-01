@@ -7,6 +7,8 @@
 //
 import UIKit
 
+
+// Parent VC for one page to be extend and/or override
 class EventCreationPage_VC: UIViewController, UITextViewDelegate{
     let titleLabel = UILabel()
     let subtitleLabel = UILabel()
@@ -150,6 +152,7 @@ class EventCreationPage_VC: UIViewController, UITextViewDelegate{
 // TextField for picker
 class PickerTextField: UITextField, UITextFieldDelegate{
     
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return false
     }
@@ -169,6 +172,7 @@ class PickerTextField: UITextField, UITextFieldDelegate{
 
         return super.canPerformAction(action, withSender: sender)
     }
+    
 }
 
 
