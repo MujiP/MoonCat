@@ -21,6 +21,7 @@ class Cell: UITableViewCell {
     var locationIcon: UIImageView!
     var insetView: UIView!
     var periodIcon: UIImageView!
+    var timeLabel: UILabel!
     
     func setupInsetView() {
         let v = UIView()
@@ -143,6 +144,7 @@ class Cell: UITableViewCell {
             time.bottomAnchor.constraint(equalTo: self.periodIcon.bottomAnchor, constant: 7),
             time.trailingAnchor.constraint(equalTo: self.periodIcon.leadingAnchor, constant: -4)
         ])
+        self.timeLabel = time
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -241,6 +243,18 @@ class Cell: UITableViewCell {
             self.tags!.map { $0.removeFromSuperview() }
         }
         self.createNewTagsFrom(e.tags)
+        
+        let date = Date(timeIntervalSince1970: e.date)
+        let calendar = Calendar.current
+
+        let hour = calendar.component(.hour, from: date) - 12
+        let minutes = calendar.component(.minute, from: date)
+        
+        if minutes == 0 {
+            self.timeLabel.text = "\(hour)"
+        } else {
+            self.timeLabel.text = "\(hour):\(minutes)"
+        }
         
     }
     
