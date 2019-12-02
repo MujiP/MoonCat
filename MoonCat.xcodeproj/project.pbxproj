@@ -34,7 +34,7 @@
 		AEF7DF0D238CC3DA00C1BFF1 /* TabTransitionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7DF0C238CC3DA00C1BFF1 /* TabTransitionStyle.swift */; };
 		AEF7DF0F238CC40900C1BFF1 /* X_UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7DF0E238CC40900C1BFF1 /* X_UIView.swift */; };
 		AEF7DF12238CC57C00C1BFF1 /* SegmentedBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7DF11238CC57C00C1BFF1 /* SegmentedBar.swift */; };
-		AEF7DF16238CC8A100C1BFF1 /* Playground_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7DF15238CC8A100C1BFF1 /* Playground_VC.swift */; };
+		AEF7DF16238CC8A100C1BFF1 /* ImageUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7DF15238CC8A100C1BFF1 /* ImageUpload.swift */; };
 		AEF7DF18238CD4DE00C1BFF1 /* Events_TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7DF17238CD4DE00C1BFF1 /* Events_TVC.swift */; };
 		AEF7DF1A238CD54A00C1BFF1 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7DF19238CD54A00C1BFF1 /* Cell.swift */; };
 		AEF7DF1F238CE42700C1BFF1 /* proxima-nova-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEF7DF1E238CE42700C1BFF1 /* proxima-nova-regular.ttf */; };
@@ -101,7 +101,7 @@
 		AEF7DF0C238CC3DA00C1BFF1 /* TabTransitionStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabTransitionStyle.swift; sourceTree = "<group>"; };
 		AEF7DF0E238CC40900C1BFF1 /* X_UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = X_UIView.swift; sourceTree = "<group>"; };
 		AEF7DF11238CC57C00C1BFF1 /* SegmentedBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedBar.swift; sourceTree = "<group>"; };
-		AEF7DF15238CC8A100C1BFF1 /* Playground_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playground_VC.swift; sourceTree = "<group>"; };
+		AEF7DF15238CC8A100C1BFF1 /* ImageUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUpload.swift; sourceTree = "<group>"; };
 		AEF7DF17238CD4DE00C1BFF1 /* Events_TVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events_TVC.swift; sourceTree = "<group>"; };
 		AEF7DF19238CD54A00C1BFF1 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		AEF7DF1E238CE42700C1BFF1 /* proxima-nova-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proxima-nova-regular.ttf"; sourceTree = "<group>"; };
@@ -230,7 +230,7 @@
 				AEF7DF17238CD4DE00C1BFF1 /* Events_TVC.swift */,
 				AEF7DF19238CD54A00C1BFF1 /* Cell.swift */,
 				AEF7DF3623907F8E00C1BFF1 /* Header.swift */,
-				AEF7DF15238CC8A100C1BFF1 /* Playground_VC.swift */,
+				AEF7DF15238CC8A100C1BFF1 /* ImageUpload.swift */,
 				AE22F0FB237B72A2008256B4 /* A_VC.swift */,
 				AE3814A2237269F9001F9A73 /* Assets.xcassets */,
 				AEB5BF4A237CC74D00727337 /* DarkThunder */,
@@ -415,7 +415,7 @@
 				AEF7DF45239226EF00C1BFF1 /* 🎟YourEvents.swift in Sources */,
 				AEF7DF12238CC57C00C1BFF1 /* SegmentedBar.swift in Sources */,
 				AEF7DF18238CD4DE00C1BFF1 /* Events_TVC.swift in Sources */,
-				AEF7DF16238CC8A100C1BFF1 /* Playground_VC.swift in Sources */,
+				AEF7DF16238CC8A100C1BFF1 /* ImageUpload.swift in Sources */,
 				AEF7DF0B238CC3CF00C1BFF1 /* TabLayoutStyle.swift in Sources */,
 				AEF7DF39239084DF00C1BFF1 /* BlurView.swift in Sources */,
 				AE52FD23237B9A3500468DBE /* GazelleTabBar_VC.swift in Sources */,
