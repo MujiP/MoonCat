@@ -1,0 +1,6 @@
+.DS_Store
+.vscode
+Pods/
+MoonCat.xcodeproj/xcuserdata/Kirk.xcuserdatad/
+MoonCat.xcworkspace/xcuserdata/
+Podfile.lock

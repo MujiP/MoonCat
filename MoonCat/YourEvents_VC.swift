@@ -50,6 +50,10 @@ class YourEvents_VC: UIViewController, Displaying {
             createIcon.centerYAnchor.constraint(equalTo: v.centerYAnchor, constant: 8)
         ])
         
+        let tapCreateIcon = UITapGestureRecognizer(target: self, action: #selector(createTapped))
+        createIcon.addGestureRecognizer(tapCreateIcon)
+        createIcon.isUserInteractionEnabled = true
+        
         let refresh = UIImageView(image: UIImage(named: "refreshIcon"))
         self.view.addSubview(refresh)
         refresh.translatesAutoresizingMaskIntoConstraints = false
@@ -69,6 +73,16 @@ class YourEvents_VC: UIViewController, Displaying {
         self.refresh()
     }
     
+    @objc func createTapped() {
+        let eventCreation_VC = EventCreation_VC(transitionStyle: UIPageViewController.TransitionStyle.scroll, navigationOrientation: UIPageViewController.NavigationOrientation.horizontal)
+        // full screen
+        // eventCreation_VC.modalPresentationStyle = .fullScreen
+        // show(eventCreation_VC, sender: YourEvents_VC())
+        
+        // Modal
+        present(eventCreation_VC, animated: true, completion: nil)
+
+    }
 
 
 }

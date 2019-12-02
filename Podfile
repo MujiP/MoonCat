@@ -8,5 +8,6 @@ target 'MoonCat' do
   pod 'PromiseKit/CorePromise'
   pod 'GooglePlaces'
   pod 'GoogleMaps'
+  pod 'TagListView', '~> 1.0'
 
 end
