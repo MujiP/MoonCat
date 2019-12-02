@@ -29,31 +29,6 @@ class EventCreation_VC: UIPageViewController, UIPageViewControllerDelegate{
 
 }
 
-// Dedicate class for storing data from page view dynamically
-class eventDatabase{
-    var eventDesc = String()
-    var startDateTime = String()
-    var location = String()
-    var aera = String()
-    var maxPeople = String()
-    var tags = [String]()
-
-    func dataSanityCheckPassed() -> Bool {
-        print("passcheck")
-        print (!eventDesc.isEmpty && !startDateTime.isEmpty && !location.isEmpty)
-        return (!eventDesc.isEmpty && !startDateTime.isEmpty && !location.isEmpty)
-    }
-    
-    func reloadData(){
-        eventDesc = ""
-        startDateTime = ""
-        location = ""
-        maxPeople = ""
-        tags.removeAll()
-    }
-}
-
-
 // Handling pages source and swipe transition
 class PageDataSource: NSObject, UIPageViewControllerDataSource {
     var pages = [UIViewController]()
@@ -132,5 +107,34 @@ class PageDataSource: NSObject, UIPageViewControllerDataSource {
     
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
         return currentIndex
+    }
+}
+
+
+// Dedicate class for storing data from page view dynamically
+class eventDatabase{
+    var eventDesc = String()
+    var startDateTime = String()
+    var location = String()
+    var area = String()
+    var maxPeople = String()
+    var tags = [String]()
+
+    func dataSanityCheckPassed() -> Bool {
+
+        print(eventDesc)
+        print(startDateTime)
+        print(location)
+        print(area)
+        print(maxPeople)
+        return (!eventDesc.isEmpty && !startDateTime.isEmpty && !location.isEmpty && !area.isEmpty)
+    }
+    
+    func reloadData(){
+        eventDesc = ""
+        startDateTime = ""
+        location = ""
+        maxPeople = ""
+        tags.removeAll()
     }
 }
