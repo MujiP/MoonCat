@@ -29,11 +29,36 @@ class EventCreation_VC: UIPageViewController, UIPageViewControllerDelegate{
 
 }
 
+// Dedicate class for storing data from page view dynamically
+class eventDatabase{
+    var eventDesc = String()
+    var startDateTime = String()
+    var location = String()
+    var aera = String()
+    var maxPeople = String()
+    var tags = [String]()
+
+    func dataSanityCheckPassed() -> Bool {
+        print("passcheck")
+        print (!eventDesc.isEmpty && !startDateTime.isEmpty && !location.isEmpty)
+        return (!eventDesc.isEmpty && !startDateTime.isEmpty && !location.isEmpty)
+    }
+    
+    func reloadData(){
+        eventDesc = ""
+        startDateTime = ""
+        location = ""
+        maxPeople = ""
+        tags.removeAll()
+    }
+}
+
 
 // Handling pages source and swipe transition
 class PageDataSource: NSObject, UIPageViewControllerDataSource {
     var pages = [UIViewController]()
     var currentIndex: Int = 0
+    var eventDB = eventDatabase()
     
     override init(){
         super.init()
@@ -42,17 +67,16 @@ class PageDataSource: NSObject, UIPageViewControllerDataSource {
     
     // MARK: - load pages as UIViews here
     private func setPages() -> Void{
-        //
-        let page1 = live()
-        let page2 = live2()
-        let page3 = live3()
-        let page4 = live4()
-        let page5 = live5()
-        let page6 = DescEntryPage()
-        let page7 = TimeSelectPage()
-        let page8 = LocationEntryPage()
-        let page9 = TagEntryPage()
-        let page10 = MemberRestrainPage()
+        let page1 = live(eventDB: eventDB)
+        let page2 = live2(eventDB: eventDB)
+        let page3 = live3(eventDB: eventDB)
+        let page4 = live4(eventDB: eventDB)
+        let page5 = live5(eventDB: eventDB)
+        let page6 = DescEntryPage(eventDB: eventDB)
+        let page7 = TimeSelectPage(eventDB: eventDB)
+        let page8 = LocationEntryPage(eventDB: eventDB)
+        let page9 = TagEntryPage(eventDB: eventDB)
+        let page10 = MemberRestrainPage(eventDB: eventDB)
         self.pages.append(contentsOf: [page1, page2, page3, page4, page5, page6, page7, page8, page9, page10])
     }
     

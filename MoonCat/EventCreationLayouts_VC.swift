@@ -43,7 +43,6 @@ class DescEntryPage: EventCreationPage_VC, UITextViewDelegate{
         if textField.text == placeholder{
             textField.text = ""
             textField.textColor = UIColor.black
-            
         }
         
     }
@@ -53,13 +52,14 @@ class DescEntryPage: EventCreationPage_VC, UITextViewDelegate{
             textField.text = placeholder
             textField.textColor = UIColor.lightGray
         }
-        self.eventDesc = textField.text
-        
+        self.eventDB.eventDesc = ""
+        self.eventDB.eventDesc += textField.text
     }
        
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         
         if text == "\n"{
+            textViewDidEndEditing(textField)
             textField.resignFirstResponder()
         }
         
@@ -145,7 +145,8 @@ class TimeSelectPage: EventCreationPage_VC, UITextFieldDelegate{
     func createStartToolBar(){
         // set up tool bar
         
-//        doneTimePick.autoresizingMask = .flexibleHeight
+        // Bug with autoresizing
+        // doneTimePick.autoresizingMask = .flexibleHeight
         doneTimePick.translatesAutoresizingMaskIntoConstraints = false
         
         doneTimePick.barStyle = .default
@@ -165,6 +166,7 @@ class TimeSelectPage: EventCreationPage_VC, UITextFieldDelegate{
         let format = DateFormatter()
         format.dateFormat = "dd-MM-yyyy HH:mm"
         startTimeText.text = format.string(from: timePicker.date)
+        self.eventDB.startDateTime = startTimeText.text!
     }
 
 }
@@ -255,7 +257,7 @@ extension LocationEntryPage: GMSAutocompleteViewControllerDelegate{
         self.locationText.text = place.name
         
 // MARK: - LocationData
-        self.location = place.name!
+        self.eventDB.location = locationText.text!
         
         //TODO: store place data
         // print("Place name: \(place.name)")
@@ -370,9 +372,9 @@ extension TagEntryPage: TagListViewDelegate{
     func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
         print("Tag pressed: \(title), \(sender)")
         if tagView.isSelected{
-            self.tags.append(title)
+            self.eventDB.tags.append(title)
         } else {
-            self.tags.removeAll{$0 == title}
+            self.eventDB.tags.removeAll{$0 == title}
         }
         tagView.isSelected = !tagView.isSelected
         
@@ -403,7 +405,16 @@ class MemberRestrainPage: EventCreationPage_VC, UIPickerViewDataSource, UIPicker
         setupBodyContainer()
         addToContainer(views: [titleLabel, numPicker, createButton], container: bodyContainer)
         
+
         print("Member")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if self.eventDB.dataSanityCheckPassed() {
+            self.createButton.isEnabled = true
+            print(self.createButton.isEnabled)
+        }
     }
      
     override func setUpTitle() {
@@ -428,11 +439,13 @@ class MemberRestrainPage: EventCreationPage_VC, UIPickerViewDataSource, UIPicker
     func setUpCreateButton(){
         createButton.setTitle("Create!", for: .normal)
         createButton.setTitleColor(.systemBlue, for: .normal)
+        createButton.setTitleColor(.systemGray, for: .disabled)
         createButton.addTarget(self, action: #selector(self.didFinishCreateEvent), for: .touchUpInside)
+        createButton.isEnabled = false
     }
     
     override func didFinishCreateEvent() {
-        self.maxPeople = self.pickerView(numPicker, titleForRow: numPicker.selectedRow(inComponent: 0), forComponent: 0)!
+        self.eventDB.maxPeople = self.pickerView(numPicker, titleForRow: numPicker.selectedRow(inComponent: 0), forComponent: 0)!
         super.didFinishCreateEvent()
     }
     

@@ -28,25 +28,29 @@ class EventCreationPage_VC: UIViewController{
     var textField = UITextView()    // Simple DataEntry point
     
     // MARK: - Data Initialzation
-    var eventDesc = String()
-    var startDateTime = String()
-    var location = String()
-    var aera = String()
-    var maxPeople = String()
-    var tags = [String]()
-
+    var eventDB: eventDatabase
+    
+    init(eventDB: eventDatabase){
+        self.eventDB = eventDB
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     
 // MARK: - Controls
     @objc func didFinishCreateEvent(){
-        print(eventDesc)
-        print(startDateTime)
-        print(location)
-        print(maxPeople)
-        assert(!eventDesc.isEmpty)
-        assert(!startDateTime.isEmpty)
-        assert(!location.isEmpty)
-        assert(!maxPeople.isEmpty)
+        print(eventDB.eventDesc)
+        print(eventDB.startDateTime)
+        print(eventDB.location)
+        print(eventDB.maxPeople)
+        
+        assert(!eventDB.eventDesc.isEmpty)
+        assert(!eventDB.startDateTime.isEmpty)
+        assert(!eventDB.location.isEmpty)
+        assert(!eventDB.maxPeople.isEmpty)
 
         //MARK: ------ export data here: -------
         
@@ -55,17 +59,11 @@ class EventCreationPage_VC: UIViewController{
     }
     
     @objc func cancelEventCreation(){
-        reloadData()
+        eventDB.reloadData()
         dismiss(animated: true, completion: nil)
     }
     
-    func reloadData(){
-        eventDesc = ""
-        startDateTime = ""
-        location = ""
-        maxPeople = ""
-        tags.removeAll()
-    }
+
 
 // MARK: - Shared Views
     
