@@ -12,26 +12,31 @@ protocol EventDelegate: AnyObject {
     /**
      When the current User just joined the event.
      */
-    func didJoin()
+    func didJoin(event: Event)
     
     /**
      When the current User just left the event.
      */
-    func didLeave()
+    func didLeave(event: Event)
 }
 
 class Event {
     
+    var id: String? // Events from backend will have an id. Events created on client side will not.
     let place: String // Starbucks
     let area: String // Queen Street West
     let description: String
-    let date: Date?
+    let date: TimeInterval
     let maxOccupancy: Int
     var people: [String]
     let tags: [String]
     weak var delegate: EventDelegate?
     
-    init(place: String, area: String, description: String, date: Date?, currentOccupancy: Int, maxOccupancy: Int, people: [String], tags: [String]) {
+    /**
+     For the date, pass a time interval since 1970
+     */
+    init(id: String?, place: String, area: String, description: String, date: TimeInterval, maxOccupancy: Int, people: [String], tags: [String]) {
+        self.id = id
         self.place = place
         self.area = area
         self.description = description
@@ -64,7 +69,7 @@ class Event {
         // TODO: Should undo local changes if the join request failed.
         
         self.people.append(User.current.name)
-        self.delegate?.didJoin()
+        self.delegate?.didJoin(event: self)
     }
     
     /**
@@ -79,7 +84,7 @@ class Event {
         
         let i = self.people.firstIndex { $0 == User.current.name }!
         self.people.remove(at: i)
-        self.delegate?.didLeave()
+        self.delegate?.didLeave(event: self)
     }
     
     /**

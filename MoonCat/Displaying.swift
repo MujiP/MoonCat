@@ -36,35 +36,51 @@ extension Displaying {
         self.loader.show()
         self.loader.start()
         
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (_) in
+        
+        //        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (_) in
+        //
+        //            let vc = Events_TVC()
+        //            self.welcomeChild(vc) { (v) in
+        //                v.frame = self.view.bounds
+        //                self.view.insertSubview(v, at: 0)
+        //            }
+        //
+        //            self.loader.stop {
+        //                self.loader.removeFromSuperview()
+        //                self.loader = nil
+        //            }
+        //
+        //            vc.intro()
+        //            self.vc = vc
+        //        }
+        
+        
+        firstly {
+            self.request
+        }.done { events in
+            print("Received \(events.count) events")
             
-            let vc = Events_TVC()
+            guard events.count > 0 else {
+                return
+            }
+            
+            let vc = Events_TVC(events: events)
             self.welcomeChild(vc) { (v) in
                 v.frame = self.view.bounds
                 self.view.insertSubview(v, at: 0)
             }
             
+            vc.intro()
+            self.vc = vc
+            
+        }.ensure {
             self.loader.stop {
                 self.loader.removeFromSuperview()
                 self.loader = nil
             }
-            
-            vc.intro()
-            self.vc = vc
+        }.catch { error in
+            print(error)
         }
-        
-//        firstly {
-//            self.request
-//        }.done { profiles in
-
-//
-//        }.ensure {
-////            self.loader.stop {
-////                self.loader.removeFromSuperview()
-////            }
-//        }.catch { error in
-//            print(error)
-//        }
         
         
     }

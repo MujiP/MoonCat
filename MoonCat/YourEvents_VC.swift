@@ -14,7 +14,7 @@ class YourEvents_VC: UIViewController, Displaying {
     var vc: Events_TVC?
     var loader: CircularLoader!
     var request: Promise<[Event]> {
-        return 🎟YourEvents(yourID: "foo").run()
+        return 🎟YourEvents(yourID: User.current.name).run()
     }
     
     override func viewDidLoad() {

@@ -19,6 +19,7 @@
 		AE38149E237269F7001F9A73 /* Root_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE38149D237269F7001F9A73 /* Root_VC.swift */; };
 		AE3814A3237269F9001F9A73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE3814A2237269F9001F9A73 /* Assets.xcassets */; };
 		AE3814A6237269F9001F9A73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE3814A4237269F9001F9A73 /* LaunchScreen.storyboard */; };
+		AE516F07239489AC009A61F2 /* X_Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE516F06239489AC009A61F2 /* X_Date.swift */; };
 		AE52FD23237B9A3500468DBE /* GazelleTabBar_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE52FD22237B9A3500468DBE /* GazelleTabBar_VC.swift */; };
 		AE6F993523726A6A00533DC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F993423726A6A00533DC2 /* AppDelegate.swift */; };
 		AE6F99372372C69000533DC2 /* GitWorkflow.md in Resources */ = {isa = PBXBuildFile; fileRef = AE6F99362372C69000533DC2 /* GitWorkflow.md */; };
@@ -88,6 +89,7 @@
 		AE3814A2237269F9001F9A73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE3814A5237269F9001F9A73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE3814A7237269F9001F9A73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE516F06239489AC009A61F2 /* X_Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = X_Date.swift; sourceTree = "<group>"; };
 		AE52FD22237B9A3500468DBE /* GazelleTabBar_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GazelleTabBar_VC.swift; sourceTree = "<group>"; };
 		AE6F993423726A6A00533DC2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE6F99362372C69000533DC2 /* GitWorkflow.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = GitWorkflow.md; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				AE22F0E22378D7D7008256B4 /* DevExtensions.swift */,
 				AEB5BF48237CC6D700727337 /* PromiseKitExtensions.swift */,
 				AE22F0DE2378D7D7008256B4 /* X_UILabel.swift */,
+				AE516F06239489AC009A61F2 /* X_Date.swift */,
 				AEF7DF0E238CC40900C1BFF1 /* X_UIView.swift */,
 				AE22F0E42378D7D7008256B4 /* X_UIViewController.swift */,
 			);
@@ -404,6 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE516F07239489AC009A61F2 /* X_Date.swift in Sources */,
 				AEF7DF33238F9B4D00C1BFF1 /* Tag.swift in Sources */,
 				B3E9C6BB2393C27E00CEEAF7 /* Playground2_VC.swift in Sources */,
 				B3DDA131237D21BA000C20EA /* AutoComplete_VC.swift in Sources */,

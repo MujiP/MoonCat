@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import PromiseKit
 
 class Cell: UITableViewCell {
     
     var placeLabel: UILabel!
     var areaLabel: UILabel!
     var segmentedBar: SegmentedBar!
+    var profileGroup: ProfileGroup!
     var tags: [Tag]!
     var container: UIView!
     var descriptionLabel: UILabel!
@@ -163,22 +165,24 @@ class Cell: UITableViewCell {
         self.setupPeriodIcon()
         self.setupTimeLabel()
         
-        // Replace this with actual component later
-        
-        let profiles = UIImageView(image: UIImage(named: "profiles"))
-        container.addSubview(profiles)
-        profiles.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            profiles.intrinsicWidthConstraint,
-            profiles.intrinsicHeightConstraint,
-            profiles.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -10),
-            profiles.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 10)
-        ])
-        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func createNewProfileGroup(names: [String], maxCount: Int) {
+        
+        let g = ProfileGroup(profileNames: names, max: maxCount)
+        self.container.addSubview(g)
+        g.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            g.intrinsicWidthConstraint,
+            g.intrinsicHeightConstraint,
+            g.bottomAnchor.constraint(equalTo: self.container.bottomAnchor, constant: -10),
+            g.leadingAnchor.constraint(equalTo: self.container.leadingAnchor, constant: 10)
+        ])
+        self.profileGroup = g
     }
     
     func createNewSegmentedBar(currentCount: Int, maxCount: Int) {
@@ -228,6 +232,11 @@ class Cell: UITableViewCell {
         }
         self.createNewSegmentedBar(currentCount: e.people.count, maxCount: e.maxOccupancy)
         
+        if self.profileGroup != nil {
+            self.profileGroup.removeFromSuperview()
+        }
+        self.createNewProfileGroup(names: e.people, maxCount: e.maxOccupancy)
+        
         if self.tags != nil {
             self.tags!.map { $0.removeFromSuperview() }
         }
@@ -238,18 +247,38 @@ class Cell: UITableViewCell {
 }
 
 extension Cell: EventDelegate {
-    func didJoin() {
+    func didJoin(event: Event) {
         // Update the segmented bar and profile group components
         print("did join")
         
         self.segmentedBar.increment()
+        self.profileGroup.addProfile(withName: User.current.name)
+        
+        firstly {
+            🎟Join(eventID: event.id!, yourID: User.current.name).run()
+        }.done { _ in
+            print("Join request successful")
+        }.catch { error in
+            print("Join request failed:")
+            print(error)
+        }
     }
     
-    func didLeave() {
+    func didLeave(event: Event) {
         // Update the segmented bar and profile group components
         print("did leave")
         
         self.segmentedBar.decrement()
+        self.profileGroup.removeLastAddedProfile()
+        
+        firstly {
+            🎟Leave(eventID: event.id!, yourID: User.current.name).run()
+        }.done { _ in
+            print("Leave request successful")
+        }.catch { error in
+            print("Leave request failed:")
+            print(error)
+        }
     }
     
     

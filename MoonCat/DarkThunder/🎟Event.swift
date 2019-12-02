@@ -23,16 +23,16 @@ struct 🎟Event: Requestable {
     
     typealias ExpectedObjType = X
     
-    init(_ event: EventInfo) {
+    init(_ event: Event) {
         
-        // TODO: Replace this to take in an Event struct and put its info in the payload / path
-        
-        self.path += "/" + event.category
         self.payload = [
-            "name": event.eventName,
-            "location": event.location,
-            "start_time": event.startTime,
-            "end_time": event.endTime
+            "place": event.place,
+            "area": event.area,
+            "description": event.description,
+            "date": event.date,
+            "maxOccupancy": event.maxOccupancy,
+            "people": event.people,
+            "tags": event.tags
         ]
     }
     
