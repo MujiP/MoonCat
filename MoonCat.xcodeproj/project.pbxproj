@@ -55,6 +55,7 @@
 		AEF7DF4923922FC000C1BFF1 /* 🎟Leave.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7DF4823922FC000C1BFF1 /* 🎟Leave.swift */; };
 		AEF7DF4B2392396A00C1BFF1 /* CircularLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7DF4A2392396A00C1BFF1 /* CircularLoader.swift */; };
 		AEF7DF512393315200C1BFF1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7DF502393315200C1BFF1 /* User.swift */; };
+		B331B6A92395357A000DF9AE /* ImageUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = B331B6A82395357A000DF9AE /* ImageUpload.swift */; };
 		B3DDA131237D21BA000C20EA /* AutoComplete_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DDA130237D21BA000C20EA /* AutoComplete_VC.swift */; };
 		B3E9C6BA2393C27E00CEEAF7 /* ProfileGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9C6B82393C27E00CEEAF7 /* ProfileGroup.swift */; };
 		B3E9C6BB2393C27E00CEEAF7 /* Playground2_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9C6B92393C27E00CEEAF7 /* Playground2_VC.swift */; };
@@ -125,6 +126,7 @@
 		AEF7DF4A2392396A00C1BFF1 /* CircularLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularLoader.swift; sourceTree = "<group>"; };
 		AEF7DF502393315200C1BFF1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B24AF53C344CB3394E946627 /* Pods-MoonCat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoonCat.debug.xcconfig"; path = "Target Support Files/Pods-MoonCat/Pods-MoonCat.debug.xcconfig"; sourceTree = "<group>"; };
+		B331B6A82395357A000DF9AE /* ImageUpload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUpload.swift; sourceTree = "<group>"; };
 		B3DDA130237D21BA000C20EA /* AutoComplete_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoComplete_VC.swift; sourceTree = "<group>"; };
 		B3E9C6B82393C27E00CEEAF7 /* ProfileGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileGroup.swift; sourceTree = "<group>"; };
 		B3E9C6B92393C27E00CEEAF7 /* Playground2_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playground2_VC.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 			children = (
 				AE6F993423726A6A00533DC2 /* AppDelegate.swift */,
 				AEF7DF502393315200C1BFF1 /* User.swift */,
+				B331B6A82395357A000DF9AE /* ImageUpload.swift */,
 				83F4CF172377FEF900551751 /* EventInfo.swift */,
 				AEF7DF3C2390BE8E00C1BFF1 /* AllEvents_VC.swift */,
 				AEF7DF3E2390BEA400C1BFF1 /* YourEvents_VC.swift */,
@@ -431,6 +434,7 @@
 				AE22F0FC237B72A2008256B4 /* A_VC.swift in Sources */,
 				4AD5F8292393134B00922C57 /* EventCreationLayouts_VC.swift in Sources */,
 				4AD5F8242391D2D500922C57 /* EventCreation_VC.swift in Sources */,
+				B331B6A92395357A000DF9AE /* ImageUpload.swift in Sources */,
 				AEF7DF4723922FB200C1BFF1 /* 🎟Join.swift in Sources */,
 				AE6F993523726A6A00533DC2 /* AppDelegate.swift in Sources */,
 				AEF7DF2D238F964900C1BFF1 /* Event.swift in Sources */,

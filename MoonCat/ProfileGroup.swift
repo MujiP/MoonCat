@@ -38,6 +38,7 @@ class ProfileGroup: UIView {
         var views = [UIImageView]()
         for name in profileNames {
             let imv = UIImageView(image: UIImage(named: name))
+            imv.contentMode = .center
             views.append(imv)
             index += 1
         }
@@ -69,6 +70,7 @@ class ProfileGroup: UIView {
         
         super.init(frame: CGRect(x: 0, y: 0, width: x, height: profileReference.bounds.height))
         
+        
         views.map { self.insertSubview($0, at: 0); $0.frame = $0.frame.integral }
     }
     
@@ -82,6 +84,7 @@ class ProfileGroup: UIView {
      - Precondition: an image exists for the passed in profile name.
      */
     func addProfile(withName name: String) {
+        
         if self.index == self.views.count {
             // All slots are filled up
             return
@@ -91,9 +94,28 @@ class ProfileGroup: UIView {
         self.index += 1
     }
     
-    func removeLastAddedProfile() {
+    func removeProfile(atIndex n: Int) {
+        
+        // Find index of the profile
+        // Loop, starting at that index.
+        // Set that image to its neighbours.
+        // On the last iteration, set it to blank.
+        
+        let count = self.views.count
+        for i in n..<count {
+            if i == count - 1 {
+                self.views[i].image = UIImage(named: "profile_blank")
+                break
+            }
+            
+            let v1 = self.views[i]
+            let v2 = self.views[i + 1]
+            v1.image = v2.image
+            
+        }
+        
         self.index -= 1
-        self.views[self.index].image = UIImage(named: "profile_blank")
+        
     }
     
 }

@@ -13,5 +13,5 @@ class User {
     
     private init() {} // Singleton pattern
     
-    let name = "profile_4"
+    let name = "profile_1"
 }

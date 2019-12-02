@@ -278,12 +278,12 @@ extension Cell: EventDelegate {
         }
     }
     
-    func didLeave(event: Event) {
+    func didLeave(event: Event, index: Int) {
         // Update the segmented bar and profile group components
         print("did leave")
         
         self.segmentedBar.decrement()
-        self.profileGroup.removeLastAddedProfile()
+        self.profileGroup.removeProfile(atIndex: index)
         
         firstly {
             🎟Leave(eventID: event.id!, yourID: User.current.name).run()

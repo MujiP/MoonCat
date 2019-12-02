@@ -17,7 +17,7 @@ protocol EventDelegate: AnyObject {
     /**
      When the current User just left the event.
      */
-    func didLeave(event: Event)
+    func didLeave(event: Event, index: Int)
 }
 
 class Event {
@@ -81,10 +81,9 @@ class Event {
         // Send the Leave request
         // Alert delegate
         
-        
         let i = self.people.firstIndex { $0 == User.current.name }!
         self.people.remove(at: i)
-        self.delegate?.didLeave(event: self)
+        self.delegate?.didLeave(event: self, index: i)
     }
     
     /**
