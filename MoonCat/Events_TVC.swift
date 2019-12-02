@@ -7,36 +7,20 @@
 //
 
 import UIKit
+//
+//        [Event(place: "Robarts Library",
+//              area: "Saint George Street",
+//              description: "Some description about the event goes here, who knows, it can be whatever you want.",
+//              date: nil,
+//              maxOccupancy: 5,
+//              people: ["profile_2"],
+//              tags: ["Study", "Csc209"])
+//        ]
 
 class Events_TVC: UITableViewController {
     
-    var model: [[Event]] = [
-        
-        [Event(place: "Starbucks",
-              area: "Queen Street West",
-              description: "Some description about the event goes here, who knows, it can be whatever you want.",
-              date: nil,
-              currentOccupancy: 4,
-              maxOccupancy: 5,
-              people: ["profile_1", "profile_2", "profile_3", "profile_4"],
-              tags: ["Coffee"])
-        ],
-        
-        [Event(place: "Robarts Library",
-              area: "Saint George Street",
-              description: "Some description about the event goes here, who knows, it can be whatever you want.",
-              date: nil,
-              currentOccupancy: 2,
-              maxOccupancy: 5,
-              people: ["profile_2"],
-              tags: ["Study", "Csc209"])
-        ]
-    ]
-    
-    var headers = [
-        "Today",
-        "Tomorrow"
-    ]
+    var model = [[Event]]()
+    var headers = [String]()
     
     
     func intro() {
@@ -49,7 +33,7 @@ class Events_TVC: UITableViewController {
     }
     
     
-    func process() {
+    func process(events: [Event]) {
         // Separate the events by day
         // Have a [[Event]] as the model, so you can index in on it by the different days (should still be ordered)
         // Have a [String] being the formatted day strings for use in header views.
@@ -60,10 +44,28 @@ class Events_TVC: UITableViewController {
         // Then we need to generate a day string for each YYYYMMdd.
         // This will depend on the current date, ex. Today, Tomorrow, Monday 12. For now leave out the month; it's obvious.
         
+        for each in events {
+            let slotKey = Date(timeIntervalSince1970: each.date).toString()
+            if let i = self.headers.firstIndex(of: slotKey) {
+                // Put the event there
+                self.model[i].append(each)
+            } else {
+                // This is a new slot key.
+                // Append it to headers.
+                // Append a new empty array in the model
+                // Put the event in the last index
+                
+                self.headers.append(slotKey)
+                self.model.append([Event]())
+                self.model[self.model.count - 1].append(each)
+            }
+        }
+        
     }
     
-    init() {
+    init(events: [Event]) {
         super.init(style: .grouped)
+        self.process(events: events)
     }
     
     required init?(coder: NSCoder) {

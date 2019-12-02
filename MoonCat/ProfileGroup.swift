@@ -91,5 +91,10 @@ class ProfileGroup: UIView {
         self.index += 1
     }
     
+    func removeLastAddedProfile() {
+        self.index -= 1
+        self.views[self.index].image = UIImage(named: "profile_blank")
+    }
+    
 }
 

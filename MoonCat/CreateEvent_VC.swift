@@ -523,13 +523,6 @@ class CreateEvent_VC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             showContact: showContact
         )
         
-        firstly {
-            🎟Event(eventInformation).run()
-        }.done { _ in
-            print("done")
-        }.catch { error in
-            print(error)
-        }
         
     }
     
