@@ -58,13 +58,23 @@ extension Displaying {
         firstly {
             self.request
         }.done { events in
-            print("Received \(events.count) events")
             
-            guard events.count > 0 else {
+            // Remove the dummy events we created for API testing
+            var filtered = [Event]()
+            for each in events {
+                if each.description != "Ignore" {
+                    filtered.append(each)
+                }
+            }
+            
+            
+            print("Received \(filtered.count) events")
+            
+            guard filtered.count > 0 else {
                 return
             }
             
-            let vc = Events_TVC(events: events)
+            let vc = Events_TVC(events: filtered)
             self.welcomeChild(vc) { (v) in
                 v.frame = self.view.bounds
                 self.view.insertSubview(v, at: 0)
