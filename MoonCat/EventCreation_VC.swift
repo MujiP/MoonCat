@@ -67,15 +67,10 @@ class PageDataSource: NSObject, UIPageViewControllerDataSource {
     // Return previous UIVC when swipe left
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
             
-        // error handling
         if let currentPageIndex = self.pages.firstIndex(of: viewController) {
             if currentPageIndex == 0 {
-                // Stay
-                // TODO: check here
                 return nil
             } else {
-                // Update new page index
-                // TODO: check here
                 self.currentIndex = currentPageIndex - 1
                 assert(self.currentIndex >= 0 && self.currentIndex < self.pages.count, "Index out of bound when swipe right with " + String(self.currentIndex))
                 return self.pages[currentPageIndex - 1]
@@ -127,6 +122,7 @@ class eventDatabase{
         print(location)
         print(area)
         print(maxPeople)
+        print(tags)
         return (!eventDesc.isEmpty && !startDateTime.isEmpty && !location.isEmpty && !area.isEmpty)
     }
     
