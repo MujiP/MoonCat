@@ -11,7 +11,7 @@ import Bifrost
 
 struct 🎟Join: Requestable {
     
-    var HTTPMethod = "GET"
+    var HTTPMethod = "POST"
     var host = "darkthunder-1.herokuapp.com"
     var path = "/join"
     
