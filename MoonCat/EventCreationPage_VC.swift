@@ -6,6 +6,7 @@
 //  Copyright © 2019 Bolusaur. All rights reserved.
 //
 import UIKit
+import PromiseKit
 
 
 // Parent VC for one page to be extend and/or override
@@ -47,6 +48,8 @@ class EventCreationPage_VC: UIViewController{
         print(eventDB.location)
         print(eventDB.area)
         print(eventDB.maxPeople)
+        print(eventDB.tags)
+        print(eventDB.date)
         
         assert(!eventDB.eventDesc.isEmpty)
         assert(!eventDB.startDateTime.isEmpty)
@@ -55,6 +58,23 @@ class EventCreationPage_VC: UIViewController{
         assert(!eventDB.maxPeople.isEmpty)
 
         //MARK: ------ export data here: -------
+        
+        let event = Event(id: nil,
+                          place: eventDB.location,
+                          area: eventDB.area,
+                          description: eventDB.eventDesc,
+                          date: eventDB.date.timeIntervalSince1970,
+                          maxOccupancy: Int(eventDB.maxPeople)!,
+                          people: [User.current.name],
+                          tags: eventDB.tags)
+        
+        firstly {
+            🎟Event(event).run()
+        }.done { _ in
+            print("new event sent successfully")
+        }.catch { error in
+            print(error)
+        }
         
         
         dismiss(animated: true, completion: nil)

@@ -114,6 +114,7 @@ class eventDatabase{
     var area = String()
     var maxPeople = String()
     var tags = [String]()
+    var date: Date!
 
     func dataSanityCheckPassed() -> Bool {
 

@@ -166,6 +166,7 @@ class TimeSelectPage: EventCreationPage_VC, UITextFieldDelegate{
         format.dateFormat = "dd-MM-yyyy HH:mm"
         startTimeText.text = format.string(from: timePicker.date)
         self.eventDB.startDateTime = startTimeText.text!
+        self.eventDB.date = timePicker.date
     }
 
 }
