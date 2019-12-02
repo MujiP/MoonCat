@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Bagel
+import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,8 +19,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+//         GMSServices.provideAPIKey("AIzaSyCOY869ROmeICjxedqC-Sycsqtjm7zU_cY")
+//         GMSPlacesClient.provideAPIKey("AIzaSyCOY869ROmeICjxedqC-Sycsqtjm7zU_cY")
+        GMSServices.provideAPIKey("AIzaSyBuxnws1p2hIfPka2kJOfQMBk2xRLrrXmA")
+        GMSPlacesClient.provideAPIKey("AIzaSyBs8a19q83dBbnkjsPTRKMoQadwkKBgMwI")
         
+        Bagel.start()
+        
+        // Setup transition style and navigation
         self.window = UIWindow()
+        
+        // let eventCreation_VC = EventCreation_VC(transitionStyle: UIPageViewController.TransitionStyle.scroll, navigationOrientation: UIPageViewController.NavigationOrientation.horizontal)
+        // self.window?.rootViewController = eventCreation_VC()
         self.window?.rootViewController = Root_VC()
         self.window?.makeKeyAndVisible()
         
