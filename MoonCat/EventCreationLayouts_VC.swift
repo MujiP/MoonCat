@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 import GooglePlaces
 import TagListView
 
@@ -25,7 +26,6 @@ class DescEntryPage: EventCreationPage_VC, UITextViewDelegate{
         setUpTitle()
         setupBodyContainer()
         addToContainer(views: [self.titleLabel, self.textField], container: bodyContainer)
-        print("Description")
     }
     
    override func setUpTitle() {
@@ -93,7 +93,6 @@ class TimeSelectPage: EventCreationPage_VC, UITextFieldDelegate{
 
         setupBodyContainer()
         addToContainer(views: [self.titleLabel, self.slotContainer], container: bodyContainer)
-        print("Time")
     }
     
 //    override func viewDidAppear(_ animated: Bool) {
@@ -192,7 +191,6 @@ class LocationEntryPage: EventCreationPage_VC, UITextFieldDelegate{
         
         setupBodyContainer()
         addToContainer(views: [self.titleLabel, slotContainer], container: bodyContainer)
-        print("Location")
     }
     
     override func setUpTitle() {
@@ -230,19 +228,26 @@ class LocationEntryPage: EventCreationPage_VC, UITextFieldDelegate{
 // Google places search layout
 extension LocationEntryPage: GMSAutocompleteViewControllerDelegate{
     
+    
     // Present the Autocomplete view controller when the textview is pressed.
     @objc func autocompleteClicked(_ sender: UITextView) {
         let autocompleteController = GMSAutocompleteViewController()
         autocompleteController.delegate = self
+        
+        // Specify bounds
+        let neBoundsCorner = CLLocationCoordinate2D(latitude: 43.673129, longitude: -79.414361)
+        let swBoundsCorner = CLLocationCoordinate2D(latitude: 43.654482, longitude: -79.369620)
+        autocompleteController.autocompleteBounds = GMSCoordinateBounds(coordinate: neBoundsCorner, coordinate: swBoundsCorner)
+
 
         // Specify the place data types to return.
-        let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) |
-        UInt(GMSPlaceField.placeID.rawValue))!
+        let fields: GMSPlaceField = GMSPlaceField(rawValue: GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) |
+            UInt(GMSPlaceField.placeID.rawValue))!.rawValue | UInt(GMSPlaceField.formattedAddress.rawValue))!
         autocompleteController.placeFields = fields
 
         // Specify a filter.
         let filter = GMSAutocompleteFilter()
-        filter.type = .address
+        filter.type = .establishment
         autocompleteController.autocompleteFilter = filter
 
         // Display the autocomplete view controller.
@@ -252,17 +257,18 @@ extension LocationEntryPage: GMSAutocompleteViewControllerDelegate{
     
     // MARK: - Handle the user's selection.
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-
+        
+        if place.formattedAddress != nil {
+            let address = place.formattedAddress!
+            let slice = address.firstIndex(of: ",")!
+            let area = address[...address.index(slice, offsetBy :-1)]
+            self.eventDB.area = String(area)
+        }
         
         self.locationText.text = place.name
         
-// MARK: - LocationData
+        // MARK: - LocationData
         self.eventDB.location = locationText.text!
-        
-        //TODO: store place data
-        // print("Place name: \(place.name)")
-        // print("Place ID: \(place.placeID)")
-        // print("Place attributions: \(place.attributions)")
         
         dismiss(animated: true, completion: nil)
     }
@@ -370,7 +376,7 @@ class TagEntryPage: EventCreationPage_VC{
 
 extension TagEntryPage: TagListViewDelegate{
     func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
-        print("Tag pressed: \(title), \(sender)")
+        // print("Tag pressed: \(title), \(sender)")
         if tagView.isSelected{
             self.eventDB.tags.append(title)
         } else {
@@ -405,15 +411,12 @@ class MemberRestrainPage: EventCreationPage_VC, UIPickerViewDataSource, UIPicker
         setupBodyContainer()
         addToContainer(views: [titleLabel, numPicker, createButton], container: bodyContainer)
         
-
-        print("Member")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if self.eventDB.dataSanityCheckPassed() {
             self.createButton.isEnabled = true
-            print(self.createButton.isEnabled)
         }
     }
      
@@ -483,7 +486,6 @@ class live: DescEntryPage {
         textField.backgroundColor = .init(white: 0.95, alpha: 0.5)
         setupBodyContainer()
         addToContainer(views: [self.titleLabel, self.textField], container: bodyContainer)
-        print("live")
     }
 }
 
@@ -512,7 +514,6 @@ class live2: TimeSelectPage{
         
         setupBodyContainer()
         addToContainer(views: [self.titleLabel, self.slotContainer], container: bodyContainer)
-        print("live")
     }
 
 }
@@ -533,7 +534,6 @@ class live3: LocationEntryPage {
         
         setupBodyContainer()
         addToContainer(views: [self.titleLabel, slotContainer], container: bodyContainer)
-        print("Live")
     }
     
 }
