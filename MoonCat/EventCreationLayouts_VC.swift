@@ -378,9 +378,9 @@ extension TagEntryPage: TagListViewDelegate{
     func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
         // print("Tag pressed: \(title), \(sender)")
         if tagView.isSelected{
-            self.eventDB.tags.append(title)
-        } else {
             self.eventDB.tags.removeAll{$0 == title}
+        } else {
+            self.eventDB.tags.append(title)
         }
         tagView.isSelected = !tagView.isSelected
         
