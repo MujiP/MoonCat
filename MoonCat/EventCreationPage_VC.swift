@@ -45,11 +45,13 @@ class EventCreationPage_VC: UIViewController{
         print(eventDB.eventDesc)
         print(eventDB.startDateTime)
         print(eventDB.location)
+        print(eventDB.area)
         print(eventDB.maxPeople)
         
         assert(!eventDB.eventDesc.isEmpty)
         assert(!eventDB.startDateTime.isEmpty)
         assert(!eventDB.location.isEmpty)
+        assert(!eventDB.area.isEmpty)
         assert(!eventDB.maxPeople.isEmpty)
 
         //MARK: ------ export data here: -------
